@@ -1,5 +1,6 @@
 """Reproducible, conservative HN catalog collection. Standard library only."""
 import tempfile
+import hashlib
 import argparse, datetime as dt, html, json, re, sqlite3, time, urllib.parse, urllib.request
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -41,7 +42,7 @@ def excerpt(text,game):
 def fetch(url):
  for attempt in range(4):
   try:
-   with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'HackerGames/0.1 public-data-index'}),timeout=40) as res:return json.load(res)
+   with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'PROJECT 24/0.1 public-data-index'}),timeout=40) as res:return json.load(res)
   except Exception:
    if attempt==3:raise
    time.sleep(2**attempt)
@@ -84,6 +85,7 @@ def import_cache(cache, metadata, previous=None, preserve_totals=True):
  export()
 def export():
  snapshot=read(ROOT/'data/snapshot.json',{'records':[],'queries':[],'collectedAt':''})
+ theme_data=read(ROOT/'data/classifiers/theme-predictions.json',{}); theme_predictions=theme_data.get('predictions',{})
  reviews=read(ROOT/'data/reviews.json',[]); lookup={(r['gameId'],r['id']):r for r in reviews}
  con=sqlite3.connect(ROOT/'data/catalog.sqlite');con.execute('CREATE TABLE IF NOT EXISTS mentions(game_id TEXT, id TEXT, payload TEXT, PRIMARY KEY(game_id,id))');con.execute('DELETE FROM mentions')
  games=[]
@@ -95,13 +97,21 @@ def export():
    if review:
     if review['excerpt'] not in m['text']:raise ValueError('Review excerpt not in source: '+m['id'])
     m.update(classification=review['classification'],confidence=review['confidence'],provenance=review['provenance']+'; '+review['reason'])
+   prediction=theme_predictions.get(hashlib.sha256(m['text'].encode()).hexdigest())
+   if prediction and prediction['label']!='general' and prediction['confidence']>=theme_data['model']['threshold']:
+    m['theme']={k:prediction[k] for k in ['label','name','confidence']};m['theme']['model']=theme_data['model']['id']
    mentions.append(m);con.execute('INSERT INTO mentions VALUES(?,?,?)',(g['id'],m['id'],json.dumps(m)))
   mentions.sort(key=lambda m:(m['classification']!='recommendation',m['kind']!='comment',m['id']))
   totals={kind:max([q['reportedSearchMatches'] for q in snapshot['queries'] if q['gameId']==g['id'] and q['kind']==kind] or [0]) for kind in ['comment','story']}
   g.update(mentions=mentions,keywordMatches=sum(totals.values()) if any(q['gameId']==g['id'] for q in snapshot['queries']) else None,verifiedRecommendations=sum(m['classification']=='recommendation' for m in mentions),discussionCount=len({m['storyUrl'] for m in mentions}),showHN=any(r.get('showHNLaunch') and r['gameId']==g['id'] and any(m['id']==r['id'] for m in mentions) for r in reviews))
+  theme_groups={}
+  for m in mentions:
+   if m.get('theme'):
+    t=m['theme'];group=theme_groups.setdefault(t['label'],{'label':t['label'],'name':t['name'],'count':0});group['count']+=1
+  g['themes']=sorted(theme_groups.values(),key=lambda x:(-x['count'],x['label']))
   games.append(g)
  con.commit();con.close()
- result={'generatedAt':max(snapshot['collectedAt'],snapshot.get('discoveryUpdatedAt','')),'coverage':{'description':f'{len(games)} games identified in sampled historical HN records and recommendation threads. Counts describe collected, context-filtered evidence, not the entire HN archive.','method':'Sampled local HN archive, whole discussion threads, and bounded Algolia searches. Explicit game URLs and reviewed title identities; conservative context checks.','keywordMatches':'Raw Algolia-reported comment plus story query matches at baseline collection, before disambiguation. These are not unique verified game mentions or recommendations. Incremental updates preserve this baseline.', 'recommendations':'Only positive game endorsements individually source-reviewed by Codex count as verified. These are agent reviews, not independent human verification. Heuristic candidates are separate and unverified.','ranking':'Verified recommendations rank this sample; unequal search coverage and editorial review mean this is not a census.','limitations':['Sampled archive and selected recommendation threads; not an exhaustive HN archive.','Comments can discuss multiple games. Heuristic labels may be wrong.','Hidden Gems is an editorial discovery filter, not evidence of obscurity.','Show HN requires an individually reviewed creator launch; discovery alone does not establish this status.'],'archive':read(ROOT/'data/discovery-coverage.json',{}),'source':'https://hn.algolia.com/api','snapshotRecords':len(snapshot['records'])},'games':games}
+ result={'generatedAt':max(snapshot['collectedAt'],snapshot.get('discoveryUpdatedAt','')),'coverage':{'description':f'{len(games)} games identified in sampled historical HN records and recommendation threads. Counts describe collected, context-filtered evidence, not the entire HN archive.','method':'Sampled local HN archive, whole discussion threads, and bounded Algolia searches. Explicit game URLs and reviewed title identities; conservative context checks.','keywordMatches':'Raw Algolia-reported comment plus story query matches at baseline collection, before disambiguation. These are not unique verified game mentions or recommendations. Incremental updates preserve this baseline.', 'recommendations':'Only positive game endorsements individually source-reviewed by Codex count as verified. These are agent reviews, not independent human verification. Heuristic candidates are separate and unverified.','ranking':'Verified recommendations rank this sample; unequal search coverage and editorial review mean this is not a census.','limitations':['Sampled archive and selected recommendation threads; not an exhaustive HN archive.','Comments can discuss multiple games. Heuristic labels may be wrong.','Hidden Gems is an editorial discovery filter, not evidence of obscurity.','Show HN requires an individually reviewed creator launch; discovery alone does not establish this status.'],'archive':read(ROOT/'data/discovery-coverage.json',{}),'themeClassifier':theme_data.get('model'),'source':'https://hn.algolia.com/api','snapshotRecords':len(snapshot['records'])},'games':games}
  (ROOT/'public/data').mkdir(parents=True,exist_ok=True)
  (ROOT/'public/data/catalog.json').write_text(json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n')
  print(f"Exported {len(games)} games, {len(snapshot['records'])} evidence records, {sum(g['verifiedRecommendations'] for g in games)} reviewed recommendations")

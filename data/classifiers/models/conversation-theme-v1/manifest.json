@@ -1,0 +1,43 @@
+{
+  "dataset": "conversation-theme-v1",
+  "description": "Custom classifier: conversation-theme-v1",
+  "n_classes": 8,
+  "task_type": "choice",
+  "encoder": "/Users/nico/.cache/huggingface/hub/models--BAAI--bge-large-en-v1.5/snapshots/d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+  "encoder_dim": 1024,
+  "labels": {
+    "challenge-and-mastery": "challenge-and-mastery",
+    "general": "general",
+    "nostalgia": "nostalgia",
+    "playing-together": "playing-together",
+    "puzzles-and-systems": "puzzles-and-systems",
+    "relaxing-and-unwinding": "relaxing-and-unwinding",
+    "story-and-world": "story-and-world",
+    "technical-craft": "technical-craft"
+  },
+  "class_order": [
+    "challenge-and-mastery",
+    "general",
+    "nostalgia",
+    "playing-together",
+    "puzzles-and-systems",
+    "relaxing-and-unwinding",
+    "story-and-world",
+    "technical-craft"
+  ],
+  "hf_source": "user-provided",
+  "hf_config": null,
+  "hf_revision": null,
+  "license": "user-provided",
+  "train_examples": 0,
+  "train_accuracy": 0,
+  "test_examples": 0,
+  "test_accuracy": 0,
+  "scaler_mean_hash": "cff1d3b6",
+  "classifier_coef_hash": "d848f64d",
+  "n_features": null,
+  "feature_layout": null,
+  "label_descriptions": null,
+  "oos_threshold": null,
+  "schema_version": 1
+}

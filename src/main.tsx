@@ -77,8 +77,9 @@ function App() {
       params.get("platform") || "All platforms",
     ),
     [sort, setSort] = useState("recommended");
+  const [theme, setTheme] = useState(params.get("theme") || "all");
   const [visibleGames, setVisibleGames] = useState(48);
-  useEffect(() => setVisibleGames(48), [query, section, genre, platform, sort]);
+  useEffect(() => setVisibleGames(48), [query, section, genre, platform, sort, theme]);
   useEffect(() => {
     fetch("/data/catalog.json")
       .then((r) => {
@@ -103,6 +104,7 @@ function App() {
       );
       setGenre(p.get("genre") || "All genres");
       setPlatform(p.get("platform") || "All platforms");
+      setTheme(p.get("theme") || "all");
     };
     window.addEventListener("popstate", listener);
     return () => window.removeEventListener("popstate", listener);
@@ -116,21 +118,22 @@ function App() {
     if (route !== "/") return;
     const p = new URLSearchParams();
     if (query) p.set("q", query);
+    if (theme !== "all") p.set("theme", theme);
     if (section !== "All games") p.set("section", section);
     if (genre !== "All genres") p.set("genre", genre);
     if (platform !== "All platforms") p.set("platform", platform);
     history.replaceState({}, "", `/${p.size ? "?" + p : ""}${location.hash}`);
-  }, [query, section, genre, platform, route]);
+  }, [query, section, genre, platform, route, theme]);
   const games = catalog?.games || [];
   const selected = route.startsWith("/game/")
     ? games.find((g) => g.id === decodeURIComponent(route.slice(6)))
     : null;
   useEffect(() => {
     document.title = selected
-      ? `${selected.title} — HackerGames`
+      ? `${selected.title} — PROJECT 24`
       : route === "/about"
-        ? "How the index works — HackerGames"
-        : "HackerGames — Games people on HN talk about.";
+        ? "How the index works — PROJECT 24"
+        : "PROJECT 24 — Games people on HN talk about.";
   }, [selected, route]);
   const genres = [
     ...new Set(games.flatMap((g) => (g.genres?.length ? g.genres : [g.genre]))),
@@ -145,6 +148,7 @@ function App() {
             .includes(query.toLowerCase());
           return (
             matches &&
+            (theme === "all" || !!g.themes?.some(t => t.label === theme)) &&
             (genre === "All genres" ||
               g.genres?.includes(genre) ||
               g.genre === genre) &&
@@ -169,7 +173,7 @@ function App() {
             a.title.localeCompare(b.title)
           );
         }),
-    [games, query, genre, platform, section, sort],
+    [games, query, genre, platform, section, sort, theme],
   );
   function internal(e: React.MouseEvent<HTMLAnchorElement>, path: string) {
     if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
@@ -190,6 +194,7 @@ function App() {
   }
   function reset() {
     setQuery("");
+    setTheme("all");
     setGenre("All genres");
     setPlatform("All platforms");
     setSection("All games");
@@ -219,8 +224,7 @@ function App() {
             <span className="brand-icon">
               <Gamepad2 size={24} />
             </span>
-            Hacker<span>Games</span>
-            <small>BETA</small>
+            PROJECT <span>24</span>
           </a>
           <nav aria-label="Main navigation">
             <a
@@ -259,14 +263,14 @@ function App() {
           <div className="loading" role="status">
             <Gamepad2 size={48} />
             <h1>Loading the collection…</h1>
-            <p>Loading the HackerGames index.</p>
+            <p>Loading the PROJECT 24 index.</p>
           </div>
         ) : route === "/about" ? (
           <section className="about">
             <a className="back" href="/" onClick={(e) => internal(e, "/")}>
               <ArrowLeft size={16} /> Back to discovery
             </a>
-            <div className="eyebrow">SMALL INDEX. OPEN EVIDENCE.</div>
+        <div className="eyebrow">PROJECT 24 · SMALL INDEX. OPEN EVIDENCE.</div>
             <h1>
               Good games.
               <br />
@@ -297,6 +301,8 @@ function App() {
                   across aliases, and unrelated uses of a name. They are never
                   treated as recommendations. An em dash means no search estimate is available.
                 </p>
+                <h2>Conversation themes, with Jeffy</h2>
+                <p>A custom <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">Jeffy</a> classifier suggests topics such as puzzles, nostalgia, and technical craft. It runs locally on source excerpts; no visitor data is sent to a model service. This experiment was trained on 85 synthetic teaching examples. A small Codex-labeled diagnostic agreed with 15 of 24 top labels; it is not independent human evaluation or an accuracy estimate. It does not establish recommendation status or game features. Low-confidence and general predictions are hidden, and new evidence may not have a prediction yet.</p>
                 <h2>A growing, incomplete collection</h2>
                 <p>{catalog.coverage.description}</p><p>The local archive samples whole days, mostly from 2008–2026. Busy days can dominate a sample. It is not a complete history of HN; newer entries also have less recommendation review.</p>
                 <p>
@@ -342,13 +348,13 @@ function App() {
               originals. Game artwork belongs to its respective publishers and
               is loaded from the credited metadata source; it is not covered by
               this project’s code license. Game details include source links on
-              each page. HackerGames is an independent project, not affiliated
+              each page. PROJECT 24 is an independent project, not affiliated
               with Hacker News, Y Combinator, Valve, or any game publisher.
             </p>
             <p>
-              Future work includes broader historical coverage, review tooling,
-              richer metadata, and a pluggable <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer" style={{ textDecoration: "underline", textUnderlineOffset: "3px" }}>Jeffy classifier</a>. No exhaustive
-              archive or automated recommendation verification is claimed.
+              Future work includes broader historical coverage, community review
+              tools, and a stronger independent evaluation of the experimental
+              <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer" style={{ textDecoration: "underline", textUnderlineOffset: "3px" }}> Jeffy topic classifier</a>. PROJECT 24 has no exhaustive archive and does not automatically verify recommendations.
             </p>
           </section>
         ) : selected ? (
@@ -370,7 +376,7 @@ function App() {
             <section className="hero">
               <div className="hero-copy">
                 <div className="eyebrow">
-                  <span className="tiny-square" /> THE HACKER NEWS GAME INDEX
+                  <span className="tiny-square" /> PROJECT 24 · THE HN GAME INDEX
                 </div>
                 <h1>
                   Games people
@@ -440,6 +446,13 @@ function App() {
               </div>
             </div>
             <section className="catalog" id="catalog">
+              <div className="conversation-lenses">
+                <div><strong>What are people talking about?</strong><p>Explore themes in the source excerpts. Experimental tags by <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">Jeffy</a>; they describe conversations, not verified game qualities.</p></div>
+                <label>Conversation theme <select aria-label="Conversation theme" value={theme} onChange={e => setTheme(e.target.value)}>
+                  <option value="all">All conversations</option>
+                  {[...new Map(games.flatMap(g => (g.themes || []).map(t => [t.label, t.name] as const))).entries()].sort((a,b) => a[1].localeCompare(b[1])).map(([value,name]) => <option key={value} value={value}>{name}</option>)}
+                </select></label>
+              </div>
               <div className="section-heading">
                 <div>
                   <div className="eyebrow">THE COLLECTION</div>
@@ -650,7 +663,7 @@ function App() {
           href="/"
           onClick={(e) => internal(e, "/")}
         >
-          <Gamepad2 size={20} /> HackerGames
+          <Gamepad2 size={20} /> PROJECT 24
         </a>
         <p>Built from HN conversations. Still growing.</p>
         <a href="/about" onClick={(e) => internal(e, "/about")}>
@@ -774,6 +787,20 @@ function Detail({
           <span>Raw search estimate · unverified</span>
         </div>
       </div>
+      <section className="outside-links" aria-label="Videos and reviews elsewhere">
+        <div>
+          <span className="eyebrow">FROM AROUND THE WEB</span>
+          <h2>Watch a little. Read around.</h2>
+          <p>These links open searches on other sites. PROJECT 24 does not endorse or reproduce their videos, reviews, or ratings.</p>
+        </div>
+        <div className="outside-link-list">
+          <a href={`https://www.youtube.com/results?search_query=${encodeURIComponent(`${g.title} gameplay trailer`)}`} target="_blank" rel="noreferrer">YouTube videos <ArrowUpRight size={15} /></a>
+          <a href={`https://www.google.com/search?q=${encodeURIComponent(`site:metacritic.com/game ${g.title} reviews`)}`} target="_blank" rel="noreferrer">Find Metacritic reviews <ArrowUpRight size={15} /></a>
+          <a href={`https://www.google.com/search?q=${encodeURIComponent(`site:opencritic.com ${g.title} reviews`)}`} target="_blank" rel="noreferrer">Find OpenCritic reviews <ArrowUpRight size={15} /></a>
+          <a href={`https://www.imdb.com/find/?q=${encodeURIComponent(g.title)}`} target="_blank" rel="noreferrer">Look up on IMDb <ArrowUpRight size={15} /></a>
+          {g.storeUrl?.includes('store.steampowered.com/app/') && <a href={`${g.storeUrl.replace(/\/$/, '')}/#app_reviews_hash`} target="_blank" rel="noreferrer">Steam player reviews <ArrowUpRight size={15} /></a>}
+        </div>
+      </section>
       <div className="discussion-layout">
         <div>
           <div className="section-heading">
@@ -819,6 +846,7 @@ function Detail({
                 </span>
                 <time>{date(m.date)}</time>
               </div>
+              {m.theme && <div className="theme-label">{m.theme.name} <span>· Jeffy suggestion</span></div>}
               <blockquote>{m.text}</blockquote>
               <div className="comment-bottom">
                 <span>
@@ -835,6 +863,7 @@ function Detail({
                   {m.provenance} · Confidence: {Math.round(m.confidence * 100)}%
                   (uncalibrated assessment)
                 </p>
+                {m.theme && <p>Conversation theme: {m.theme.name}. Jeffy custom head {m.theme.model}, confidence {Math.round(m.theme.confidence * 100)}% (uncalibrated). Trained on synthetic teaching examples. This describes the excerpt and may concern another game in the same comment; it is not a reviewed endorsement.</p>}
                 {m.storyUrl && (
                   <a href={m.storyUrl} target="_blank" rel="noreferrer">
                     {m.storyTitle || "Parent discussion"} ↗

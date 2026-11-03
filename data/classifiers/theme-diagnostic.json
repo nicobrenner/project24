@@ -1,0 +1,202 @@
+{
+  "protocol": "24 distinct HN comment IDs selected by ascending SHA256(theme-eval-v1 + id) before prediction inspection. Codex assigns one dominant excerpt theme. Small agent-labeled diagnostic, not independent human validation. The initial model was frozen before this diagnostic. The display threshold was subsequently adjusted during exploratory development; this is not an untouched final test set.",
+  "total": 24,
+  "topLabelAgreement": 15,
+  "visibleSuggestions": 2,
+  "visibleAgreement": 2,
+  "warning": "Too few displayed examples for a reliable precision estimate. Labels are agent judgments, not human ground truth. No production accuracy claim.",
+  "rows": [
+    {
+      "id": "9947102",
+      "expected": "technical-craft",
+      "predicted": "technical-craft",
+      "confidence": 0.5459,
+      "displayed": true,
+      "agrees": true
+    },
+    {
+      "id": "25107000",
+      "expected": "general",
+      "predicted": "general",
+      "confidence": 0.2642,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "1779964",
+      "expected": "relaxing-and-unwinding",
+      "predicted": "relaxing-and-unwinding",
+      "confidence": 0.6588,
+      "displayed": true,
+      "agrees": true
+    },
+    {
+      "id": "46462427",
+      "expected": "general",
+      "predicted": "general",
+      "confidence": 0.6317,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "47090948",
+      "expected": "technical-craft",
+      "predicted": "general",
+      "confidence": 0.3906,
+      "displayed": false,
+      "agrees": false
+    },
+    {
+      "id": "49848792",
+      "expected": "puzzles-and-systems",
+      "predicted": "puzzles-and-systems",
+      "confidence": 0.2907,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "18222075",
+      "expected": "general",
+      "predicted": "puzzles-and-systems",
+      "confidence": 0.2509,
+      "displayed": false,
+      "agrees": false
+    },
+    {
+      "id": "49574729",
+      "expected": "general",
+      "predicted": "technical-craft",
+      "confidence": 0.3169,
+      "displayed": false,
+      "agrees": false
+    },
+    {
+      "id": "49180559",
+      "expected": "technical-craft",
+      "predicted": "technical-craft",
+      "confidence": 0.3009,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "46523219",
+      "expected": "general",
+      "predicted": "general",
+      "confidence": 0.8398,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "9646549",
+      "expected": "challenge-and-mastery",
+      "predicted": "general",
+      "confidence": 0.3173,
+      "displayed": false,
+      "agrees": false
+    },
+    {
+      "id": "8351221",
+      "expected": "general",
+      "predicted": "general",
+      "confidence": 0.2062,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "47678562",
+      "expected": "story-and-world",
+      "predicted": "general",
+      "confidence": 0.1895,
+      "displayed": false,
+      "agrees": false
+    },
+    {
+      "id": "45602534",
+      "expected": "general",
+      "predicted": "general",
+      "confidence": 0.2717,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "50321744",
+      "expected": "puzzles-and-systems",
+      "predicted": "puzzles-and-systems",
+      "confidence": 0.4493,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "9831864",
+      "expected": "playing-together",
+      "predicted": "nostalgia",
+      "confidence": 0.2514,
+      "displayed": false,
+      "agrees": false
+    },
+    {
+      "id": "43734982",
+      "expected": "relaxing-and-unwinding",
+      "predicted": "relaxing-and-unwinding",
+      "confidence": 0.3426,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "47887109",
+      "expected": "puzzles-and-systems",
+      "predicted": "playing-together",
+      "confidence": 0.4541,
+      "displayed": false,
+      "agrees": false
+    },
+    {
+      "id": "50269062",
+      "expected": "general",
+      "predicted": "general",
+      "confidence": 0.3113,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "48556164",
+      "expected": "technical-craft",
+      "predicted": "general",
+      "confidence": 0.3036,
+      "displayed": false,
+      "agrees": false
+    },
+    {
+      "id": "9711434",
+      "expected": "technical-craft",
+      "predicted": "general",
+      "confidence": 0.3146,
+      "displayed": false,
+      "agrees": false
+    },
+    {
+      "id": "8372932",
+      "expected": "general",
+      "predicted": "general",
+      "confidence": 0.4862,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "46197195",
+      "expected": "general",
+      "predicted": "general",
+      "confidence": 0.5002,
+      "displayed": false,
+      "agrees": true
+    },
+    {
+      "id": "46804270",
+      "expected": "general",
+      "predicted": "general",
+      "confidence": 0.3748,
+      "displayed": false,
+      "agrees": true
+    }
+  ]
+}

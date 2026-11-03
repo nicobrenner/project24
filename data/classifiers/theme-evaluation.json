@@ -1,0 +1,149 @@
+{
+  "protocol": "24 distinct HN comment IDs selected by ascending SHA256(theme-eval-v1 + id) before prediction inspection. Codex assigns one dominant excerpt theme. Small agent-labeled diagnostic, not independent human validation. The initial model was frozen before this diagnostic. The display threshold was subsequently adjusted during exploratory development; this is not an untouched final test set.",
+  "examples": [
+    {
+      "id": "9947102",
+      "text": "I remember a friend of mine introducing me to Nethack and telling me that part of the fun was \"hacking the game.\" So I downloaded the source, inverted application of damage, and recompiled. To that, my friend said \"no! the hacking is supposed to be about manipulating the data files...\" I replied, \"my way was easier.\" Thanks for mentioning Nethack and reminding me of this :-).",
+      "label": "technical-craft",
+      "labeler": "Codex"
+    },
+    {
+      "id": "25107000",
+      "text": "\u2026r modification, I may have taken a less interesting career path as a result. I feel a similar lamentation when seeing kids with iPads, but feel hope when I see them tinkering with Minecraft :)",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "1779964",
+      "text": "facebook games, tetris battle. perfect thing to let your mind get a break",
+      "label": "relaxing-and-unwinding",
+      "labeler": "Codex"
+    },
+    {
+      "id": "46462427",
+      "text": "Been working and playing on Linux for years, from 2D indie e.g. Baba is You to AAA e.g. Elden Ring, BG3, Expedition 33 to AAA VR e.g. Half-life: Alyx to VR indie e.g. Cubism and my experience has just been great. It's MY system and I do whatever the heck I want, from play boring stuff to weird prototyping. I get no, like literally 0, anti-feature. I'm not \"scared\" that an update will limit my agency. I'm just zen and that is priceless. Also, quite importantly, it works wonderfully with all my other devices and peripherals. I go from Bluetooh headsets easily, I switch monitors, video projecto\u2026",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "47090948",
+      "text": "Hi again! Some of you asked about Doom in my previous post about my BreezyBox shell for ESP32-S3. In my family, Celeste is more popular, so I ported it instead. Doom is left as an exercise for the reader. Also, I extracted a few things as separate components (vterm, BT keyboard, display driver), because they have their own uses outside of BreezyBox, and some of them run on other chips, too. I wonder if I could get the whole thing to run with some limitations e.g. on C6. Most of it compiles on RISC-V just fine (except my xcc700 compiler would be useless there). Having no PSRAM makes it tight.\u2026",
+      "label": "technical-craft",
+      "labeler": "Codex"
+    },
+    {
+      "id": "49848792",
+      "text": "I want to see AI beat a 4x strategy video game or a roguelike. Let me see a 20+ win streak on the hardest difficulty in Balatro or Slay the Spire. Let me see AI beat Civilization against the best human players. Every time I mention this someone assures me that it's possible, and they point to simple board games that computers excel at, or real time strategy games where proper use of APM and clicking accurately go a long way. But I haven't seen AI succeed at any decision-focused game where describing the rules requires more than one minute. I want to see what AI can do in, not simple, and not\u2026",
+      "label": "puzzles-and-systems",
+      "labeler": "Codex"
+    },
+    {
+      "id": "18222075",
+      "text": "minuscule amount of power x huge amount of users x lots of time played rotating small blocks in a screen. Maybe the cumulative effect on energy spent for playing tetris, or minesweep (not to mention much modern videogames) is not so small after all.",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "49574729",
+      "text": "\u2026sed on score of benchmarks like Terminal-Bench v2.1, SciCode, Humanity\u2019s Last Exam, GPQA Diamond - not necessarily fluid intelligence like in abstract puzzle games of ARC-AGI-3 or Baba is You.",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "49180559",
+      "text": "\u2026single author projects. Outside the world of foss there are for example multiple games that are highly respected that were all entirely or largely developed by a single developer. Rimworld, Songs of Syx, Dwarf Fortress, Ostranauts and many others. In a proprietary context I have myself deeply understood codebases and worked with others who have also. That being said, you are arguing against a straw man that neither I nor the rust article propose. They are not saying maintainers need to understand all the code they are saying the person submitting a pr needs to deeply understand that pr. Why?\u2026",
+      "label": "technical-craft",
+      "labeler": "Codex"
+    },
+    {
+      "id": "46523219",
+      "text": "At this point, I've just decided that I'm going to actually pay for my games on iPhone. Stardew Valley cost me $15 on iPhone a few years ago, which is a lot for an iPhone game, but I don't regret it at all. It's a direct port of the PC version, meaning it's a complete experience, but also not a single ad. No attempts to get me to spam my friends, no prompts for me to buy gems to make my crops grow faster, no need to watch an ad to unlock fighting in the mines. It's a game that I paid some money for and then I got to play. What a concept! I have a borderline-irrational hatred for ads and will\u2026",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "9646549",
+      "text": "> Both are to be extremely passionate about the simple but massively playable games. Have you ever even looked at Dwarf Fortress? It is the most complex non-trival game I have ever layed my eyes on. It takes over 100 hours just to understand the ascii art. Quoting: \"Dwarf Fortress is one of the most complex computer games in the history of computer games. How complex? In the game's discussion forum, one player asserts that after 120 failed games, he can finally \"get into the swing of things.\" [ http://arstechnica.com/gaming/2013/02/dwarf-fortress-ten-hou... ]",
+      "label": "challenge-and-mastery",
+      "labeler": "Codex"
+    },
+    {
+      "id": "8351221",
+      "text": "Mission control is excellent background for playing Kerbal Space Program",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "47678562",
+      "text": "This is feels like life imitates art (the plot Stardew Valley). I hope you and your farm find great success!",
+      "label": "story-and-world",
+      "labeler": "Codex"
+    },
+    {
+      "id": "45602534",
+      "text": "\u2026s experience. The country I knew, that many others used to be angry with, but also respect - would NEVER have left such a thing to simple chance. There used to be many who stepped into the breach. And perhaps people are. It may simply be that this new information environment - geographically, financially consolidated, but ideologically divided - is ensuring that people who are solving problems and figuring things out, are unable to coordinate or gain traction. Gain traction in a manner that used to cross party lines.",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "50321744",
+      "text": "I am not the OP but I have (many) hours in Factorio and I think what they might be talking about is things like how it\u2019s not apparent at the start just how much copper infrastructure you will need by the time you get to rockets and space platforms because the early recipes are iron-heavy. Or how important green circuit scaling will become. Or how much oil cracking might change your layout. If you know what\u2019s coming you make different choices in how you build that heads off a fair bit of refactoring.",
+      "label": "puzzles-and-systems",
+      "labeler": "Codex"
+    },
+    {
+      "id": "9831864",
+      "text": "\u2026I had when I was a kid I sometimes wonder how he's going to figure out how to do anything for himself. To echo your point about the internet... My brother is online, often playing Minecraft, all the time. He loves the internet. He loves that he doesn't have to ask permission to look at anything. He enjoys meeting random people to chat with online about video games and weird youtube people that teenagers are into now. I think it's pretty awesome. He has a sort of digital version of what I experience IRL. The contrast is actually kind of amusing when you consider that in 1996 I also got my fir\u2026",
+      "label": "playing-together",
+      "labeler": "Codex"
+    },
+    {
+      "id": "43734982",
+      "text": "Are point-and-click games considered \u201ccozy\u201d? They often provide a relaxing experience\u2014similar to reading a book, but with an added sense of agency in the narrative. Classic examples include the Broken Sword series, Monkey Island, and Grim Fandango. More recent titles like Disco Elysium might also fit. This video does a good job exploring what makes the genre so appealing. [0] [0] https://www.youtube.com/watch?v=XUso3zWbDfE",
+      "label": "relaxing-and-unwinding",
+      "labeler": "Codex"
+    },
+    {
+      "id": "47887109",
+      "text": "\u2026game was deeper and more fun if everyone had access to buy the same cards. (The \"Pick one of three\" mechanic would turn out to work much better in solo/computer games, however, as Slay the Spire's success is proof of!)",
+      "label": "puzzles-and-systems",
+      "labeler": "Codex"
+    },
+    {
+      "id": "50269062",
+      "text": "> It's also rare you have a game that is allowed to improve the way Minecraft, Factorio, or Stardew Valley have Honestly I think this is the hardest thing, I've spent a bit of time now trying to look at how indie works, including building out a small team to put something together and you either need to get funding, or it's pretty gruelling. You can build something small slow and steady, but you've got to luck out and hit the zeitgeist if you don't want your project to collapse for a lack of money. Or you have to have someone support you, I mean Stardew Valley famously was building for 4 yea\u2026",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "48556164",
+      "text": "Combining this article and discovery of an unwinnable seed in the original Slay the Spire [0] \u2014 I've always pondered the existence of some kind of \"RNG hell\", where a game uses the time as its random seed and, due to some quirk of the hashing function and the game mechanics, the game is rendered completely unwinnable for (say) four days straight. (Sometimes it feels like I'm in it!) [0] https://oohbleh.github.io/losing-seed/",
+      "label": "technical-craft",
+      "labeler": "Codex"
+    },
+    {
+      "id": "9711434",
+      "text": "I think that this is the best choice. A lot of people are recommending \"real\" (albeit simpler) game making tools, but I think that those would be a mistake. At 12 his biggest obstacle is going to be becoming bored, not the skill ceiling of the tool. Scratch provides that instant visual output, skips the frustration of learning syntax, and has a large online library of other's creations for inspiration and learning. Side though: scratch style programming inside minecraft has the potential to be awesome educationally. Somebody steal this idea (unless it already exists).",
+      "label": "technical-craft",
+      "labeler": "Codex"
+    },
+    {
+      "id": "8372932",
+      "text": "Eve costs too much. Dwarf Fortress requires too much cognitive power up-front, to start having fun playing it. Diplomacy... I'd love to play it, but it's hard to find someone in the area. So there it is. Ingress. Free. Easy to start. Too easy to incorporate in your daily life. You start doing groceries in the other shop; it's few minutes more of walking, but you pass by five portals on the route. You stop reading Facebook on the tram, you hack portals instead - you'll need all that inventory later. You go out to buy a beer. It'll be only five minutes, you think. Ok, ten, because you need to \u2026",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "46197195",
+      "text": "Skydance is also known as the then-obscure company that picked up Pixar head John Lasseter when his reputation for being overly affectionate got him pushed out of Disney. It's one of the Ellison family's forays into media. David's sister/Larry's daughter Megan has Annapurna. Annapurna produced the Spike Jonze's AI romance \"Her\" and many of the the most prominent indie games of the last decade (Outer Wilds, Cocoon, Stray, Kentucky Route Zero, Sayonara Wild Hearts, Journey, Donut Country\u2026).",
+      "label": "general",
+      "labeler": "Codex"
+    },
+    {
+      "id": "46804270",
+      "text": "I really should get back to outer wilds. I like you bounced off of it because of the controls, and I keep meaning to go back because people I have faith in swear by it. I know the most basic secret you learn incredibly early, but that's the only 'spoiler' I know.",
+      "label": "general",
+      "labeler": "Codex"
+    }
+  ]
+}

@@ -37,7 +37,7 @@ HN cache files use `<game-id>-comment.json` / `<game-id>-story.json` (optional p
 
 ## Extending the pipeline
 
-Add a seed with aliases and attribution, collect evidence, inspect source context, and add review overrides. To integrate Jeffy, replace or wrap `classify(text)` with a classifier adapter that emits the same label/confidence/provenance fields. Keep automated candidate predictions separate from reviewed recommendation status. A future version should add calibrated model evaluations, full-history pagination/time windows, deletion reconciliation, metadata licenses/permissions auditing, richer aliases and developer-confirmed Show HN launch mapping.
+Add a seed with aliases and attribution, collect evidence, inspect source context, and add review overrides. Keep automated candidate predictions separate from reviewed recommendation status. A future version should add calibrated model evaluations, full-history pagination/time windows, deletion reconciliation, metadata licenses/permissions auditing, richer aliases and developer-confirmed Show HN launch mapping.
 
 `data/curated-mentions.json` contains two direct replies to the original Looptap creator launch, fetched from Algolia item 29921419. Their text omits the game name, so they are separately reviewed using the parent story as explicit entity context. Import merges these documented supplemental sources into the snapshot; they are not keyword search hits. The snapshot preserves both the text and this entity-resolution provenance.
 
@@ -58,4 +58,23 @@ Thread discovery caches broad Ask HN and Show HN searches and walks selected ful
 
 Entity decisions select exact app IDs and a matching mode. `explicit-url` accepts only records containing that app link, protecting ambiguous names such as Everything or Outsider. `title-context` additionally requires alias boundaries and gaming context; specific guards cover Tetris metaphors, Another World, and sequels. Approved identities are agent-reviewed, not human-audited. Explicit links have a rule confidence of 0.99, contextual matches 0.85; neither is statistically calibrated. Sentiment remains unreviewed until an exact source review is added separately. New entries can therefore have zero reviewed recommendations.
 
-Publication merges on `(gameId, HN item ID)`, preserves existing reviewed excerpts, and does not advance the Algolia incremental watermark. Full and incremental collection honor the same conservative entity modes for discovered games. No automatic population estimate, creator-launch verification, or recommendation verification is derived from the archive scan. Further scheduled discovery should produce candidates for review rather than silently approve them.
+Publication merges on `(gameId, HN item ID)`, preserves existing reviewed excerpts, and does not advance the Algolia incremental watermark. Full and incremental collection honor the same conservative entity modes for discovered games. No automatic population estimate, creator-launch verification, or recommendation verification is derived from the archive scan.
+
+### Reference-assisted title matching
+
+The published snapshot has 818 identities and 5,009 source records, including 695 additional identities from this pass. The exact evidence match file is checked in at `data/reference-matches.jsonl`; Wikidata's CC0 reference snapshot is `data/wikidata-game-index.json` (29,232 English-labeled game entities). Rebuild the pass with the local corpus supplied by the user:
+
+```sh
+python3 -m pipeline.reference_discovery \
+  --reference data/wikidata-game-index.json \
+  --comments /path/to/comments_sample.jsonl.gz \
+  --stories /path/to/story_scores.csv \
+  --out /tmp/project24-discovery
+python3 -m pipeline.reference_approve /tmp/project24-discovery/reference-records.jsonl
+python3 -m pipeline.reference_publish
+python3 -m pipeline.ingest export
+```
+
+`data/reference-decisions.json` is the curated identity allowlist, not a sentiment or recommendation review. Matching requires an exact, case-preserving title and separate nearby game context; sequel suffixes are rejected. A title can still resolve incorrectly, so every mention remains labeled `mention` until source-reviewed. The sampled corpus covers whole days and is clustered, with uneven annual and topic coverage. The 818 is the number of identities in this checked-in sample, not the number of games ever discussed on HN. Wikidata contributes identity and CC0 description/genre/platform metadata; no unverified artwork is added.
+
+The optional Jeffy pipeline in `pipeline/themes.py` predicts discussion topics from source excerpts. It uses a local BGE encoder and a custom Jeffy model trained on synthetic examples. Its small diagnostic is experimental and not calibrated. It does not determine game identity, endorsements, rankings, or game attributes. Low-confidence/general labels are hidden in the site.

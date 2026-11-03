@@ -15,6 +15,7 @@ export interface Mention {
     | "technical";
   confidence: number;
   provenance: string;
+  theme?: {label: string; name: string; confidence: number; model: string};
 }
 export interface Game {
   id: string;
@@ -32,6 +33,7 @@ export interface Game {
   storeUrl?: string;
   color: string;
   mentions: Mention[];
+  themes?: {label: string; name: string; count: number}[];
   keywordMatches: number | null;
   verifiedRecommendations: number;
   discussionCount: number;

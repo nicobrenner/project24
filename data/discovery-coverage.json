@@ -181,6 +181,20 @@
       "title": "Ask HN: Video games that will make me smarter and are addictive?"
     }
   ],
-  "acceptedNewEntities": 98,
-  "description": "Sampled local HN archive plus whole recommendation threads; no population estimates. Entity discovery and recommendation verification are separate."
+  "acceptedNewEntities": 695,
+  "description": "818 game identities have one or more accepted source records in the sampled HN corpus. This is not a census and mention counts are not recommendations.",
+  "wikidataReference": {
+    "source": "https://www.wikidata.org/",
+    "license": "CC0",
+    "matchedSourceRows": 2567,
+    "newEvidenceRows": 2023,
+    "newGameIdentities": 695,
+    "excludedNameCollisions": 1,
+    "excludedNameCollisionRows": 0,
+    "method": "Exact case-preserving title match plus separate nearby video-game context; curated candidate shortlist; no recommendation inference.",
+    "limitations": "The source corpus is clustered sampled days, not an exhaustive or statistically representative HN history. Entity and context matches can still be wrong; correction requests are welcome.",
+    "acceptedIdentityDecisions": 727,
+    "publishedIdentityCount": 726,
+    "baselineCatalogIdentities": 123
+  }
 }

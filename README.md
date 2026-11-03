@@ -1,4 +1,4 @@
-# HackerGames
+# PROJECT 24
 
 A small, evidence-first discovery index for video games discussed on Hacker News. React + TypeScript + Vite, served from static JSON; a Python/SQLite pipeline collects and classifies the source material.
 
@@ -27,7 +27,10 @@ npm run preview
 - All Games, Most Recommended, Most Discussed, Hidden Gems, Browser Games, and Show HN Games collections.
 - Shareable `/game/<slug>` pages, plain-text source excerpts, HN links, confidence, and classification provenance.
 - Historical HN comments and submissions, archive-based entity discovery, normalized aliases, and guarded matching for ambiguous titles.
+- 818 game identities, including 695 added from the title-reference pass; 5,009 source records with exact HN links. The wider pass contributes mentions only and does not increase reviewed recommendation counts.
+- Links from game pages to YouTube gameplay/trailer searches and external review searches (Metacritic, OpenCritic, IMDb, and Steam where available). No third-party ratings or video claims are copied into the catalog.
 - Individual Codex source review separated from machine candidates, casual mentions, criticism, and technical discussion.
+- An experimental, locally run Jeffy topic classifier has suggestions for 114 of 3,964 distinct excerpts. Its 24-example Codex-labeled diagnostic matched 15 top labels; this is not independent human evaluation or a claim of model accuracy.
 - Metadata attribution, publisher artwork loaded from credited sources, image fallback, and official play links for browser games.
 - Reproducible SQLite processing and static export, CI validation, and an incremental collection workflow.
 
@@ -52,13 +55,13 @@ The **Update HN evidence** GitHub Action runs daily or manually. It collects new
 
 ## Expanded archive discovery
 
-The catalog currently contains **123 games and 2,986 source records**, including Tetris and Another World. The 43 individually reviewed recommendations are separate from the newly discovered mentions.
+The catalog contains **818 game identities and 5,009 source records**, including Tetris and Another World. It has **43 individually reviewed recommendations**; the additional archive matches are mentions, not recommendations.
 
 The scanner processed 1,191,935 comments and 293,708 submissions from the user-supplied HN archive, then fetched 35 additional whole discussion threads through Algolia. Most archive records cover 2008–2026, with a small late-2007 boundary spillover. Sampling selected whole days, so observations are clustered and coverage is uneven. Submission scores had a 14-day settling window. Neither corpus is a complete HN archive.
 
-Candidates come from explicit Steam application URLs and repeated title phrases in gaming contexts. Steam metadata resolves candidate identities, but title collisions are rejected during entity review. The approved/rejected decisions live in `data/entity-decisions.json`; input hashes, counts, and thread IDs live in `data/discovery-coverage.json`. New ambiguous entries require explicit app URLs. Published excerpts retain HN IDs and provenance. Raw local dumps and disposable caches are not published.
+Discovery now has two stages. Steam application URLs and selected Show/Ask HN threads contribute explicitly reviewed identities in `data/entity-decisions.json`. A second, high-recall pass matches exact, case-preserving titles from a frozen Wikidata game index against nearby video-game context. The curated allowlist records 727 title decisions; 726 identities passed the final collision check, with some matching existing games. The allowlist is in `data/reference-decisions.json`; each accepted mention retains the HN item ID, parent discussion, and match provenance. Wikidata descriptions, genres, and platforms are CC0 and attributed. Uncertain artwork is omitted. Context and title matches still need correction over time.
 
-See [pipeline discovery instructions](pipeline/README.md#archive-and-thread-discovery) to reproduce this pass. Offline export from committed evidence remains available without the original dumps. The discovery pass does not advance the incremental API watermark.
+See [pipeline discovery instructions](pipeline/README.md#archive-and-thread-discovery) to reproduce both discovery passes. The Wikidata reference snapshot is checked in as `data/wikidata-game-index.json`; the large HN dumps remain local inputs and are not republished. Offline export from committed evidence remains available without the original dumps. The discovery pass does not advance the incremental API watermark.
 
 Inspirations: HackerBooks, HackerTube, and Wikihack. [HackerTube’s data page](https://hackertube.org/data) links to the [OpenIndex HN dataset](https://huggingface.co/datasets/open-index/hacker-news), a possible future full-history source. This version uses the supplied local sample and Algolia; it does not ingest that dataset or assert it is a Karpathy archive.
 
@@ -119,9 +122,9 @@ Metadata describes the credited source edition (for example a Steam release date
 
 - Full-history backfill: the current local archive samples whole days, and additional thread searches are bounded. These cannot establish all-time HN popularity.
 - More reviewed recommendations and a reviewer interface; multiple independent reviewers and calibrated confidence.
-- [Jeffy](https://jeffyclassify.com) integration through the classifier boundary, with explicit classifier version and provenance. No Jeffy service is currently wired up.
+- Better Jeffy evaluation using independent human labels and more training examples. PROJECT 24 currently runs an experimental local Jeffy topic classifier; it labels conversation themes, not game identities or recommendations.
 - Richer alias catalogs, edition-aware metadata, licensed local artwork, and ongoing source-deletion reconciliation.
-- Broader entity coverage beyond explicit Steam links and a bounded set of title candidates, including non-Steam games. Discovery is implemented; entity approval remains explicit and recommendation review remains separate.
+- Broader coverage from additional full-history sources, multilingual titles, stronger alias resolution, and ongoing correction review.
 - Frontend automated browser regression tests; current verification includes TypeScript production build, Python tests/data invariants, and manual browser interaction checks.
 
 HN search API: <https://hn.algolia.com/api>. Original discussions: <https://news.ycombinator.com/>. This independent project is not affiliated with Y Combinator, Hacker News, Valve, or game publishers.

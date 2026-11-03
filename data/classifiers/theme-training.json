@@ -1,0 +1,432 @@
+{
+  "task": "conversation-theme-v1",
+  "purpose": "Classify the topic of an excerpt, not game qualities or recommendation status",
+  "labelProvenance": "Synthetic teaching examples; no measured HN-domain quality implied",
+  "examples": [
+    {
+      "text": "I enjoyed figuring out how all the production lines fit together.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The logic puzzles made me rethink my assumptions.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Optimizing the factory is the whole appeal for me.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I like experimenting with complex interacting systems.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "You solve each room by discovering a new rule.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Planning efficient routes and resource flows kept me busy.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The automation problems feel like programming for fun.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I love building machines and watching them work.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Solving this puzzle requires a clever deduction.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The strategy comes from managing scarce resources.",
+      "label": "puzzles-and-systems",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The writing and characters stayed with me long after finishing.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Exploring this strange world was a wonderful experience.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The narrative choices really changed how I felt about the ending.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The dialogue is funny and the characters are memorable.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I played mainly to find out what happens in the story.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The atmosphere and music create a convincing place.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The mystery unfolds as you explore the landscape.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The environmental storytelling is subtle and powerful.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I found the plot disappointing and the characters flat.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The art and soundtrack make its world feel alive.",
+      "label": "story-and-world",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I read the source code to understand how the renderer works.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The engine uses a clever spatial indexing algorithm.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I ported the game to a different operating system.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The implementation fits into a tiny executable.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Writing a mod taught me how the scripting interface works.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The source release lets you build your own version.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Rendering performance depends on the graphics driver.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I reverse engineered the file format and network protocol.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "This game was written in C with a custom engine.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The physics simulation is implemented using a fixed time step.",
+      "label": "technical-craft",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I remember playing this on the family computer as a child.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "This brings back memories of my old Amiga.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "We spent our school holidays playing it in the nineties.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "It was my first computer game and I still remember it.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I grew up playing this with my brother.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The old soundtrack takes me straight back to childhood.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I rediscovered a favorite from my school days.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I used to play this after school on a DOS machine.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Seeing the remake reminded me of playing the original decades ago.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "My dad introduced me to this when I was young.",
+      "label": "nostalgia",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The difficulty is brutal but getting better feels rewarding.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I spent hours practicing until I could beat the boss.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The precise controls make every mistake feel like my own.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Learning the enemy patterns is the key to surviving.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The challenge is too punishing for me to enjoy.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Speedrunning it requires memorizing every movement.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I love the feeling of finally mastering a difficult level.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "It demands quick reflexes and careful timing.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The skill ceiling is enormous and I keep improving.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I died repeatedly before I learned the combat.",
+      "label": "challenge-and-mastery",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "We play this together every Friday night.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "It is a great cooperative game for my friends.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "My partner and I enjoy the local multiplayer.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I play online with a regular group of friends.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The shared world lets our group build things together.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Playing against other people is the main appeal.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "It works well for a family game night.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The community runs friendly multiplayer servers.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Teamwork and communication matter more than individual skill.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "My kids and I enjoy taking turns and helping each other.",
+      "label": "playing-together",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I play this to relax after work.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The slow pace helps me unwind before bed.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "It is peaceful and there is no pressure to win.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I like pottering around without a deadline.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "This is my comfort game when I feel stressed.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The gentle routine is calming rather than challenging.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I enjoy short quiet sessions with no competition.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "It offers a pleasant break from a demanding day.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "There is something soothing about tending the garden.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I want a low stress game I can take at my own pace.",
+      "label": "relaxing-and-unwinding",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The game is on sale this weekend.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "It was released last year on PC.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I have not played it yet.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Does anyone know whether this runs on Linux?",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Here is the official website for the game.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I recommend it, it is a great game.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I did not like this game very much.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "It costs twenty dollars in the store.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "There is a new trailer available.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I have it in my library but have not installed it.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "Which version should I buy?",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "This comment is about the price of computer hardware.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The company announced a new subscription service.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "The download is available at this link.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    },
+    {
+      "text": "I prefer the sequel to the original.",
+      "label": "general",
+      "origin": "Synthetic teaching example written by Codex; not an HN quote"
+    }
+  ]
+}
