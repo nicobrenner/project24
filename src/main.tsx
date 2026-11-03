@@ -22,7 +22,6 @@ const sections = [
   "All games",
   "Most Recommended",
   "Most Discussed",
-  "Hidden Gems",
   "Browser Games",
   "Show HN Games",
 ] as const;
@@ -155,9 +154,7 @@ function App() {
             (platform === "All platforms" || g.platforms.includes(platform)) &&
             (section !== "Browser Games" || !!g.playUrl) &&
             (section !== "Show HN Games" || g.showHN) &&
-            (section !== "Most Recommended" || g.verifiedRecommendations > 0) &&
-            (section !== "Hidden Gems" ||
-              (g.verifiedRecommendations > 0 && g.discussionCount <= 10))
+            (section !== "Most Recommended" || g.verifiedRecommendations > 0)
           );
         })
         .sort((a, b) => {
@@ -308,9 +305,10 @@ function App() {
                 <p>
                   Rankings describe this sample, not all of Hacker News.
                   Collection limits, uneven coverage, and a small source-review
-                  set introduce bias. Hidden Gems means a game with at least one
-                  reviewed recommendation and at most 10 sampled discussions; it
-                  does not establish that a game is obscure.
+                  set introduce bias. We have temporarily removed Hidden Gems:
+                  only one game meets our current reviewed-recommendation and
+                  low-discussion threshold, and this sample cannot establish that
+                  a game is truly obscure.
                 </p>
               </div>
               <aside>
@@ -545,11 +543,9 @@ function App() {
               <div className="result-line">
                 <span>
                   {shown.length} {shown.length === 1 ? "game" : "games"}
-                  {section === "Hidden Gems"
-                    ? " · Reviewed picks in ≤10 sampled threads"
-                    : section === "Show HN Games"
-                      ? " · Curated creator launch posts · not recommendations"
-                      : ""}
+                  {section === "Show HN Games"
+                    ? " · Curated creator launch posts · not recommendations"
+                    : ""}
                 </span>
                 <label>
                   Sort by{" "}

@@ -24,7 +24,7 @@ npm run preview
 ## Implemented
 
 - Responsive discovery catalog with search, genre/platform filters, alphabetical and evidence-based sorting, and a random pick.
-- All Games, Most Recommended, Most Discussed, Hidden Gems, Browser Games, and Show HN Games collections.
+- All Games, Most Recommended, Most Discussed, Browser Games, and Show HN Games collections.
 - Shareable `/game/<slug>` pages, plain-text source excerpts, HN links, confidence, and classification provenance.
 - Historical HN comments and submissions, archive-based entity discovery, normalized aliases, and guarded matching for ambiguous titles.
 - 818 game identities, including 695 added from the title-reference pass; 5,009 source records with exact HN links. The wider pass contributes mentions only and does not increase reviewed recommendation counts.
@@ -73,7 +73,7 @@ Inspirations: HackerBooks, HackerTube, and Wikihack. [HackerTube’s data page](
 
 **Raw keyword matches** report estimated Algolia search matches before disambiguation. Multiple alias query totals may overlap. They are not recommendation counts and are not used to rank games. A missing estimate is shown as an em dash, not zero.
 
-**Hidden Gems** means at least one reviewed recommendation and at most 10 sampled discussion threads. It is a navigational heuristic, not evidence of low global popularity. **Show HN Games** lists curated creator launch submissions from the supplied sampled archive. A launch post is a mention, not a recommendation or quality endorsement. The reviewed source IDs and repeatable importer are in `data/showhn-decisions.json` and `pipeline/showhn.py`.
+**Hidden Gems** is temporarily omitted: the current reviewed recommendation set and low-discussion cutoff yields only one title, and this sample is too limited to claim a game is obscure. **Show HN Games** lists curated creator launch submissions from the supplied sampled archive. A launch post is a mention, not a recommendation or quality endorsement. The reviewed source IDs and repeatable importer are in `data/showhn-decisions.json` and `pipeline/showhn.py`.
 
 The public methodology page explains these limits. Counts describe a bounded sample, not an exhaustive HN archive. Unequal search coverage and source-review selection bias affect rankings. Some games may have no reviewed recommendations despite substantial discussion.
 
