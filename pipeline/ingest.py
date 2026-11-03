@@ -46,7 +46,7 @@ def fetch(url):
    if attempt==3:raise
    time.sleep(2**attempt)
 
-def import_cache(cache, metadata, previous=None):
+def import_cache(cache, metadata, previous=None, preserve_totals=True):
  seeds=read(ROOT/'data/seeds.json'); records=[]; queries=[]
  for g in seeds:
   if g.get('steamAppId'):
@@ -64,7 +64,12 @@ def import_cache(cache, metadata, previous=None):
     for hit in result.get('hits',[]):
      text=plain(hit.get('comment_text') if kind=='comment' else (hit.get('title','')+' '+(hit.get('story_text') or '')))
      context=plain(hit.get('story_title',''))
-     if not detect(g,text,context):continue
+     if g.get('discoveredFrom'):
+      from pipeline.catalogue import entity_match
+      from pipeline.discover import STEAM
+      raw=(hit.get('comment_text') or '')+' '+(hit.get('url') or '')
+      if not entity_match(g,{'text':text,'storyTitle':context,'kind':kind,'steamIds':STEAM.findall(raw)}):continue
+     elif not detect(g,text,context):continue
      label,confidence=classify(text)
      records.append({'gameId':g['id'],'id':str(hit['objectID']),'url':'https://news.ycombinator.com/item?id='+str(hit['objectID']),'author':hit.get('author','unknown'),'date':hit.get('created_at',''),'text':excerpt(text,g),'kind':kind,'storyTitle':context if kind=='comment' else plain(hit.get('title','')),'storyUrl':'https://news.ycombinator.com/item?id='+str(hit.get('story_id') or hit['objectID']),'classification':label,'confidence':confidence,'provenance':VERSION+' heuristic; not a verified recommendation'})
  records.extend(read(ROOT/'data/curated-mentions.json',[]))
@@ -72,8 +77,8 @@ def import_cache(cache, metadata, previous=None):
  if previous:
   records=list({(r['gameId'],r['id']):r for r in previous['records']+records}.values())
   # Preserve baseline all-time query totals; incremental totals cover only the new interval.
-  queries=previous['queries']
- snapshot={'collectedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'queries':queries,'records':records}
+  if preserve_totals:queries=previous['queries']
+ snapshot={**({'discoveryUpdatedAt':previous['discoveryUpdatedAt']} if previous and 'discoveryUpdatedAt' in previous else {}),'collectedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'queries':queries,'records':records}
  (ROOT/'data/seeds.json').write_text(json.dumps(seeds,indent=2)+'\n')
  (ROOT/'data/snapshot.json').write_text(json.dumps(snapshot,ensure_ascii=False,indent=2)+'\n')
  export()
@@ -93,16 +98,16 @@ def export():
    mentions.append(m);con.execute('INSERT INTO mentions VALUES(?,?,?)',(g['id'],m['id'],json.dumps(m)))
   mentions.sort(key=lambda m:(m['classification']!='recommendation',m['kind']!='comment',m['id']))
   totals={kind:max([q['reportedSearchMatches'] for q in snapshot['queries'] if q['gameId']==g['id'] and q['kind']==kind] or [0]) for kind in ['comment','story']}
-  g.update(mentions=mentions,keywordMatches=sum(totals.values()),verifiedRecommendations=sum(m['classification']=='recommendation' for m in mentions),discussionCount=len({m['storyUrl'] for m in mentions}),showHN=any(r.get('showHNLaunch') and r['gameId']==g['id'] and any(m['id']==r['id'] for m in mentions) for r in reviews))
+  g.update(mentions=mentions,keywordMatches=sum(totals.values()) if any(q['gameId']==g['id'] for q in snapshot['queries']) else None,verifiedRecommendations=sum(m['classification']=='recommendation' for m in mentions),discussionCount=len({m['storyUrl'] for m in mentions}),showHN=any(r.get('showHNLaunch') and r['gameId']==g['id'] and any(m['id']==r['id'] for m in mentions) for r in reviews))
   games.append(g)
  con.commit();con.close()
- result={'generatedAt':snapshot['collectedAt'],'coverage':{'description':'Curated 25-game sample of historical HN search results. Counts describe collected, context-filtered evidence, not the entire HN archive.','method':'Algolia relevance-ranked search, up to 100 comments and 40 stories per query page; exact aliases plus conservative context checks.','keywordMatches':'Raw Algolia-reported comment plus story query matches at baseline collection, before disambiguation. These are not unique verified game mentions or recommendations. Incremental updates preserve this baseline.', 'recommendations':'Only positive game endorsements individually source-reviewed by Codex count as verified. These are agent reviews, not independent human verification. Heuristic candidates are separate and unverified.','ranking':'Verified recommendations rank this sample; unequal search coverage and editorial review mean this is not a census.','limitations':['Seed catalog only; no exhaustive archive scan.','Comments can discuss multiple games. Heuristic labels may be wrong.','Hidden Gems is an editorial discovery filter, not evidence of obscurity.','Show HN indicates matching submissions, not creator identity verification.'],'source':'https://hn.algolia.com/api','snapshotRecords':len(snapshot['records'])},'games':games}
+ result={'generatedAt':max(snapshot['collectedAt'],snapshot.get('discoveryUpdatedAt','')),'coverage':{'description':f'{len(games)} games identified in sampled historical HN records and recommendation threads. Counts describe collected, context-filtered evidence, not the entire HN archive.','method':'Sampled local HN archive, whole discussion threads, and bounded Algolia searches. Explicit game URLs and reviewed title identities; conservative context checks.','keywordMatches':'Raw Algolia-reported comment plus story query matches at baseline collection, before disambiguation. These are not unique verified game mentions or recommendations. Incremental updates preserve this baseline.', 'recommendations':'Only positive game endorsements individually source-reviewed by Codex count as verified. These are agent reviews, not independent human verification. Heuristic candidates are separate and unverified.','ranking':'Verified recommendations rank this sample; unequal search coverage and editorial review mean this is not a census.','limitations':['Sampled archive and selected recommendation threads; not an exhaustive HN archive.','Comments can discuss multiple games. Heuristic labels may be wrong.','Hidden Gems is an editorial discovery filter, not evidence of obscurity.','Show HN requires an individually reviewed creator launch; discovery alone does not establish this status.'],'archive':read(ROOT/'data/discovery-coverage.json',{}),'source':'https://hn.algolia.com/api','snapshotRecords':len(snapshot['records'])},'games':games}
  (ROOT/'public/data').mkdir(parents=True,exist_ok=True)
  (ROOT/'public/data/catalog.json').write_text(json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n')
  print(f"Exported {len(games)} games, {len(snapshot['records'])} evidence records, {sum(g['verifiedRecommendations'] for g in games)} reviewed recommendations")
 def collect(pages,incremental):
  if pages<1:raise ValueError('--pages must be positive')
- old=read(ROOT/'data/snapshot.json') if incremental else None
+ old=read(ROOT/'data/snapshot.json')
  # Fresh temporary cache prevents stale page/query results contaminating a new run.
  with tempfile.TemporaryDirectory(prefix='hackergames-') as folder:
   cache=Path(folder)
@@ -110,15 +115,15 @@ def collect(pages,incremental):
    for kind in ['comment','story']:
     for page in range(pages):
      params={'query':'"'+g['title']+'"','tags':kind,'hitsPerPage':100 if kind=='comment' else 40,'page':page}
-     if old:
+     if old and incremental:
       timestamp=int(dt.datetime.fromisoformat(old['collectedAt']).timestamp())-86400
       params['numericFilters']='created_at_i>'+str(timestamp)
      data=fetch('https://hn.algolia.com/api/v1/search?'+urllib.parse.urlencode(params))
-     if old and data.get('nbPages',0)>pages:
+     if old and incremental and data.get('nbPages',0)>pages:
       raise RuntimeError(f"Incremental coverage incomplete for {g['id']} {kind}: {data['nbPages']} pages available, --pages={pages}. Snapshot and watermark unchanged; rerun with a higher --pages value.")
      (cache/f"{g['id']}-{kind}-{page}.json").write_text(json.dumps(data));time.sleep(.35)
      if page+1>=data.get('nbPages',1):break
-  import_cache(cache,ROOT/'data/metadata-cache',previous=old)
+  import_cache(cache,ROOT/'data/metadata-cache',previous=old,preserve_totals=incremental)
 def metadata():
  cache=ROOT/'data/metadata-cache';cache.mkdir(exist_ok=True)
  for g in read(ROOT/'data/seeds.json'):

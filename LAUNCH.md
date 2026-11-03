@@ -5,15 +5,17 @@ The project is ready for Cloudflare Pages. Its runtime is a static build; no API
 ## Completed validation
 
 - TypeScript check and Vite production build pass.
-- Nine Python tests pass, including ambiguity/sequel rejection, source-backed recommendation counts, review excerpts, incremental merge preservation, and safe failure when pagination would skip evidence.
+- Sixteen Python tests pass, including ambiguity/sequel rejection, source-backed recommendation counts, review excerpts, incremental merge preservation, and safe failure when pagination would skip evidence.
 - Browser checks cover rendered catalog, search, detail-page navigation, methodology, Hidden Gems, Show HN, and browser-game filtering.
-- All four included browser play URLs returned HTTP 200 at verification.
+- The original four browser play URLs were verified in the initial pass; the expansion adds the official Tetris play page.
 - `npm audit` reported zero known vulnerabilities at install.
 - Offline data export is deterministic for unchanged versioned inputs.
 
+The expansion was checked for search and source-page rendering, with a 48-card initial page and a Show more control.
+
 ## Dataset
 
-25 curated games; 2,286 accepted evidence records; 43 endorsements individually source-reviewed by Codex. Reviews are AI assessments with explicit provenance, not independent human verification. This is a bounded sample, not all-time HN popularity. One verified historical Show HN game (Looptap) is included; its original hosting was unavailable, so no play link is offered.
+123 games; 2,986 accepted evidence records; 43 endorsements individually source-reviewed by Codex. Reviews are AI assessments with explicit provenance, not independent human verification. This is a bounded sample, not all-time HN popularity. One verified historical Show HN game (Looptap) is included; its original hosting was unavailable, so no play link is offered.
 
 ## Hosting setup still required
 

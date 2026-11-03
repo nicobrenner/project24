@@ -1,0 +1,600 @@
+{
+  "reviewer": "Codex",
+  "provenance": "Agent-reviewed entity decisions, 2026-11-02; not recommendation reviews. Direct-URL entries match only their explicit store application link.",
+  "accepted": [
+    {
+      "appId": "1444480",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "40700",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1623730",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "3040110",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "684270",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "316790",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "282140",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "291150",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "367080",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "268870",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "233550",
+      "matchMode": "title-context",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree.",
+      "title": "Another World",
+      "id": "another-world",
+      "aliases": [
+        "Out of This World"
+      ],
+      "description": "Eric Chahi\u2019s cinematic adventure, originally released in 1991. Discussion includes the original game; artwork and release metadata refer to the anniversary edition."
+    },
+    {
+      "appId": "98200",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "25000",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "930460",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree.",
+      "description": "A politically themed beat \u2019em up set around the 2018 Brazilian election. Included as a documented HN mention, not an endorsement."
+    },
+    {
+      "appId": "473950",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "582270",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "906120",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1098840",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "546560",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "371180",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "464920",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "242920",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1305370",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "410980",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "644930",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "726870",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "469920",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "375440",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1256230",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "757310",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "690370",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "638110",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2287430",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1091500",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1743850",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "872670",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1594320",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "70",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1712350",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1124180",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "254880",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "811320",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2198150",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "590830",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2653790",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2262930",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "3694060",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2832640",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "3165650",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "746850",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1371710",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2108180",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "3590650",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1003360",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1899700",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1013580",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2116950",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1176470",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "754150",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2802710",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "618690",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "3164500",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "824450",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "384090",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "3170490",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "4332850",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2387290",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "370360",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "844590",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2213700",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2275490",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1172100",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "284260",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "491950",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "4609800",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1511780",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "576030",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "792100",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "339350",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "659540",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "425410",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "32360",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "306760",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "504210",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2088550",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "225080",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1055540",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "219680",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "457140",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "1307890",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "8930",
+      "matchMode": "explicit-url",
+      "reason": "Explicit app URL in HN source and publisher game metadata agree."
+    },
+    {
+      "appId": "2310",
+      "matchMode": "title-context",
+      "reason": "Game title confirmed in sampled HN gaming context and official Steam metadata."
+    },
+    {
+      "appId": "10",
+      "matchMode": "title-context",
+      "reason": "Game title confirmed in sampled HN gaming context and official Steam metadata."
+    },
+    {
+      "appId": "26800",
+      "matchMode": "title-context",
+      "reason": "Game title confirmed in sampled HN gaming context and official Steam metadata."
+    },
+    {
+      "appId": "570",
+      "matchMode": "title-context",
+      "reason": "Game title confirmed in sampled HN gaming context and official Steam metadata."
+    },
+    {
+      "appId": "220",
+      "matchMode": "title-context",
+      "reason": "Game title confirmed in sampled HN gaming context and official Steam metadata."
+    },
+    {
+      "appId": "613830",
+      "matchMode": "title-context",
+      "reason": "Game title confirmed in sampled HN gaming context and official Steam metadata."
+    }
+  ],
+  "rejected": [
+    {
+      "appId": "447270",
+      "name": "IKEA VR Experience",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "570000",
+      "name": "Old Friend",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "379720",
+      "name": "DOOM",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "39120",
+      "name": "RIFT",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "2357570",
+      "name": "Overwatch\u00ae",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "346180",
+      "name": "David.",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "1734230",
+      "name": "WHATEVER",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "2947430",
+      "name": "HDMI",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "1650040",
+      "name": "HuGe",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "3286990",
+      "name": "WASD",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "2895510",
+      "name": "_turing",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "576310",
+      "name": "Oracle",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "1642580",
+      "name": "\u660e\u661f\u5fd7\u98582000",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "3048820",
+      "name": "Raspberry",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "704990",
+      "name": "OSES",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "4590390",
+      "name": "JEFF",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "3694710",
+      "name": "OTHERS",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "2902770",
+      "name": "\u8d5d\u4f5c \u5fc3\u7075\u63a8\u6f14 Others",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "2269530",
+      "name": "HaHa",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    },
+    {
+      "appId": "304430",
+      "name": "INSIDE",
+      "reason": "Ambiguous title or edition, or non-game experience; not enough evidence for inclusion."
+    }
+  ]
+}

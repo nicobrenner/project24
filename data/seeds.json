@@ -421,7 +421,7 @@
       "macOS"
     ],
     "releaseDate": "Oct 18, 2018",
-    "description": "Deduce the fates of a vanished ship\u2019s crew using frozen scenes of their final moments.",
+    "description": "Deduce the fates of a vanished ship’s crew using frozen scenes of their final moments.",
     "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/653530/header.jpg?t=1686697594",
     "metadataUrl": "https://store.steampowered.com/app/653530/",
     "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
@@ -531,5 +531,2332 @@
     "metadataAttribution": "Historical creator submission on Hacker News (2022); current official game hosting unavailable at collection time. No artwork supplied.",
     "color": "#97bca6",
     "steamAppId": null
+  },
+  {
+    "id": "turing-complete",
+    "title": "Turing Complete",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Oct 2, 2021",
+    "description": "Learn CPU architecture with puzzles",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1444480/8440c6246573308442238af5801639abef4ec97f/header.jpg?t=1787893529",
+    "metadataUrl": "https://store.steampowered.com/app/1444480/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1444480/",
+    "color": "#55634d",
+    "steamAppId": 1444480,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "machinarium",
+    "title": "Machinarium",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Oct 16, 2009",
+    "description": "Machinarium is the award-winning adventure game from the makers of Phonopolis, CHUCHEL and the Samorost series. Help Josef the robot save his girlfriend Berta, kidnapped by the Black Cap Brotherhood gang!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40700/header.jpg?t=1791501193",
+    "metadataUrl": "https://store.steampowered.com/app/40700/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/40700/",
+    "color": "#55634d",
+    "steamAppId": 40700,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "palworld",
+    "title": "Palworld",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "adventure",
+      "rpg"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Jul 9, 2026",
+    "description": "Fight, farm, build and work alongside mysterious creatures called \"Pals\" in this completely new multiplayer, open world survival and crafting game!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1623730/6912f19c43a95ff5fe514eedd35e68bf12335459/header.jpg?t=1790336367",
+    "metadataUrl": "https://store.steampowered.com/app/1623730/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1623730/",
+    "color": "#55634d",
+    "steamAppId": 1623730,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "outsider",
+    "title": "Outsider",
+    "aliases": [],
+    "genre": "game",
+    "genres": [
+      "game"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Nov 4, 2025",
+    "description": "Shape humanity's future in a sci-fi narrative game where choices matter. Experience an extraterrestrial contact while deciphering an overarching mystery of far-reaching consequences. Who is the Outsider?",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3040110/header.jpg?t=1778271241",
+    "metadataUrl": "https://store.steampowered.com/app/3040110/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/3040110/",
+    "color": "#55634d",
+    "steamAppId": 3040110,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "silicon-zeroes",
+    "title": "Silicon Zeroes",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Sep 18, 2017",
+    "description": "Build hardware. Solve puzzles. From the creator of Manufactoria, a new open-ended puzzle game set in Silicon Valley's first startup.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/684270/header.jpg?t=1635015162",
+    "metadataUrl": "https://store.steampowered.com/app/684270/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/684270/",
+    "color": "#55634d",
+    "steamAppId": 684270,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "grim-fandango-remastered",
+    "title": "Grim Fandango Remastered",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jan 26, 2015",
+    "description": "One of the most acclaimed adventure games of all time is now back, better than ever. Grim Fandango Remastered has the all the beautiful art and engaging story fans remember, but has also been remastered to look, sound, and control even better than the award-winning original release.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/316790/header.jpg?t=1793138379",
+    "metadataUrl": "https://store.steampowered.com/app/316790/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/316790/",
+    "color": "#55634d",
+    "steamAppId": 316790,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "soma",
+    "title": "SOMA",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "adventure"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Sep 21, 2015",
+    "description": "From the creators of Amnesia: The Dark Descent comes SOMA, a sci-fi horror game set below the waves of the Atlantic ocean. Struggle to survive a hostile world that will make you question your very existence.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/282140/header.jpg?t=1786607913",
+    "metadataUrl": "https://store.steampowered.com/app/282140/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/282140/",
+    "color": "#55634d",
+    "steamAppId": 282140,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "evolution-rts",
+    "title": "Evolution RTS",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Apr 7, 2014",
+    "description": "Evolution RTS is a free an Open Source RTS game designed using the Spring Engine. It has been in development for many years and receives updates often. It’s gameplay is designed specifically to appeal to gamers of all skill levels.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/291150/header.jpg?t=1652680550",
+    "metadataUrl": "https://store.steampowered.com/app/291150/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/291150/",
+    "color": "#55634d",
+    "steamAppId": 291150,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "songbringer",
+    "title": "Songbringer",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "adventure",
+      "rpg"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Sep 1, 2017",
+    "description": "Imagine if the original Zelda game was set in a science-fiction galaxy. Explore this open-world, action RPG with roguelike and metroidvania elements. Mighty bosses lurk deep within procedurally-generated dungeons. Wield, vanquish, unearth, collect, craft, progress, trip, adventure.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367080/header.jpg?t=1700600415",
+    "metadataUrl": "https://store.steampowered.com/app/367080/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/367080/",
+    "color": "#55634d",
+    "steamAppId": 367080,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "satellite-reign",
+    "title": "Satellite Reign",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Aug 27, 2015",
+    "description": "Satellite Reign is a real-time, class-based strategy game, set in an open-world cyberpunk city. You command a group of 4 agents through rain-soaked, neon-lit streets, where the law is the will of mega-corporations.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268870/header.jpg?t=1768784532",
+    "metadataUrl": "https://store.steampowered.com/app/268870/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/268870/",
+    "color": "#55634d",
+    "steamAppId": 268870,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "another-world",
+    "title": "Another World",
+    "aliases": [
+      "Out of This World",
+      "Another World – 20th Anniversary Edition"
+    ],
+    "genre": "action",
+    "genres": [
+      "action",
+      "adventure"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Apr 4, 2013",
+    "description": "Eric Chahi’s cinematic adventure, originally released in 1991. Discussion includes the original game; artwork and release metadata refer to the anniversary edition.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/233550/header.jpg?t=1743411543",
+    "metadataUrl": "https://store.steampowered.com/app/233550/",
+    "metadataAttribution": "Artwork and metadata: Steam and respective publisher. Summary: HackerGames editorial. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/233550/",
+    "color": "#55634d",
+    "steamAppId": 233550,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "title-context"
+  },
+  {
+    "id": "frozen-synapse",
+    "title": "Frozen Synapse",
+    "aliases": [],
+    "genre": "strategy",
+    "genres": [
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "May 26, 2011",
+    "description": "Brings the simultaneous turn-based strategy genre up-to-date and lets you give detailed, accurate orders to your squad.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/98200/header.jpg?t=1458256347",
+    "metadataUrl": "https://store.steampowered.com/app/98200/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/98200/",
+    "color": "#55634d",
+    "steamAppId": 98200,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "overgrowth",
+    "title": "Overgrowth",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Oct 16, 2017",
+    "description": "Feel like the star of a martial arts film in Overgrowth, as you jump, kick, throw, and slash your way to victory. Free the rabbits from their evil overlords in the main story, then play through the prequel story, and finally, try out nine years of mods developed by the community, or create your own!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/25000/header.jpg?t=1758307010",
+    "metadataUrl": "https://store.steampowered.com/app/25000/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/25000/",
+    "color": "#55634d",
+    "steamAppId": 25000,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "bolsomito",
+    "title": "BOLSOMITO",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "casual"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Oct 5, 2018",
+    "description": "A politically themed beat ’em up set around the 2018 Brazilian election. Included as a documented HN mention, not an endorsement.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/930460/header.jpg?t=1546974048",
+    "metadataUrl": "https://store.steampowered.com/app/930460/",
+    "metadataAttribution": "Artwork and metadata: Steam and respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/930460/",
+    "color": "#55634d",
+    "steamAppId": 930460,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "manifold-garden",
+    "title": "Manifold Garden",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Oct 20, 2020",
+    "description": "Rediscover gravity and explore an Escher-esque world of impossible architecture. Witness infinity in first-person and master its rules to solve physics-defying puzzles. Cultivate a garden to open new paths forward, where an eternal expanse awaits.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/473950/header.jpg?t=1603220474",
+    "metadataUrl": "https://store.steampowered.com/app/473950/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/473950/",
+    "color": "#55634d",
+    "steamAppId": 473950,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "everything",
+    "title": "Everything",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "rpg",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Apr 21, 2017",
+    "description": "Be the Universe in this epic, award-winning reality simulation game - featuring thousands of playable characters, endless exploration, an extraordinary soundtrack and narration from Alan Watts.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582270/header.jpg?t=1793237175",
+    "metadataUrl": "https://store.steampowered.com/app/582270/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/582270/",
+    "color": "#55634d",
+    "steamAppId": 582270,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "polybius",
+    "title": "POLYBIUS",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Dec 21, 2018",
+    "description": "POLYBIUS is a fast, trippy tunnel shooter playable on a normal screen or in VR. 50 levels of blissful trance shooting action are set to a blistering soundtrack. The PS4 version was EDGE Magazine's VR GOTY in 2017, and the PC version of the game was even used as the basis for a NIN music video.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/906120/header.jpg?t=1742484213",
+    "metadataUrl": "https://store.steampowered.com/app/906120/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/906120/",
+    "color": "#55634d",
+    "steamAppId": 906120,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "zach-like",
+    "title": "ZACH-LIKE",
+    "aliases": [],
+    "genre": "game",
+    "genres": [
+      "game"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Jun 17, 2019",
+    "description": "ZACH-LIKE is a book of behind-the-scenes design documents from Zachtronics. The digital version of ZACH-LIKE contains the full contents of the book, a bunch of terrible games that Zach made before SpaceChem, and some prototypes and early builds of Zachtronics games, both released and... not.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1098840/header.jpg?t=1667069607",
+    "metadataUrl": "https://store.steampowered.com/app/1098840/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1098840/",
+    "color": "#55634d",
+    "steamAppId": 1098840,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "half-life-alyx",
+    "title": "Half-Life: Alyx",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "adventure"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Mar 23, 2020",
+    "description": "Half-Life: Alyx is Valve’s VR return to the Half-Life series. It’s the story of an impossible fight against a vicious alien race known as the Combine, set between the events of Half-Life and Half-Life 2. Playing as Alyx Vance, you are humanity’s only chance for survival.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/546560/header.jpg?t=1790202165",
+    "metadataUrl": "https://store.steampowered.com/app/546560/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/546560/",
+    "color": "#55634d",
+    "steamAppId": 546560,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "super-3-d-noah-s-ark",
+    "title": "Super 3-D Noah's Ark",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jun 23, 2015",
+    "description": "Fast paced, first person adventure aboard Noah's ark!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/371180/header.jpg?t=1643921580",
+    "metadataUrl": "https://store.steampowered.com/app/371180/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/371180/",
+    "color": "#55634d",
+    "steamAppId": 371180,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "surviving-mars",
+    "title": "Surviving Mars",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Mar 15, 2018",
+    "description": "There will be challenges to overcome. Execute your strategy and improve your colony’s chances of survival while unlocking the mysteries of this alien world. Are you ready? Mars is waiting for you.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/464920/header.jpg?t=1779438914",
+    "metadataUrl": "https://store.steampowered.com/app/464920/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/464920/",
+    "color": "#55634d",
+    "steamAppId": 464920,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "banished",
+    "title": "Banished",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Feb 18, 2014",
+    "description": "In this city-building strategy game, you control a group of exiled travelers who decide to restart their lives in a new land. They have only the clothes on their backs and a cart filled with supplies from their homeland. The townspeople of Banished are your primary resource.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242920/header.jpg?t=1667584747",
+    "metadataUrl": "https://store.steampowered.com/app/242920/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/242920/",
+    "color": "#55634d",
+    "steamAppId": 242920,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "pandemia-virus-outbreak",
+    "title": "Pandemia: Virus Outbreak",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "May 20, 2020",
+    "description": "2 in 1, Swipe cards to face the deadly virus threat in this story driven strategy game. Step into the world in which you will face the decisions that world leaders make in the event of a deadly virus threat. Every decision have consequences. Create Vaccine in special Arcade mode.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1305370/header.jpg?t=1732741743",
+    "metadataUrl": "https://store.steampowered.com/app/1305370/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1305370/",
+    "color": "#55634d",
+    "steamAppId": 1305370,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "master-of-orion-2",
+    "title": "Master of Orion 2",
+    "aliases": [],
+    "genre": "strategy",
+    "genres": [
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Feb 25, 2016",
+    "description": "Forge an empire in a universe where population growth is stripping away planetary resources. Colonize unknown planets and trade with other races for their knowledge.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/410980/header.jpg?t=1708071672",
+    "metadataUrl": "https://store.steampowered.com/app/410980/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/410980/",
+    "color": "#55634d",
+    "steamAppId": 410980,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "they-are-billions",
+    "title": "They Are Billions",
+    "aliases": [],
+    "genre": "strategy",
+    "genres": [
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Jun 18, 2019",
+    "description": "They Are Billions is a Steampunk strategy game set on a post-apocalyptic planet. Build and defend colonies to survive against the billions of the infected that seek to annihilate the few remaining living humans. Can humanity survive after the zombie apocalypse?",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/644930/header.jpg?t=1595631876",
+    "metadataUrl": "https://store.steampowered.com/app/644930/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/644930/",
+    "color": "#55634d",
+    "steamAppId": 644930,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "anchorhead",
+    "title": "Anchorhead",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Jan 31, 2018",
+    "description": "You take a deep breath of salty air as the first raindrops begin to spatter the pavement, and the swollen, slate-colored clouds that blanket the sky mutter ominous portents amongst themselves over the little coastal town of Anchorhead.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/726870/header.jpg?t=1517414337",
+    "metadataUrl": "https://store.steampowered.com/app/726870/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/726870/",
+    "color": "#55634d",
+    "steamAppId": 726870,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "hackmud",
+    "title": "hackmud",
+    "aliases": [],
+    "genre": "massively multiplayer",
+    "genres": [
+      "massively multiplayer",
+      "rpg",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Sep 22, 2016",
+    "description": "hackmud is a retro cyberpunk RPG where you play a digital persona in a chaotic, unpredictable, and often goofy abandoned internet. Enter a 90s hacker movie filled with scripts, scams, and sabotage. Explore the world of digital secrets and forge your legacy through cunning, creativity, or disruption.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/469920/header.jpg?t=1773854578",
+    "metadataUrl": "https://store.steampowered.com/app/469920/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/469920/",
+    "color": "#55634d",
+    "steamAppId": 469920,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "hero-u-rogue-to-redemption",
+    "title": "Hero-U: Rogue to Redemption",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure",
+      "rpg"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jul 10, 2018",
+    "description": "Hero-U: Rogue to Redemption is a humorous fantasy role-playing adventure game by Lori and Corey Cole, creators of the acclaimed Quest for Glory series. As the Rogue Shawn O'Conner, players will make friends, explore a haunted castle, and use their Rogue skills for fun and profit.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/375440/header.jpg?t=1667944889",
+    "metadataUrl": "https://store.steampowered.com/app/375440/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/375440/",
+    "color": "#55634d",
+    "steamAppId": 375440,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "hyperbolica",
+    "title": "Hyperbolica",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Mar 14, 2022",
+    "description": "Hyperbolica is a whimsical Non-Euclidean adventure with mind-bending worlds full of games, puzzles, mazes, and secrets! Immerse yourself in reality-warping geometries where lines can never be parallel, horizons are curved, and space grows exponentially.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1256230/header.jpg?t=1709755107",
+    "metadataUrl": "https://store.steampowered.com/app/1256230/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1256230/",
+    "color": "#55634d",
+    "steamAppId": 1256230,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "sable",
+    "title": "Sable",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure",
+      "rpg"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Sep 23, 2021",
+    "description": "Embark on an unique and unforgettable journey and guide Sable through her Gliding; a rite of passage that will take her across vast deserts and mesmerizing landscapes, capped by the remains of spaceships and ancient wonders.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/757310/header.jpg?t=1792068075",
+    "metadataUrl": "https://store.steampowered.com/app/757310/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/757310/",
+    "color": "#55634d",
+    "steamAppId": 757310,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "cantata",
+    "title": "Cantata",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Aug 15, 2023",
+    "description": "Crash-landed in the universe of Cantata, will you expand your empire or bring peace to the war torn planet? Grow your army, manage resources and discover the colourful planet of Shoal, its people, and the armed forces overrunning this land in this genre-defining Grand Tactics game.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/690370/header.jpg?t=1739200820",
+    "metadataUrl": "https://store.steampowered.com/app/690370/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/690370/",
+    "color": "#55634d",
+    "steamAppId": 690370,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "desert-bus-vr",
+    "title": "Desert Bus VR",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Nov 27, 2017",
+    "description": "Desert Bus is back and better than ever! The 1998 Penn and Teller cult hit mini-game is coming to virtual reality, so you can fully immerse yourself in the thrilling eight-hour trip from Arizona to Nevada. It’s almost like you’re driving the “wheel” thing!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/638110/header.jpg?t=1513708518",
+    "metadataUrl": "https://store.steampowered.com/app/638110/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/638110/",
+    "color": "#55634d",
+    "steamAppId": 638110,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "metropolis-1998",
+    "title": "Metropolis 1998",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "2026",
+    "description": "A fresh, modern city builder with charming aesthetics. Detailed agent-based simulation and scheduling. See inside buildings. Design and customize almost anything. Business-specific zoning, and mixed use zones too!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2287430/35bb9ddfed97f3ac31cba8e72793830b0a8dca1b/header.jpg?t=1786388609",
+    "metadataUrl": "https://store.steampowered.com/app/2287430/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2287430/",
+    "color": "#55634d",
+    "steamAppId": 2287430,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "cyberpunk-2077",
+    "title": "Cyberpunk 2077",
+    "aliases": [],
+    "genre": "rpg",
+    "genres": [
+      "rpg"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Dec 9, 2020",
+    "description": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/48a93d6445a67520ea49833c93dae8f2e68fc540/header_alt_assets_9.jpg?t=1792682505",
+    "metadataUrl": "https://store.steampowered.com/app/1091500/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1091500/",
+    "color": "#55634d",
+    "steamAppId": 1091500,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "hyper-demon",
+    "title": "HYPER DEMON",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Sep 19, 2022",
+    "description": "HYPER DEMON is an FPS like no other. a pearl of lightning. a dream from the future. a drop of poison. a swan song. The faster you slay demons, the harder the game and the higher your score. There is an end. Will it see you?",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1743850/header.jpg?t=1726872838",
+    "metadataUrl": "https://store.steampowered.com/app/1743850/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1743850/",
+    "color": "#55634d",
+    "steamAppId": 1743850,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "scp-5k",
+    "title": "SCP: 5K",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "massively multiplayer",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Feb 22, 2022",
+    "description": "SCP: 5K is a co-op or singleplayer tactical horror FPS project that puts players in the midst of a conspiracy where the SCP Foundation has turned on humanity. Enjoy Early Access as we continue to work towards a completed full release of the project!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/872670/header.jpg?t=1786536356",
+    "metadataUrl": "https://store.steampowered.com/app/872670/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/872670/",
+    "color": "#55634d",
+    "steamAppId": 872670,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "captain-of-industry",
+    "title": "Captain of Industry",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "May 31, 2022",
+    "description": "Build an industrial empire on a remote island. Mine resources, reshape terrain with excavators, grow food, construct factories, lay train tracks, and trade with the outside world. Research 100+ technologies to advance from basic metal smelting all the way to nuclear power and space flight.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1594320/9a604b771ff99f83f21020ac2c0a2a54a7d18627/header.jpg?t=1784572847",
+    "metadataUrl": "https://store.steampowered.com/app/1594320/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1594320/",
+    "color": "#55634d",
+    "steamAppId": 1594320,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "half-life",
+    "title": "Half-Life",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Nov 19, 1998",
+    "description": "Named Game of the Year by over 50 publications, Valve's debut title blends action and adventure with award-winning technology to create a frighteningly realistic world where players must think to survive. Also includes an exciting multiplayer mode that allows you to play against friends and enemies ",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/70/header.jpg?t=1745368462",
+    "metadataUrl": "https://store.steampowered.com/app/70/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/70/",
+    "color": "#55634d",
+    "steamAppId": 70,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "riven",
+    "title": "Riven",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure",
+      "casual"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Jun 25, 2024",
+    "description": "Uncover a story of intrigue, betrayal, and a civilization teetering on the brink of collapse as you solve intricate puzzles to unlock the secrets of Riven. Built from the ground-up and expanded from the award-winning original game released in 1997.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1712350/9ead2cf7de352df93cea7462e17ec0141bac1fca/header.jpg?t=1784241079",
+    "metadataUrl": "https://store.steampowered.com/app/1712350/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1712350/",
+    "color": "#55634d",
+    "steamAppId": 1712350,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "rail-route",
+    "title": "Rail Route",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Feb 22, 2024",
+    "description": "In Rail Route, you will design, construct, upgrade, and automate your railway network in one of the many maps based on real-life cities worldwide. Dispatch the trains to make the traffic flow and the network grow!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1124180/137cf30c5d34ce5412f95b0034dc89fc62459675/header.jpg?t=1792527311",
+    "metadataUrl": "https://store.steampowered.com/app/1124180/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1124180/",
+    "color": "#55634d",
+    "steamAppId": 1124180,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "moonbase-commander",
+    "title": "MoonBase Commander",
+    "aliases": [],
+    "genre": "strategy",
+    "genres": [
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Feb 6, 2014",
+    "description": "Explore. Strategize. Conquer.In the far future, Mankind has nearly exhausted all of earth’s natural resources. Fragile alliances between nations are tested to their limits as fierce wars ignite across land and space.MoonBase Commander puts you in charge of your own lunar territory in a quest to buil",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/254880/header.jpg?t=1579791596",
+    "metadataUrl": "https://store.steampowered.com/app/254880/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/254880/",
+    "color": "#55634d",
+    "steamAppId": 254880,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "jupiter-hell",
+    "title": "Jupiter Hell",
+    "aliases": [],
+    "genre": "rpg",
+    "genres": [
+      "rpg",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "releaseDate": "Aug 5, 2021",
+    "description": "True Roguelike. Turn-based shooter. Permadeath. Tribute to the sci-fi classics of the Golden VHS era. Successor to DRL. Just you and your gun against hordes of horrors and monstrosities. Give them hell to the rhythm of heavy metal.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/811320/header.jpg?t=1783611381",
+    "metadataUrl": "https://store.steampowered.com/app/811320/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/811320/",
+    "color": "#55634d",
+    "steamAppId": 811320,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "tiny-glade",
+    "title": "Tiny Glade",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Sep 23, 2024",
+    "description": "Tiny Glade is a small diorama builder where you doodle whimsical castles, cozy cottages & romantic ruins. Explore gridless building chemistry as the game adorns your glades with procedural detail. No management, combat or goals: just kick back and turn forgotten meadows into lovable dioramas.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2198150/b3a0326cc6d63ca88973fdee61d09052433abf94/header_alt_assets_0.jpg?t=1790175461",
+    "metadataUrl": "https://store.steampowered.com/app/2198150/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2198150/",
+    "color": "#55634d",
+    "steamAppId": 2198150,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "s-box",
+    "title": "s&box",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "adventure",
+      "casual",
+      "racing",
+      "simulation",
+      "sports",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Apr 28, 2026",
+    "description": "s&box is a game creation platform. Play, create, and share games, all in one place. Hundreds of games ready to jump into with your friends.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/590830/0f64b7e4f9628fdcff7e1f86696d08b9d280de5e/header.jpg?t=1791282405",
+    "metadataUrl": "https://store.steampowered.com/app/590830/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/590830/",
+    "color": "#55634d",
+    "steamAppId": 590830,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "the-exit-8",
+    "title": "The Exit 8",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Nov 29, 2023",
+    "description": "You are trapped in an endless underground passageway. Observe your surroundings carefully to reach \"The Exit 8\".",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2653790/header.jpg?t=1756464433",
+    "metadataUrl": "https://store.steampowered.com/app/2653790/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2653790/",
+    "color": "#55634d",
+    "steamAppId": 2653790,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "bombe",
+    "title": "Bombe",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jun 4, 2023",
+    "description": "Minesweeper, but you only solve each situation once.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2262930/header.jpg?t=1715417627",
+    "metadataUrl": "https://store.steampowered.com/app/2262930/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2262930/",
+    "color": "#55634d",
+    "steamAppId": 2262930,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "manos-the-hands-of-choice",
+    "title": "Manos The Hands Of Choice",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "May 13, 2025",
+    "description": "A weird, surreal visual novel retelling the cult B-movie Manos: The Hands of Fate. Face tarot cards, blackjack duels, and bad vacation decisions in this Ghibli-meets-grindhouse choose-your-own-disaster comedy. Featuring Torgo. Lots of Torgo.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3694060/272b2acf2dcbed3d5b7d7e281f13aaae377eb029/header.jpg?t=1747123403",
+    "metadataUrl": "https://store.steampowered.com/app/3694060/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/3694060/",
+    "color": "#55634d",
+    "steamAppId": 3694060,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "dead-get-rekt",
+    "title": "DEAD GET REKT",
+    "aliases": [],
+    "genre": "rpg",
+    "genres": [
+      "rpg"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "May 10, 2024",
+    "description": "In the shadow-drenched realm where modern warfare intertwines with necromantic horrors, we have conjured an unparalleled adventure. Forge your arsenal from an evolving deck of cards, face legions of the undead delvers, unearth artifacts of might and vanquish the darkness that festers down the Crypt!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2832640/header.jpg?t=1726412431",
+    "metadataUrl": "https://store.steampowered.com/app/2832640/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2832640/",
+    "color": "#55634d",
+    "steamAppId": 2832640,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "masters-of-albion",
+    "title": "Masters of Albion",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Apr 22, 2026",
+    "description": "A bold reimagining of the God Game genre from the creator who defined it. Shape a living world as a god - or step into it and experience it through your people. Build, guide and defend your town by day, then survive the night when everything is under threat. There is no single solution. Only yours.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3165650/47c7ce5f41d5c0696cade13268f1004e63b7b2e5/header.jpg?t=1790870535",
+    "metadataUrl": "https://store.steampowered.com/app/3165650/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/3165650/",
+    "color": "#55634d",
+    "steamAppId": 3165650,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "cloudpunk",
+    "title": "Cloudpunk",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure",
+      "rpg"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Apr 23, 2020",
+    "description": "A neon-noir story in a rain-drenched cyberpunk metropolis. It’s your first night on the job working for the Cloudpunk delivery service. Two rules: Don’t miss a delivery and don’t ask what’s in the package.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/746850/header.jpg?t=1729027817",
+    "metadataUrl": "https://store.steampowered.com/app/746850/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/746850/",
+    "color": "#55634d",
+    "steamAppId": 746850,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "rogue-aces-deluxe",
+    "title": "Rogue Aces Deluxe",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Oct 16, 2020",
+    "description": "Rogue Aces Deluxe - the definitive 2D aerial combat roguelike. Explosive single player balletic chaos with sophisticated flight controls. With 1-4 player Dogfight Deathmatch modes and unlockable bonus games. Fly with panache and maintain your moustache!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1371710/header.jpg?t=1680288671",
+    "metadataUrl": "https://store.steampowered.com/app/1371710/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1371710/",
+    "color": "#55634d",
+    "steamAppId": 1371710,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "swordhaven-iron-conspiracy",
+    "title": "Swordhaven: Iron Conspiracy",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure",
+      "rpg"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Dec 16, 2025",
+    "description": "A love letter to classic Infinity Engine cRPGs from the creators of ATOM RPG, Swordhaven is a turn-based \\ RTwP, party-based, dialogue-heavy 85+ hour long adventure set in a world of Nova Drakonia.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2108180/header.jpg?t=1782420584",
+    "metadataUrl": "https://store.steampowered.com/app/2108180/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2108180/",
+    "color": "#55634d",
+    "steamAppId": 2108180,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "oku",
+    "title": "OKU",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "To be announced",
+    "description": "Without art, our world is fading. As the lone apprentice to a vanished haiku master, you venture out into Japanese landscapes and capture their beauty in poetry to restore forgotten paths. Explore your legacy, meet other travelers on this meditative journey, and learn to appreciate art and nature.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3590650/cea92a63fc537b892f2856793af4e2ba50977e05/header.jpg?t=1788426627",
+    "metadataUrl": "https://store.steampowered.com/app/3590650/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/3590650/",
+    "color": "#55634d",
+    "steamAppId": 3590650,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "it-s-winter",
+    "title": "ШХД: ЗИМА / IT'S WINTER",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Mar 7, 2019",
+    "description": "Panel houses, snow, overcast sky, tiny kitchen, shabby staircase… It's Winter is an indie game which genre could be classified as sandbox, post-soviet, sad 3d, russian sadness. Nothing awaits you: there is no chance to get out, no room for adventures and breathtaking plot.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1003360/header.jpg?t=1694204730",
+    "metadataUrl": "https://store.steampowered.com/app/1003360/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1003360/",
+    "color": "#55634d",
+    "steamAppId": 1003360,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "graphwar",
+    "title": "Graphwar",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Feb 23, 2022",
+    "description": "Graphwar is an artillery game in which you must hit your enemies using mathematical functions. The trajectory of your shot is determined by the function you wrote, and your goal is to avoid the obstacles and your teammates and hit your enemies. The game takes place in a Cartesian Plane.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1899700/header.jpg?t=1719988232",
+    "metadataUrl": "https://store.steampowered.com/app/1899700/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1899700/",
+    "color": "#55634d",
+    "steamAppId": 1899700,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "manna-for-our-malices",
+    "title": "Manna for our Malices",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Feb 11, 2019",
+    "description": "Akagi Ai is unexpectedly stabbed on her way home from school. She finds her spirit possessing her body from earlier that day, and must collaborate with the past self that inhabits her body to discover why she keeps dying -- and why she keeps coming back.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1013580/header.jpg?t=1549885351",
+    "metadataUrl": "https://store.steampowered.com/app/1013580/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1013580/",
+    "color": "#55634d",
+    "steamAppId": 1013580,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "tiny-solar-system",
+    "title": "Tiny Solar System",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "casual",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Oct 18, 2022",
+    "description": "A single player space game where you fly a rocket around a tiny solar system with realistic physics, including take off, orbiting, orbital transfers and landings. Help settling other planets and moons. No time limits, no stress. If you crash you just get rescued.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2116950/header.jpg?t=1667823542",
+    "metadataUrl": "https://store.steampowered.com/app/2116950/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2116950/",
+    "color": "#55634d",
+    "steamAppId": 2116950,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "terra-invicta",
+    "title": "Terra Invicta",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Jan 5, 2026",
+    "description": "An alien invasion has fractured humanity into seven ideological factions each with a unique vision for the future. Lead your chosen faction to take control of Earth’s nations, expand across the Solar System, and battle enemy fleets in tactical combat.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1176470/9423aad2c3bea9a6a0d135e85140ca7e0a2dd804/header.jpg?t=1793270318",
+    "metadataUrl": "https://store.steampowered.com/app/1176470/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1176470/",
+    "color": "#55634d",
+    "steamAppId": 1176470,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "rolling-line",
+    "title": "Rolling Line",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Apr 27, 2018",
+    "description": "Build your own model railway tracks and scenery or explore pre-made maps, including 1000s of player-made maps and mods on the Steam Workshop! Play solo and in multiplayer, both in virtual reality and on PC!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/754150/8435c7d408875a7d6981c12fcc500825072f8195/header.jpg?t=1784851357",
+    "metadataUrl": "https://store.steampowered.com/app/754150/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/754150/",
+    "color": "#55634d",
+    "steamAppId": 754150,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "quantum-odyssey",
+    "title": "Quantum Odyssey",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jan 29, 2025",
+    "description": "See the logic all of us obey. Design, optimize, and reverse-engineer real quantum algorithms in an open-ended Zachlike simulator. Solve 500+ visual puzzles and hack other players’ creations. No coding or physics background required.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2802710/5a2470681af8b6c5deba5d57eaf3b690e22e8294/header.jpg?t=1793018435",
+    "metadataUrl": "https://store.steampowered.com/app/2802710/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2802710/",
+    "color": "#55634d",
+    "steamAppId": 2802710,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "gorescript",
+    "title": "Gorescript",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Jun 15, 2017",
+    "description": "Gorescript is a classic first person shooter game, inspired by the great old FPS games that defined the genre. Fight your way through 18 handcrafted levels of frantic action paced gameplay, from easy to hardcore levels of difficulty.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/618690/header.jpg?t=1682923484",
+    "metadataUrl": "https://store.steampowered.com/app/618690/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/618690/",
+    "color": "#55634d",
+    "steamAppId": 618690,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "schedule-i",
+    "title": "Schedule I",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Mar 24, 2025",
+    "description": "From small-time dope pusher to kingpin - manufacture and distribute a range of drugs throughout the grungy city of Hyland Point. Expand your empire with properties, businesses, employees and more.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3164500/header.jpg?t=1785744977",
+    "metadataUrl": "https://store.steampowered.com/app/3164500/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/3164500/",
+    "color": "#55634d",
+    "steamAppId": 3164500,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "blockchain-tycoon",
+    "title": "Blockchain Tycoon",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Jan 20, 2021",
+    "description": "Blockchain Tycoon is the cryptocurrency simulation game where you build and manage your own mining operation. Create your own coin, mine it, invest in other coins, upgrade and overclock GPUs or you can just HODL.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/824450/header.jpg?t=1710350703",
+    "metadataUrl": "https://store.steampowered.com/app/824450/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/824450/",
+    "color": "#55634d",
+    "steamAppId": 824450,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "sketch-tales",
+    "title": "Sketch Tales",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "adventure",
+      "rpg"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Sep 28, 2015",
+    "description": "Descend into creative madness with Sketch Tales, a sandbox action RPG where what you draw becomes what you play! Build imaginative worlds, creatures, and weapons and watch your drawings come to life. Share your created worlds and maps with friends and battle it out in multiplayer.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/384090/header.jpg?t=1478624922",
+    "metadataUrl": "https://store.steampowered.com/app/384090/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/384090/",
+    "color": "#55634d",
+    "steamAppId": 384090,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "cat-me-if-you-can",
+    "title": "Cat Me If You Can",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Sep 8, 2026",
+    "description": "Cat Me If You Can is a charming and cozy game where you explore beautifully handcrafted black-and-white worlds, searching for hidden cats to photograph and bring their colours back into the world.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3170490/993bdda41a4d972429fec0c867e81192b6589d44/header.jpg?t=1788879670",
+    "metadataUrl": "https://store.steampowered.com/app/3170490/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/3170490/",
+    "color": "#55634d",
+    "steamAppId": 3170490,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "global-business-tycoon",
+    "title": "Global Business Tycoon",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "releaseDate": "Mar 27, 2026",
+    "description": "Global Business Tycoon is a strategic management simulator where you build a global empire. Play solo or online multiplayer with up to 8 players.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4332850/cf5603e123a81d5f1248edac9e30779b68453592/header.jpg?t=1792355327",
+    "metadataUrl": "https://store.steampowered.com/app/4332850/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/4332850/",
+    "color": "#55634d",
+    "steamAppId": 4332850,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "nbf0",
+    "title": "NBF0",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Jul 17, 2025",
+    "description": "A simple, fun, FPS where you must advance through waves of evil robots. Use your energy weapons to fight them and escape to freedom!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2387290/187c411c60d6bd99f5f061bc9daafbd12aa4c717/header.jpg?t=1790730298",
+    "metadataUrl": "https://store.steampowered.com/app/2387290/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2387290/",
+    "color": "#55634d",
+    "steamAppId": 2387290,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "tis-100",
+    "title": "TIS-100",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jul 20, 2015",
+    "description": "TIS-100 is an open-ended programming game by Zachtronics, the creators of SpaceChem and Infinifactory, in which you rewrite corrupted code segments to repair the TIS-100 and unlock its secrets. It’s the assembly language programming game you never asked for!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/370360/header.jpg?t=1787697740",
+    "metadataUrl": "https://store.steampowered.com/app/370360/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/370360/",
+    "color": "#55634d",
+    "steamAppId": 370360,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "hypnospace-outlaw",
+    "title": "Hypnospace Outlaw",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Mar 12, 2019",
+    "description": "Greetings Enforcer, and thank you for enlisting in the Hypnospace Patrol Department! As the world falls into its slumber, Hypnospace becomes a bustling global village. These virtual streets aren't going to police themselves!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/844590/header.jpg?t=1755257643",
+    "metadataUrl": "https://store.steampowered.com/app/844590/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/844590/",
+    "color": "#55634d",
+    "steamAppId": 844590,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "sintopia",
+    "title": "Sintopia",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Apr 16, 2026",
+    "description": "Manage Hell. Manipulate the Overworld. Build the resurrection business of your dreams! In Sintopia, you’re tasked with managing the bureaucratic administration of Hell: “re-educate” the sinful, generate profit, play god and expand your hellish empire. All part of a day’s work at Hell Incorporated.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2213700/e0ec26bd058154ce1e7a24e2e0d4ffcc90fe731d/header.jpg?t=1785921001",
+    "metadataUrl": "https://store.steampowered.com/app/2213700/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2213700/",
+    "color": "#55634d",
+    "steamAppId": 2213700,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "kaizen-a-factory-story",
+    "title": "Kaizen: A Factory Story",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jul 14, 2025",
+    "description": "Kaizen is an open-ended puzzle automation game from the original Zachtronics team, set in 1980s Japan. Design, build, and optimize production lines to create iconic products, like calculators, camcorders, and arcade machines.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2275490/7645034021f6c4e58511c314ef2d13c0922baf62/header.jpg?t=1789059851",
+    "metadataUrl": "https://store.steampowered.com/app/2275490/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2275490/",
+    "color": "#55634d",
+    "steamAppId": 2275490,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "pathblasters",
+    "title": "PathBlasters",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "casual"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Apr 11, 2024",
+    "description": "Run, blast, and solve your way to victory! Experience the rush of a colorful, fast-paced chase, solo or against a friend! Burst through the levels and up your score in this retro-inspired arcade setting.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172100/header.jpg?t=1712936236",
+    "metadataUrl": "https://store.steampowered.com/app/1172100/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1172100/",
+    "color": "#55634d",
+    "steamAppId": 1172100,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "panoramical",
+    "title": "PANORAMICAL",
+    "aliases": [],
+    "genre": "game",
+    "genres": [
+      "game"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Sep 17, 2015",
+    "description": "Manipulate the look, sound, and feel of more than a dozen mesmerizing landscapes in this immersive musical adventure through space and time.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/284260/header.jpg?t=1783360312",
+    "metadataUrl": "https://store.steampowered.com/app/284260/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/284260/",
+    "color": "#55634d",
+    "steamAppId": 284260,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "orwell-keeping-an-eye-on-you",
+    "title": "Orwell: Keeping an Eye On You",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Oct 27, 2016",
+    "description": "Big Brother has arrived - and it’s you. Investigate the lives of citizens to find those responsible for a series of terror attacks. Information from the internet, personal communications and private files are all accessible to you. But, be warned, the information you supply will have consequences.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/491950/header.jpg?t=1770913154",
+    "metadataUrl": "https://store.steampowered.com/app/491950/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/491950/",
+    "color": "#55634d",
+    "steamAppId": 491950,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "influencer-solitaire",
+    "title": "Influencer Solitaire",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jun 30, 2026",
+    "description": "Play your cards and dice well to become an influencer! Start as nobody and choose your actions wisely to climb up the influence ladder.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4609800/228ff97566e75fbccfd59cc5e3b870324ca64233/header.jpg?t=1786347483",
+    "metadataUrl": "https://store.steampowered.com/app/4609800/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/4609800/",
+    "color": "#55634d",
+    "steamAppId": 4609800,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "last-call-bbs",
+    "title": "Last Call BBS",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Aug 3, 2022",
+    "description": "Boot up your Z5 Powerlance and dial into Last Call BBS, the last game from Zachtronics! The Barkeep’s loaded up his retro computer with a full set of puzzle games for you to download and play. No need to worry about copy protection, they’re all fully cracked and ready to enjoy!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1511780/header.jpg?t=1787696087",
+    "metadataUrl": "https://store.steampowered.com/app/1511780/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1511780/",
+    "color": "#55634d",
+    "steamAppId": 1511780,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "mhrd",
+    "title": "MHRD",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jan 5, 2017",
+    "description": "MHRD is a hardware design game, in which you design various hardware circuits in a hardware description language. The hardware circuits you design get more complex as you go until you create a fully functional CPU design.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576030/header.jpg?t=1707994633",
+    "metadataUrl": "https://store.steampowered.com/app/576030/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/576030/",
+    "color": "#55634d",
+    "steamAppId": 576030,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "7-billion-humans",
+    "title": "7 Billion Humans",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Aug 23, 2018",
+    "description": "Automate swarms of office workers to solve puzzles inside your very own parallel computer made of people. A thrilling followup to the award winning Human Resource Machine. Now with more humans!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/792100/header.jpg?t=1667105092",
+    "metadataUrl": "https://store.steampowered.com/app/792100/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/792100/",
+    "color": "#55634d",
+    "steamAppId": 792100,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "choice-of-robots",
+    "title": "Choice of Robots",
+    "aliases": [],
+    "genre": "rpg",
+    "genres": [
+      "rpg"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Dec 19, 2014",
+    "description": "Your robots will change the world! Will you show them the true meaning of love, or conquer Alaska with your robot army? A 300,000-word epic interactive sci-fi novel.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/339350/header.jpg?t=1790618829",
+    "metadataUrl": "https://store.steampowered.com/app/339350/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/339350/",
+    "color": "#55634d",
+    "steamAppId": 339350,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "warsim-the-realm-of-aslona",
+    "title": "Warsim: The Realm of Aslona",
+    "aliases": [],
+    "genre": "rpg",
+    "genres": [
+      "rpg",
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Dec 20, 2022",
+    "description": "Warsim is a deep, rich text based kingdom ruling sim unlike anything else, complete with charming ASCII graphics. Navigate the millions of different procedurally generated races, events and areas with a huge emphasis on player choice. Don't let its look fool you, there is depth in every direction.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/659540/header.jpg?t=1748615383",
+    "metadataUrl": "https://store.steampowered.com/app/659540/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/659540/",
+    "color": "#55634d",
+    "steamAppId": 659540,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "road-to-ballhalla",
+    "title": "Road to Ballhalla",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "adventure",
+      "racing"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Aug 5, 2016",
+    "description": "Roll and be trolled on your journey to the legendary place called Ballhalla. Follow the beat to overcome deadly hazards in sync with the music. Style your balls and marble at awful puns in the roll playing game of the year!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/425410/header.jpg?t=1725622618",
+    "metadataUrl": "https://store.steampowered.com/app/425410/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/425410/",
+    "color": "#55634d",
+    "steamAppId": 425410,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "the-secret-of-monkey-island-special-edition",
+    "title": "The Secret of Monkey Island: Special Edition",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Jul 15, 2009",
+    "description": "Back by popular demand, The Secret of Monkey Island™: Special Edition faithfully re-imagines the internationally-acclaimed classic game (originally released in 1990) for original and new audiences alike.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/32360/header.jpg?t=1741729431",
+    "metadataUrl": "https://store.steampowered.com/app/32360/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/32360/",
+    "color": "#55634d",
+    "steamAppId": 32360,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "obduction",
+    "title": "Obduction",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Aug 24, 2016",
+    "description": "A new sci-fi adventure from Cyan, the creators of Myst. Abducted far across the universe, you find yourself on a broken alien landscape with odd pieces of Earth. Explore, uncover, solve, and find a way to make it home.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/306760/header.jpg?t=1787614935",
+    "metadataUrl": "https://store.steampowered.com/app/306760/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/306760/",
+    "color": "#55634d",
+    "steamAppId": 306760,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "shenzhen-i-o",
+    "title": "SHENZHEN I/O",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Nov 17, 2016",
+    "description": "BUILD CIRCUITS. WRITE CODE. RTFM.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504210/header.jpg?t=1787697741",
+    "metadataUrl": "https://store.steampowered.com/app/504210/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/504210/",
+    "color": "#55634d",
+    "steamAppId": 504210,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "dying-breed",
+    "title": "Dying Breed",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Oct 7, 2025",
+    "description": "Golden-age RTS classic. Fast-paced action & strategic decision-making, battling evil arch-enemies, zombies, and retro-futuristic technologies. All to a '90s electro-metal soundtrack and FMV live-action cut scenes.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2088550/header.jpg?t=1789686537",
+    "metadataUrl": "https://store.steampowered.com/app/2088550/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2088550/",
+    "color": "#55634d",
+    "steamAppId": 2088550,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "brothers-a-tale-of-two-sons",
+    "title": "Brothers - A Tale of Two Sons",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "adventure"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Sep 3, 2013",
+    "description": "Guide two brothers on an epic fairy tale journey from visionary Swedish film director, Josef Fares and top-tier developer Starbreeze Studios. Control both brothers at once as you experience co-op play in single player mode, like never before.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/225080/dbfc904916a519d4c0cbea79f898cf33fc231ee1/header.jpg?t=1776415514",
+    "metadataUrl": "https://store.steampowered.com/app/225080/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/225080/",
+    "color": "#55634d",
+    "steamAppId": 225080,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "a-short-hike",
+    "title": "A Short Hike",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jul 30, 2019",
+    "description": "Hike, climb, and soar through the peaceful mountainside landscapes of Hawk Peak Provincial Park as you make your way to the summit.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1055540/header.jpg?t=1777758958",
+    "metadataUrl": "https://store.steampowered.com/app/1055540/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1055540/",
+    "color": "#55634d",
+    "steamAppId": 1055540,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "proteus",
+    "title": "Proteus",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure",
+      "casual"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jan 30, 2013",
+    "description": "Proteus is a game about exploration and immersion in a dream-like island world where the soundtrack to your play is created by your surroundings. Played in first-person, the primary means of interaction is simply your presence in the world and how you observe it.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/219680/header.jpg?t=1447356537",
+    "metadataUrl": "https://store.steampowered.com/app/219680/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/219680/",
+    "color": "#55634d",
+    "steamAppId": 219680,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "oxygen-not-included",
+    "title": "Oxygen Not Included",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jul 30, 2019",
+    "description": "Oxygen Not Included is a space-colony simulation game. Deep inside an alien space rock your industrious crew will need to master science, overcome strange new lifeforms, and harness incredible space tech to survive, and possibly, thrive.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/457140/header.jpg?t=1790785089",
+    "metadataUrl": "https://store.steampowered.com/app/457140/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/457140/",
+    "color": "#55634d",
+    "steamAppId": 457140,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "kingdoms-reborn",
+    "title": "Kingdoms Reborn",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Nov 2, 2020",
+    "description": "A city builder with simulated citizens, set in a procedurally-generated world map. Grow your kingdom through the eras from a tiny medieval hamlet into a prosperous global empire! Cooperate or compete in real-time with your friends in multiplayer mode.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1307890/header.jpg?t=1710049664",
+    "metadataUrl": "https://store.steampowered.com/app/1307890/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/1307890/",
+    "color": "#55634d",
+    "steamAppId": 1307890,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "sid-meier-s-civilization-v",
+    "title": "Sid Meier's Civilization V",
+    "aliases": [
+      "Sid Meier's Civilization® V"
+    ],
+    "genre": "strategy",
+    "genres": [
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Sep 21, 2010",
+    "description": "Create, discover, and download new player-created maps, scenarios, interfaces, and more!",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8930/header.jpg?t=1724341158",
+    "metadataUrl": "https://store.steampowered.com/app/8930/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/8930/",
+    "color": "#55634d",
+    "steamAppId": 8930,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "explicit-url"
+  },
+  {
+    "id": "quake",
+    "title": "Quake",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Aug 3, 2007",
+    "description": "Developed by the award-winning id Software, Quake® is the ground-breaking, original dark fantasy first-person shooter that inspires today’s retro-style FPS games. With Quake (Enhanced), experience the authentic, updated, and visually enhanced version of the original.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2310/433ed70abc2743386b152cded8d7d0cbc6b26a2c/header.jpg?t=1786035741",
+    "metadataUrl": "https://store.steampowered.com/app/2310/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/2310/",
+    "color": "#55634d",
+    "steamAppId": 2310,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "title-context"
+  },
+  {
+    "id": "counter-strike",
+    "title": "Counter-Strike",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Nov 1, 2000",
+    "description": "Play the world's number 1 online action game. Engage in an incredibly realistic brand of terrorist warfare in this wildly popular team-based game. Ally with teammates to complete strategic missions. Take out enemy sites. Rescue hostages. Your role affects your team's success. Your team's success aff",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10/header.jpg?t=1745368572",
+    "metadataUrl": "https://store.steampowered.com/app/10/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/10/",
+    "color": "#55634d",
+    "steamAppId": 10,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "title-context"
+  },
+  {
+    "id": "braid",
+    "title": "Braid",
+    "aliases": [],
+    "genre": "casual",
+    "genres": [
+      "casual",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Apr 10, 2009",
+    "description": "This is the original version of Braid from 2009, which may not work well on newer systems. For an updated version of the game with nicer graphics, more levels and a large amount of developer commentary, see Braid, Anniversary Edition.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/26800/header.jpg?t=1734027955",
+    "metadataUrl": "https://store.steampowered.com/app/26800/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/26800/",
+    "color": "#55634d",
+    "steamAppId": 26800,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "title-context"
+  },
+  {
+    "id": "dota-2",
+    "title": "Dota 2",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action",
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jul 9, 2013",
+    "description": "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has taken on",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1791407503",
+    "metadataUrl": "https://store.steampowered.com/app/570/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/570/",
+    "color": "#55634d",
+    "steamAppId": 570,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "title-context"
+  },
+  {
+    "id": "half-life-2",
+    "title": "Half-Life 2",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "releaseDate": "Nov 16, 2004",
+    "description": "Reawakened from stasis in the occupied metropolis of City 17, Gordon Freeman is joined by Alyx Vance as he leads a desperate human resistance. Experience the landmark first-person shooter packed with immersive world-building, boundary-pushing physics, and exhilarating combat.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/header.jpg?t=1745368545",
+    "metadataUrl": "https://store.steampowered.com/app/220/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/220/",
+    "color": "#55634d",
+    "steamAppId": 220,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "title-context"
+  },
+  {
+    "id": "chrono-trigger",
+    "title": "CHRONO TRIGGER",
+    "aliases": [
+      "CHRONO TRIGGER®"
+    ],
+    "genre": "rpg",
+    "genres": [
+      "rpg"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Feb 27, 2018",
+    "description": "The timeless RPG classic returns loaded with upgrades! Journey to the forgotten past, to the far future, and to the end of time. A big adventure to save the planet, now begins…",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/613830/header.jpg?t=1785246249",
+    "metadataUrl": "https://store.steampowered.com/app/613830/",
+    "metadataAttribution": "Artwork, metadata, and description excerpt: Steam and the respective publisher. Release date refers to the credited Steam edition.",
+    "storeUrl": "https://store.steampowered.com/app/613830/",
+    "color": "#55634d",
+    "steamAppId": 613830,
+    "discoveredFrom": "Local HN archive and broad recommendation-thread discovery; entity approval in data/entity-decisions.json",
+    "discoveryMatchMode": "title-context"
+  },
+  {
+    "id": "tetris",
+    "title": "Tetris",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [
+      "Browser"
+    ],
+    "releaseDate": "",
+    "description": "Arrange falling blocks into complete lines. This listing groups discussion of the classic Tetris game and its versions.",
+    "coverUrl": "",
+    "metadataUrl": "https://play.tetris.com/",
+    "metadataAttribution": "Game identity and browser play link: The Tetris Company official website. Editorial summary; no publisher artwork reproduced. Franchise-level listing.",
+    "storeUrl": "https://tetris.com/",
+    "playUrl": "https://play.tetris.com/",
+    "color": "#52619b",
+    "discoveredFrom": "User-requested title verified against official Tetris site and local archive",
+    "discoveryMatchMode": "title-context"
   }
 ]

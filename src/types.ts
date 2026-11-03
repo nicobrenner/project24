@@ -32,7 +32,7 @@ export interface Game {
   storeUrl?: string;
   color: string;
   mentions: Mention[];
-  keywordMatches: number;
+  keywordMatches: number | null;
   verifiedRecommendations: number;
   discussionCount: number;
   showHN: boolean;

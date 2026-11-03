@@ -1,0 +1,186 @@
+{
+  "scanned": {
+    "comment": 1191935,
+    "story": 293708
+  },
+  "years": {
+    "2007": 76,
+    "2008": 76432,
+    "2009": 79167,
+    "2010": 77750,
+    "2011": 79222,
+    "2012": 77935,
+    "2013": 77727,
+    "2014": 79209,
+    "2015": 79454,
+    "2016": 79573,
+    "2017": 78564,
+    "2018": 79896,
+    "2019": 78900,
+    "2020": 80547,
+    "2021": 78739,
+    "2022": 80133,
+    "2023": 79575,
+    "2024": 79714,
+    "2025": 79739,
+    "2026": 63291
+  },
+  "gamingContextRecords": 16475,
+  "sampling": "User-provided sampled HN corpus. Whole-day/cluster sampling; not exhaustive or i.i.d. No population estimates.",
+  "inputs": [
+    {
+      "name": "comments_sample.jsonl.gz",
+      "bytes": 225925647,
+      "sha256": "bc9f50b6a46f774180e83748eb6bec273fcc8fc49bd434f09ccba203bee40736"
+    },
+    {
+      "name": "story_scores.csv",
+      "bytes": 46190131,
+      "sha256": "7c3b793034d9944ae50a2c3f3ec2c9ccb94da3b10b15b336088df2c1ec4bd2fc"
+    }
+  ],
+  "additionalThreads": [
+    {
+      "id": "30733339",
+      "title": "Show HN: A game that tests how well you know your local area"
+    },
+    {
+      "id": "47640728",
+      "title": "Show HN: A game where you build a GPU"
+    },
+    {
+      "id": "50052251",
+      "title": "Show HN: PS2 games statically recompiled to WebAssembly"
+    },
+    {
+      "id": "34469154",
+      "title": "Ask HN: Great text based games to play?"
+    },
+    {
+      "id": "26719105",
+      "title": "Show HN: DragonRuby Game Toolkit"
+    },
+    {
+      "id": "44204181",
+      "title": "Show HN: AI game animation sprite generator"
+    },
+    {
+      "id": "441156",
+      "title": "Ask HN: playin' the stocks game"
+    },
+    {
+      "id": "40130304",
+      "title": "Show HN: Balancing game for the mobile browser with increasing difficulty"
+    },
+    {
+      "id": "16049026",
+      "title": "Show HN: A game my 12-year-old daughter wrote"
+    },
+    {
+      "id": "6656419",
+      "title": "Show HN: Game where you write Python robots to fight other players"
+    },
+    {
+      "id": "14440050",
+      "title": "Ask HN: Which games are you playing in free time?"
+    },
+    {
+      "id": "29913328",
+      "title": "Ask HN: Which games do you recommend to improve thinking and reasoning?"
+    },
+    {
+      "id": "25246179",
+      "title": "Show HN: I made a Mahjong browser game"
+    },
+    {
+      "id": "26495059",
+      "title": "Show HN: Video Game in a Font"
+    },
+    {
+      "id": "40050388",
+      "title": "Ask HN: What older games are you playing through?"
+    },
+    {
+      "id": "42737778",
+      "title": "Show HN: Interactive game teaching dark patterns in UX design"
+    },
+    {
+      "id": "6749726",
+      "title": "Show HN: A game I've been working on for the last year is out today"
+    },
+    {
+      "id": "8556056",
+      "title": "Show HN: Balls \u2013 Game I\u2019ve made while I was learning Swift"
+    },
+    {
+      "id": "9710878",
+      "title": "Ask HN: My 12 year old nephew wants to make a game, how do I help him?"
+    },
+    {
+      "id": "43027335",
+      "title": "Show HN: Game Bub \u2013 open-source FPGA retro emulation handheld"
+    },
+    {
+      "id": "19776901",
+      "title": "Show HN: A game I made in 48 hours"
+    },
+    {
+      "id": "31296227",
+      "title": "Show HN: I made a browser-based RTS game"
+    },
+    {
+      "id": "25821459",
+      "title": "Show HN: Gamejoy \u2013 hosted Zoom games for remote teams"
+    },
+    {
+      "id": "26825724",
+      "title": "Show HN: The game where you test your offside decision-making skills against VAR"
+    },
+    {
+      "id": "11036789",
+      "title": "Ask HN: How do game companies keep their files organized for a large-scale game?"
+    },
+    {
+      "id": "21874772",
+      "title": "Show HN: Gameslab, a FPGA powered handheld game console"
+    },
+    {
+      "id": "15793156",
+      "title": "Show HN: 3D Game Programming using bitblting in Windows"
+    },
+    {
+      "id": "15242375",
+      "title": "Show HN: GameOfCoins.de \u2013 Virtual Cryptocurrency Trading"
+    },
+    {
+      "id": "40157832",
+      "title": "Ask HN: Has anyone else stopped playing video games as an adult?"
+    },
+    {
+      "id": "30477328",
+      "title": "Ask HN: What are you favourite games?"
+    },
+    {
+      "id": "38458496",
+      "title": "Ask HN: What games could you spend a lifetime playing?"
+    },
+    {
+      "id": "31268588",
+      "title": "Ask HN: What games are you playing?"
+    },
+    {
+      "id": "37438028",
+      "title": "Show HN: Conway's Game of Life in TypeScript's type system"
+    },
+    {
+      "id": "15670355",
+      "title": "Show HN: MoneyGame \u2013 Browser-based business simulation game"
+    },
+    {
+      "id": "34303125",
+      "title": "Ask HN: Video games that will make me smarter and are addictive?"
+    }
+  ],
+  "acceptedNewEntities": 98,
+  "description": "Sampled local HN archive plus whole recommendation threads; no population estimates. Entity discovery and recommendation verification are separate."
+}

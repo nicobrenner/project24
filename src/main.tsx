@@ -27,7 +27,7 @@ const sections = [
   "Show HN Games",
 ] as const;
 type Section = (typeof sections)[number];
-const fmt = (n: number) => n.toLocaleString();
+const fmt = (n: number | null) => n === null ? "—" : n.toLocaleString();
 const date = (value: string) => {
   const d = new Date(value);
   return Number.isNaN(d.valueOf())
@@ -77,6 +77,8 @@ function App() {
       params.get("platform") || "All platforms",
     ),
     [sort, setSort] = useState("recommended");
+  const [visibleGames, setVisibleGames] = useState(48);
+  useEffect(() => setVisibleGames(48), [query, section, genre, platform, sort]);
   useEffect(() => {
     fetch("/data/catalog.json")
       .then((r) => {
@@ -128,7 +130,7 @@ function App() {
       ? `${selected.title} — HackerGames`
       : route === "/about"
         ? "How the index works — HackerGames"
-        : "HackerGames — Games worth your downtime.";
+        : "HackerGames — Games people on HN talk about.";
   }, [selected, route]);
   const genres = [
     ...new Set(games.flatMap((g) => (g.genres?.length ? g.genres : [g.genre]))),
@@ -256,7 +258,7 @@ function App() {
         ) : !catalog ? (
           <div className="loading" role="status">
             <Gamepad2 size={48} />
-            <h1>Finding your next rabbit hole…</h1>
+            <h1>Loading the collection…</h1>
             <p>Loading the HackerGames index.</p>
           </div>
         ) : route === "/about" ? (
@@ -290,13 +292,13 @@ function App() {
                   technical conversation or a criticism is still a discussion.
                 </p>
                 <p>
-                  <strong>Keyword matches</strong> are raw search results before
+                  <strong>Keyword matches</strong> are raw search estimates before
                   game detection. They may contain false positives, duplicates
                   across aliases, and unrelated uses of a name. They are never
-                  treated as recommendations.
+                  treated as recommendations. An em dash means no search estimate is available.
                 </p>
-                <h2>A deliberately bounded archive</h2>
-                <p>{catalog.coverage.description}</p>
+                <h2>A growing, incomplete collection</h2>
+                <p>{catalog.coverage.description}</p><p>The local archive samples whole days, mostly from 2008–2026. Busy days can dominate a sample. It is not a complete history of HN; newer entries also have less recommendation review.</p>
                 <p>
                   Rankings describe this sample, not all of Hacker News.
                   Collection limits, uneven coverage, and a small source-review
@@ -309,8 +311,7 @@ function App() {
                 <h3>Under the hood</h3>
                 <ol>
                   <li>
-                    Collect historical submissions and comments through the HN
-                    Algolia API.
+                    Scan a local archive of 1,191,935 comments and 293,708 submissions, then collect additional discussions through the HN Algolia API.
                   </li>
                   <li>
                     Match known aliases with word boundaries and extra context
@@ -361,7 +362,7 @@ function App() {
           <div className="empty">
             <h1>Game not found.</h1>
             <a href="/" onClick={(e) => internal(e, "/")}>
-              Explore the index →
+              Browse the games →
             </a>
           </div>
         ) : (
@@ -372,26 +373,21 @@ function App() {
                   <span className="tiny-square" /> THE HACKER NEWS GAME INDEX
                 </div>
                 <h1>
-                  Games worth
+                  Games people
                   <br />
-                  your <span>downtime.</span>
+                  on HN <span>talk about.</span>
                   <svg viewBox="0 0 320 18" aria-hidden="true">
                     <path d="M3 12Q150 0 314 8M42 17Q175 8 280 13" />
                   </svg>
                 </h1>
                 <p>
-                  Great games hide in great conversations.
-                  <br />
-                  Find your next obsession in the games
-                  <br className="desktop" /> Hacker News can’t stop talking
-                  about.
+                  An open index of games mentioned and recommended on Hacker News. Browse the games, read the conversations, and see what catches your eye.
                 </p>
                 <a className="primary" href="#catalog">
-                  Find your next game <ArrowRight size={17} />
+                  Browse the games <ArrowRight size={17} />
                 </a>
                 <div className="hero-note">
-                  <span className="hn-square">Y</span> Real conversations. No
-                  paid placements.
+                  <span className="hn-square">Y</span> Collected from HN conversations.
                 </div>
               </div>
               <div className="hero-art" aria-label="Games in the index">
@@ -400,7 +396,7 @@ function App() {
                 <span className="art-cross cross-one">+</span>
                 <span className="art-cross cross-two">+</span>
                 <div className="art-caption">
-                  SIDE QUESTS START HERE <ArrowUpRight size={17} />
+                  FROM THE COLLECTION <ArrowUpRight size={17} />
                 </div>
                 {featured.map((g, i) => (
                   <React.Fragment key={g.id}>
@@ -422,17 +418,16 @@ function App() {
                     <MessageSquare size={19} />
                   </span>
                   <div>
-                    Less scrolling.
+                    Games, stories,
                     <br />
-                    <strong>More playing.</strong>
+                    <strong>and side projects.</strong>
                   </div>
                 </div>
               </div>
             </section>
             <div className="index-strip">
               <div>
-                <span className="live-dot" /> A community’s taste, an open
-                index.
+                <span className="live-dot" /> A small, open-source project
               </div>
               <div>
                 <strong>{games.length}</strong> games{" "}
@@ -447,9 +442,9 @@ function App() {
             <section className="catalog" id="catalog">
               <div className="section-heading">
                 <div>
-                  <div className="eyebrow">YOUR NEXT RABBIT HOLE</div>
+                  <div className="eyebrow">THE COLLECTION</div>
                   <h2>
-                    Explore the index<span>.</span>
+                    Browse games<span>.</span>
                   </h2>
                 </div>
                 <button
@@ -562,7 +557,7 @@ function App() {
                 </label>
               </div>
               <div className="grid">
-                {shown.map((g, i) => (
+                {shown.slice(0, visibleGames).map((g, i) => (
                   <article className="card" key={g.id}>
                     {link(
                       g,
@@ -607,6 +602,7 @@ function App() {
                   </article>
                 ))}
               </div>
+              {shown.length > visibleGames && <button className="random" onClick={() => setVisibleGames(n => n + 48)}>Show more games ({shown.length - visibleGames} remaining)</button>}
               {!shown.length && (
                 <div className="empty">
                   <Search size={30} />
@@ -621,7 +617,7 @@ function App() {
               <div className="catalog-note">
                 <span className="note-icon">i</span>
                 <p>
-                  Quality over quantity. Rankings reflect a collected sample,
+                  Rankings reflect a collected sample,
                   not all of HN. A mention isn’t an endorsement.
                   <br />
                   <a href="/about" onClick={(e) => internal(e, "/about")}>
@@ -635,16 +631,14 @@ function App() {
               <div className="banner-symbol">&gt;_</div>
               <div>
                 <h2>
-                  The best recommendations
-                  <br />
-                  come with a conversation.
+                  Help tend the collection.
                 </h2>
                 <p>
-                  Follow the thread. Discover why a game stayed with someone.
+                  Missing a game? Found a bad match? Suggestions and corrections are welcome.
                 </p>
               </div>
-              <a href="/about" onClick={(e) => internal(e, "/about")}>
-                Behind the index <ArrowUpRight size={18} />
+              <a href="https://github.com/nicobrenner/hackergames/issues" target="_blank" rel="noreferrer">
+                Contribute on GitHub <ArrowUpRight size={18} />
               </a>
             </section>
           </>
@@ -658,7 +652,7 @@ function App() {
         >
           <Gamepad2 size={20} /> HackerGames
         </a>
-        <p>Made for curious minds with time to play.</p>
+        <p>Built from HN conversations. Still growing.</p>
         <a href="/about" onClick={(e) => internal(e, "/about")}>
           Sources & methodology <ArrowUpRight size={13} />
         </a>
@@ -777,7 +771,7 @@ function Detail({
         </div>
         <div>
           <strong>{fmt(g.keywordMatches)}</strong>
-          <span>Raw keyword matches · unverified</span>
+          <span>Raw search estimate · unverified</span>
         </div>
       </div>
       <div className="discussion-layout">
