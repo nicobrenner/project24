@@ -346,7 +346,7 @@ function App() {
             </p>
             <p>
               Future work includes broader historical coverage, review tooling,
-              richer metadata, and a pluggable Jeffy classifier. No exhaustive
+              richer metadata, and a pluggable <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer" style={{ textDecoration: "underline", textUnderlineOffset: "3px" }}>Jeffy classifier</a>. No exhaustive
               archive or automated recommendation verification is claimed.
             </p>
           </section>

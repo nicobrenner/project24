@@ -107,7 +107,7 @@ Metadata describes the credited source edition (for example a Steam release date
 
 - Broader, time-windowed historical backfill: current seed-driven sampling is deliberately bounded and cannot establish all-time HN popularity.
 - More reviewed recommendations and a reviewer interface; multiple independent reviewers and calibrated confidence.
-- Jeffy integration through the classifier boundary, with explicit classifier version and provenance. No Jeffy service is currently wired up.
+- [Jeffy](https://jeffyclassify.com) integration through the classifier boundary, with explicit classifier version and provenance. No Jeffy service is currently wired up.
 - Richer alias catalogs, edition-aware metadata, licensed local artwork, and ongoing source-deletion reconciliation.
 - Automated discovery and editorial approval of new game entities; current game seeds are curated.
 - Frontend automated browser regression tests; current verification includes TypeScript production build, Python tests/data invariants, and manual browser interaction checks.
