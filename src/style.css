@@ -1264,6 +1264,10 @@ footer small {
   .section-heading h2 {
     font-size: 28px;
   }
+  .catalog > .section-heading {
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
   .tabs {
     gap: 20px;
   }
@@ -1351,7 +1355,8 @@ footer small {
     font-size: 43px;
   }
   .detail-stats {
-    gap: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
   }
   .detail-stats span {
     font-size: 9px;
@@ -1362,6 +1367,25 @@ footer small {
   }
   .discussion-layout {
     grid-template-columns: 1fr;
+  }
+  .discussion-layout .section-heading {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+  }
+  .discussion-layout .section-heading .select {
+    width: 100%;
+    max-width: none;
+  }
+  .discussion-layout .section-heading .select select {
+    width: 100%;
+    max-width: none;
+  }
+  .detail-actions {
+    gap: 4px 16px;
+  }
+  .detail-actions .text-link {
+    min-height: 44px;
   }
   .detail-aside {
     order: -1;
@@ -1462,6 +1486,7 @@ footer small {
   .result-line {
     align-items: flex-start;
     gap: 8px;
+    flex-wrap: wrap;
   }
   .result-line > label {
     display: flex;
@@ -1470,6 +1495,30 @@ footer small {
     gap: 5px;
   }
   .detail-stats span {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card-art .cover {
+    height: 165px;
+  }
+  .card-body {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .card h3 {
+    min-height: 0;
+  }
+  .card-body > p {
+    font-size: 11px;
+    height: auto;
+    min-height: 38px;
+  }
+  .card-stats {
     font-size: 9px;
   }
 }
