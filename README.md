@@ -73,7 +73,7 @@ Inspirations: HackerBooks, HackerTube, and Wikihack. [HackerTube’s data page](
 
 **Raw keyword matches** report estimated Algolia search matches before disambiguation. Multiple alias query totals may overlap. They are not recommendation counts and are not used to rank games. A missing estimate is shown as an em dash, not zero.
 
-**Hidden Gems** means at least one reviewed recommendation and at most 10 sampled discussion threads. It is a navigational heuristic, not evidence of low global popularity. **Show HN Games** requires an individually reviewed creator launch, not merely a matching Show HN phrase.
+**Hidden Gems** means at least one reviewed recommendation and at most 10 sampled discussion threads. It is a navigational heuristic, not evidence of low global popularity. **Show HN Games** lists curated creator launch submissions from the supplied sampled archive. A launch post is a mention, not a recommendation or quality endorsement. The reviewed source IDs and repeatable importer are in `data/showhn-decisions.json` and `pipeline/showhn.py`.
 
 The public methodology page explains these limits. Counts describe a bounded sample, not an exhaustive HN archive. Unequal search coverage and source-review selection bias affect rankings. Some games may have no reviewed recommendations despite substantial discussion.
 

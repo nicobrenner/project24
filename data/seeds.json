@@ -18388,5 +18388,702 @@
     "color": "#596d59",
     "discoveredFrom": "Wikidata English-Wikipedia game identity matched against the sampled HN archive; see data/reference-decisions.json",
     "discoveryMatchMode": "exact-title-with-game-context"
+  },
+  {
+    "id": "showhn-40017180",
+    "title": "Mazelit",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://news.ycombinator.com/item?id=40017180",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "40017180"
+  },
+  {
+    "id": "showhn-21136364",
+    "title": "Astro Golf",
+    "aliases": [],
+    "genre": "arcade",
+    "genres": [
+      "arcade"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "http://astro.golf",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "21136364"
+  },
+  {
+    "id": "showhn-50080246",
+    "title": "Wonderhop",
+    "aliases": [],
+    "genre": "party",
+    "genres": [
+      "party"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://wonderhop.io/en/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "50080246"
+  },
+  {
+    "id": "showhn-47873966",
+    "title": "Hisorty",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://hisorty.app/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "47873966"
+  },
+  {
+    "id": "showhn-47321188",
+    "title": "What's My JND?",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.keithcirkel.co.uk/whats-my-jnd/?r=ARUjKP__-ve-",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "47321188"
+  },
+  {
+    "id": "showhn-42903950",
+    "title": "Find the Different Color",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://vidzert.com/find-the-different-color",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "42903950"
+  },
+  {
+    "id": "showhn-50071000",
+    "title": "Vaguely Right",
+    "aliases": [],
+    "genre": "party",
+    "genres": [
+      "party"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://minisani.com/vaguely-right/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "50071000"
+  },
+  {
+    "id": "showhn-48238555",
+    "title": "Mechs.lol",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://mechs.lol",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "48238555"
+  },
+  {
+    "id": "showhn-50071768",
+    "title": "TypetoDefuse",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://littlegamesclub.com/typetodefuse/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "50071768"
+  },
+  {
+    "id": "showhn-43014455",
+    "title": "Detective Stories",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://detective-stories.com/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "43014455"
+  },
+  {
+    "id": "showhn-44386701",
+    "title": "Color Guesser",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://colorguesser.com/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "44386701"
+  },
+  {
+    "id": "showhn-44234936",
+    "title": "Hangin' Man",
+    "aliases": [],
+    "genre": "word",
+    "genres": [
+      "word"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.hanginman.xyz",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "44234936"
+  },
+  {
+    "id": "showhn-47078205",
+    "title": "Getting Warmer",
+    "aliases": [],
+    "genre": "word",
+    "genres": [
+      "word"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://gettingwarmer.io",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "47078205"
+  },
+  {
+    "id": "showhn-47199309",
+    "title": "CranKen",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://geistpro.itch.io/cranken",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "47199309"
+  },
+  {
+    "id": "showhn-31012246",
+    "title": "Let Me Guess",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://letmeguess.phelps.au/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "31012246"
+  },
+  {
+    "id": "showhn-22217128",
+    "title": "VRWorkout",
+    "aliases": [],
+    "genre": "rhythm",
+    "genres": [
+      "rhythm"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "http://www.vrworkout.at",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "22217128"
+  },
+  {
+    "id": "showhn-41171203",
+    "title": "Little Riddle",
+    "aliases": [],
+    "genre": "word",
+    "genres": [
+      "word"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://little-riddle.com",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "41171203"
+  },
+  {
+    "id": "showhn-46321706",
+    "title": "Daily Set Puzzle",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.anniehu.com/set/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "46321706"
+  },
+  {
+    "id": "showhn-45824205",
+    "title": "Quantle",
+    "aliases": [],
+    "genre": "word",
+    "genres": [
+      "word"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.quantle.org",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "45824205"
+  },
+  {
+    "id": "showhn-8521467",
+    "title": "Wobble Wockets",
+    "aliases": [],
+    "genre": "arcade",
+    "genres": [
+      "arcade"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "http://play.wobblewockets.com/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "8521467"
+  },
+  {
+    "id": "showhn-49628812",
+    "title": "Moral.games",
+    "aliases": [],
+    "genre": "party",
+    "genres": [
+      "party"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://moral.games",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "49628812"
+  },
+  {
+    "id": "showhn-19776901",
+    "title": "Timezone",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://joemanaco.itch.io/timezone",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "19776901"
+  },
+  {
+    "id": "showhn-13238331",
+    "title": "RocketBlitz",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://rocketblitz.com/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "13238331"
+  },
+  {
+    "id": "showhn-35701530",
+    "title": "rpgGPT",
+    "aliases": [],
+    "genre": "role-playing",
+    "genres": [
+      "role-playing"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://rpg-gpt.vercel.app",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "35701530"
+  },
+  {
+    "id": "showhn-47197218",
+    "title": "Stacked Game of Life",
+    "aliases": [],
+    "genre": "strategy",
+    "genres": [
+      "strategy"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://stacked-game-of-life.koenvangilst.nl/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "47197218"
+  },
+  {
+    "id": "showhn-47322172",
+    "title": "Sudokrypt",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://leviwanner.itch.io/sudokrypt",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "47322172"
+  },
+  {
+    "id": "showhn-14168323",
+    "title": "NumPop",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://petedeas.co.uk/numpop.html",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "14168323"
+  },
+  {
+    "id": "showhn-43881296",
+    "title": "Startup or Flop",
+    "aliases": [],
+    "genre": "quiz",
+    "genres": [
+      "quiz"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.startuporflop.com/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "43881296"
+  },
+  {
+    "id": "showhn-39493498",
+    "title": "Lander",
+    "aliases": [],
+    "genre": "arcade",
+    "genres": [
+      "arcade"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://lander.gg",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "39493498"
+  },
+  {
+    "id": "showhn-46412796",
+    "title": "Glitch Survival",
+    "aliases": [],
+    "genre": "action",
+    "genres": [
+      "action"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://glitch-survival.replit.app",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "46412796"
+  },
+  {
+    "id": "showhn-46417514",
+    "title": "Matchstick Puzzle Game",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://matchmath.pages.dev/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "46417514"
+  },
+  {
+    "id": "showhn-41063373",
+    "title": "Shuffdle",
+    "aliases": [],
+    "genre": "word",
+    "genres": [
+      "word"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.shuffdle.com",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "41063373"
+  },
+  {
+    "id": "showhn-50059969",
+    "title": "Gaussian Splat Mini-Games",
+    "aliases": [],
+    "genre": "arcade",
+    "genres": [
+      "arcade"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://games.yanisfalaki.com/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "50059969"
+  },
+  {
+    "id": "showhn-35502287",
+    "title": "The Abyss Talks Back",
+    "aliases": [],
+    "genre": "adventure",
+    "genres": [
+      "adventure"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.theabysstalksback.com/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "35502287"
+  },
+  {
+    "id": "showhn-44386132",
+    "title": "Summle",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://summle.net",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "44386132"
+  },
+  {
+    "id": "showhn-47555129",
+    "title": "CodeRacer",
+    "aliases": [],
+    "genre": "word",
+    "genres": [
+      "word"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://coderacer.dev",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "47555129"
+  },
+  {
+    "id": "showhn-48882363",
+    "title": "Hooping.io",
+    "aliases": [],
+    "genre": "arcade",
+    "genres": [
+      "arcade"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.hooping.io/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "48882363"
+  },
+  {
+    "id": "showhn-40740236",
+    "title": "Chronle",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://chronle.com/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "40740236"
+  },
+  {
+    "id": "showhn-50060696",
+    "title": "BellRun",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://bellrun.com/menu/how-to-play",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "50060696"
+  },
+  {
+    "id": "showhn-49488507",
+    "title": "AI Rush",
+    "aliases": [],
+    "genre": "party",
+    "genres": [
+      "party"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://ai-rush.lol/",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "49488507"
+  },
+  {
+    "id": "showhn-48884949",
+    "title": "Tenclicker",
+    "aliases": [],
+    "genre": "idle",
+    "genres": [
+      "idle"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://tenclicker.com",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "48884949"
   }
 ]

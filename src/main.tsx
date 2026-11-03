@@ -548,7 +548,7 @@ function App() {
                   {section === "Hidden Gems"
                     ? " · Reviewed picks in ≤10 sampled threads"
                     : section === "Show HN Games"
-                      ? " · Reviewed original game submissions"
+                      ? " · Curated creator launch posts · not recommendations"
                       : ""}
                 </span>
                 <label>
@@ -910,7 +910,7 @@ function Detail({
           </a>
           {g.showHN && (
             <p className="showhn-note">
-              <Terminal size={16} /> Original Show HN game submission verified
+              <Terminal size={16} /> Curated Show HN game launch post
               against the source.
             </p>
           )}

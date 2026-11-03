@@ -15,6 +15,7 @@ export interface Mention {
     | "technical";
   confidence: number;
   provenance: string;
+  showHNSubmission?: boolean;
   theme?: {label: string; name: string; confidence: number; model: string};
 }
 export interface Game {
@@ -38,6 +39,7 @@ export interface Game {
   verifiedRecommendations: number;
   discussionCount: number;
   showHN: boolean;
+  showHNSourceId?: string;
 }
 export interface Catalog {
   generatedAt: string;
