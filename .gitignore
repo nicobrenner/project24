@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tsbuildinfo
+__pycache__/
+*.pyc
+*.sqlite*
+.env*
+!.env.example
+.wrangler/
+.DS_Store
+data/cache/
+data/metadata-cache/

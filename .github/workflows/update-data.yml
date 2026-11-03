@@ -1,0 +1,36 @@
+name: Update HN evidence
+on:
+  schedule:
+    - cron: "17 13 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: catalog-update
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: python3 -m pipeline.ingest collect --incremental --pages 5
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Commit verified export
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/snapshot.json public/data/catalog.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: update collected HN evidence'
+            git push
+          fi

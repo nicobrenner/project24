@@ -1,0 +1,535 @@
+[
+  {
+    "id": "factorio",
+    "title": "Factorio",
+    "aliases": [],
+    "genre": "automation",
+    "genres": [
+      "automation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Aug 14, 2020",
+    "description": "Build intricate production lines, automate everything, and defend an expanding factory.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427520/ab9a2df0a77caebde20dc45adc021de8cdcf7cc5/header.jpg?t=1792752343",
+    "metadataUrl": "https://store.steampowered.com/app/427520/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/427520/",
+    "color": "#b58a43",
+    "steamAppId": 427520
+  },
+  {
+    "id": "dwarf-fortress",
+    "title": "Dwarf Fortress",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "releaseDate": "Dec 6, 2022",
+    "description": "Guide a dwarven settlement through a richly simulated world of unexpected stories.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/975370/34e18f5695fffd64458b78110930abc5258ccd14/header.jpg?t=1788524920",
+    "metadataUrl": "https://store.steampowered.com/app/975370/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/975370/",
+    "color": "#607b59",
+    "steamAppId": 975370
+  },
+  {
+    "id": "minecraft",
+    "title": "Minecraft",
+    "aliases": [],
+    "genre": "sandbox",
+    "genres": [
+      "sandbox"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "Explore a block-built world, gather resources, and create almost anything.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.minecraft.net/",
+    "metadataAttribution": "Official game website; summary by HackerGames.",
+    "storeUrl": "https://www.minecraft.net/",
+    "color": "#6e9e66",
+    "steamAppId": null
+  },
+  {
+    "id": "rimworld",
+    "title": "RimWorld",
+    "aliases": [
+      "Rimworld"
+    ],
+    "genre": "strategy",
+    "genres": [
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Oct 17, 2018",
+    "description": "Manage a space colony where unpredictable people and events generate emergent stories.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/294100/76e0613b8197327299d5dbabb0a7fd7828a689a2/header.jpg?t=1782756789",
+    "metadataUrl": "https://store.steampowered.com/app/294100/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/294100/",
+    "color": "#936a69",
+    "steamAppId": 294100
+  },
+  {
+    "id": "baba-is-you",
+    "title": "Baba Is You",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Mar 13, 2019",
+    "description": "Rewrite the rules of each puzzle by pushing words around its world.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/736260/header.jpg?t=1760102539",
+    "metadataUrl": "https://store.steampowered.com/app/736260/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/736260/",
+    "color": "#8c85c5",
+    "steamAppId": 736260
+  },
+  {
+    "id": "celeste",
+    "title": "Celeste",
+    "aliases": [],
+    "genre": "platformer",
+    "genres": [
+      "platformer"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jan 25, 2018",
+    "description": "Climb a mountain through precise platforming challenges and a story about perseverance.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525",
+    "metadataUrl": "https://store.steampowered.com/app/504230/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/504230/",
+    "color": "#7a98be",
+    "steamAppId": 504230
+  },
+  {
+    "id": "outer-wilds",
+    "title": "Outer Wilds",
+    "aliases": [],
+    "genre": "exploration",
+    "genres": [
+      "exploration"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Jun 18, 2020",
+    "description": "Investigate a handcrafted solar system trapped in a mysterious time loop.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/753640/079ae4a7ff4b5875adc5c63c4c0b84e5a3e6966b/header.jpg?t=1785424341",
+    "metadataUrl": "https://store.steampowered.com/app/753640/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/753640/",
+    "color": "#c98560",
+    "steamAppId": 753640
+  },
+  {
+    "id": "slay-the-spire",
+    "title": "Slay the Spire",
+    "aliases": [],
+    "genre": "roguelike",
+    "genres": [
+      "roguelike"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Jan 23, 2019",
+    "description": "Build a deck of cards while climbing through tactical battles and risky choices.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/header.jpg?t=1774015376",
+    "metadataUrl": "https://store.steampowered.com/app/646570/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/646570/",
+    "color": "#b06a7c",
+    "steamAppId": 646570
+  },
+  {
+    "id": "disco-elysium",
+    "title": "Disco Elysium",
+    "aliases": [],
+    "genre": "rpg",
+    "genres": [
+      "rpg"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Oct 15, 2019",
+    "description": "Solve a murder through conversations, conflicting inner voices, and consequential choices.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632470/816ea59d6d8ac525f79a07c3a7afa94eddb3437c/header.jpg?t=1780913406",
+    "metadataUrl": "https://store.steampowered.com/app/632470/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/632470/",
+    "color": "#9a719a",
+    "steamAppId": 632470
+  },
+  {
+    "id": "kerbal-space-program",
+    "title": "Kerbal Space Program",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Apr 27, 2015",
+    "description": "Design spacecraft and learn orbital mechanics through spectacular trial and error.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220200/header.jpg?t=1738037585",
+    "metadataUrl": "https://store.steampowered.com/app/220200/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/220200/",
+    "color": "#6d9eb4",
+    "steamAppId": 220200
+  },
+  {
+    "id": "hollow-knight",
+    "title": "Hollow Knight",
+    "aliases": [],
+    "genre": "metroidvania",
+    "genres": [
+      "metroidvania"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Feb 24, 2017",
+    "description": "Explore an interconnected underground kingdom with demanding combat and quiet mysteries.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/3c3489495136b26b34f8a9543c7f5645b99d388c/header.jpg?t=1776125684",
+    "metadataUrl": "https://store.steampowered.com/app/367520/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/367520/",
+    "color": "#7886a6",
+    "steamAppId": 367520
+  },
+  {
+    "id": "into-the-breach",
+    "title": "Into the Breach",
+    "aliases": [],
+    "genre": "strategy",
+    "genres": [
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Feb 27, 2018",
+    "description": "Defend cities in compact tactical battles where the next enemy move is visible.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/590380/header.jpg?t=1755610784",
+    "metadataUrl": "https://store.steampowered.com/app/590380/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/590380/",
+    "color": "#738d81",
+    "steamAppId": 590380
+  },
+  {
+    "id": "stardew-valley",
+    "title": "Stardew Valley",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Feb 26, 2016",
+    "description": "Restore a farm, meet a small town, and settle into a life of your own making.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1786554168",
+    "metadataUrl": "https://store.steampowered.com/app/413150/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/413150/",
+    "color": "#8ca86e",
+    "steamAppId": 413150
+  },
+  {
+    "id": "the-witness",
+    "title": "The Witness",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Jan 26, 2016",
+    "description": "Explore an island of interconnected visual puzzles and learn its language by observation.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/210970/header.jpg?t=1720810823",
+    "metadataUrl": "https://store.steampowered.com/app/210970/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/210970/",
+    "color": "#d0a26b",
+    "steamAppId": 210970
+  },
+  {
+    "id": "ftl-faster-than-light",
+    "title": "FTL: Faster Than Light",
+    "aliases": [
+      "FTL",
+      "Faster Than Light"
+    ],
+    "genre": "strategy",
+    "genres": [
+      "strategy"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Sep 14, 2012",
+    "description": "Keep a starship and its crew alive through tactical encounters across a hostile galaxy.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/212680/f21426ac9ad51338fa33becce88984758e07c38b/header.jpg?t=1748969356",
+    "metadataUrl": "https://store.steampowered.com/app/212680/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/212680/",
+    "color": "#758eb5",
+    "steamAppId": 212680
+  },
+  {
+    "id": "portal",
+    "title": "Portal",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "releaseDate": "Oct 10, 2007",
+    "description": "Solve spatial puzzles with two connected portals inside an unsettling research facility.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/header.jpg?t=1745368554",
+    "metadataUrl": "https://store.steampowered.com/app/400/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/400/",
+    "color": "#81a6ae",
+    "steamAppId": 400
+  },
+  {
+    "id": "noita",
+    "title": "Noita",
+    "aliases": [],
+    "genre": "roguelike",
+    "genres": [
+      "roguelike"
+    ],
+    "platforms": [
+      "Windows"
+    ],
+    "releaseDate": "Oct 15, 2020",
+    "description": "Experiment with spells in a dangerous world where every pixel participates in a simulation.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/881100/header.jpg?t=1675987871",
+    "metadataUrl": "https://store.steampowered.com/app/881100/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/881100/",
+    "color": "#9a7e52",
+    "steamAppId": 881100
+  },
+  {
+    "id": "opus-magnum",
+    "title": "Opus Magnum",
+    "aliases": [],
+    "genre": "puzzle",
+    "genres": [
+      "puzzle"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "releaseDate": "Dec 7, 2017",
+    "description": "Construct mechanical alchemy machines and refine their elegant repeating motions.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/558990/6d8aa1ce08dd0c0e711e0eb068d9d9af6fdb3317/header.jpg?t=1774910584",
+    "metadataUrl": "https://store.steampowered.com/app/558990/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/558990/",
+    "color": "#b18c5d",
+    "steamAppId": 558990
+  },
+  {
+    "id": "nethack",
+    "title": "NetHack",
+    "aliases": [
+      "Nethack"
+    ],
+    "genre": "roguelike",
+    "genres": [
+      "roguelike"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "Navigate a deep, unpredictable dungeon in a classic turn-based roguelike.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.nethack.org/",
+    "metadataAttribution": "Official game website; summary by HackerGames.",
+    "storeUrl": "https://www.nethack.org/",
+    "color": "#8b8e91",
+    "steamAppId": null
+  },
+  {
+    "id": "return-of-the-obra-dinn",
+    "title": "Return of the Obra Dinn",
+    "aliases": [],
+    "genre": "mystery",
+    "genres": [
+      "mystery"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ],
+    "releaseDate": "Oct 18, 2018",
+    "description": "Deduce the fates of a vanished ship\u2019s crew using frozen scenes of their final moments.",
+    "coverUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/653530/header.jpg?t=1686697594",
+    "metadataUrl": "https://store.steampowered.com/app/653530/",
+    "metadataAttribution": "Cover artwork and platform/release metadata: Steam and the respective publisher. Summary: HackerGames editorial.",
+    "storeUrl": "https://store.steampowered.com/app/653530/",
+    "color": "#7e9e91",
+    "steamAppId": 653530
+  },
+  {
+    "id": "a-dark-room",
+    "title": "A Dark Room",
+    "aliases": [],
+    "genre": "browser",
+    "genres": [
+      "browser"
+    ],
+    "platforms": [
+      "Browser"
+    ],
+    "releaseDate": "",
+    "description": "A minimalist text adventure that grows from tending a fire into something much larger.",
+    "coverUrl": null,
+    "metadataUrl": "https://adarkroom.doublespeakgames.com/",
+    "metadataAttribution": "Official game website; summary by HackerGames.",
+    "storeUrl": "https://adarkroom.doublespeakgames.com/",
+    "color": "#b58a43",
+    "steamAppId": null,
+    "playUrl": "https://adarkroom.doublespeakgames.com/"
+  },
+  {
+    "id": "universal-paperclips",
+    "title": "Universal Paperclips",
+    "aliases": [],
+    "genre": "browser",
+    "genres": [
+      "browser"
+    ],
+    "platforms": [
+      "Browser"
+    ],
+    "releaseDate": "",
+    "description": "Turn a humble paperclip operation into an escalating experiment in automated growth.",
+    "coverUrl": null,
+    "metadataUrl": "https://www.decisionproblem.com/paperclips/",
+    "metadataAttribution": "Official game website; summary by HackerGames.",
+    "storeUrl": "https://www.decisionproblem.com/paperclips/",
+    "color": "#607b59",
+    "steamAppId": null,
+    "playUrl": "https://www.decisionproblem.com/paperclips/"
+  },
+  {
+    "id": "2048",
+    "title": "2048",
+    "aliases": [],
+    "genre": "browser",
+    "genres": [
+      "browser"
+    ],
+    "platforms": [
+      "Browser"
+    ],
+    "releaseDate": "",
+    "description": "Slide and combine numbered tiles in a compact mathematical puzzle.",
+    "coverUrl": null,
+    "metadataUrl": "https://play2048.co/",
+    "metadataAttribution": "Official game website; summary by HackerGames.",
+    "storeUrl": "https://play2048.co/",
+    "color": "#6e9e66",
+    "steamAppId": null,
+    "playUrl": "https://play2048.co/"
+  },
+  {
+    "id": "hexgl",
+    "title": "HexGL",
+    "aliases": [],
+    "genre": "browser",
+    "genres": [
+      "browser"
+    ],
+    "platforms": [
+      "Browser"
+    ],
+    "releaseDate": "",
+    "description": "Race a futuristic craft around a fast, WebGL-powered track.",
+    "coverUrl": null,
+    "metadataUrl": "https://hexgl.bkcore.com/play/",
+    "metadataAttribution": "Official game website; summary by HackerGames.",
+    "storeUrl": "https://hexgl.bkcore.com/play/",
+    "color": "#936a69",
+    "steamAppId": null,
+    "playUrl": "https://hexgl.bkcore.com/play/"
+  },
+  {
+    "id": "looptap",
+    "title": "Looptap",
+    "aliases": [],
+    "genre": "arcade",
+    "genres": [
+      "arcade"
+    ],
+    "platforms": [
+      "Browser"
+    ],
+    "releaseDate": "",
+    "description": "Time each tap to keep a moving dot inside an ever-changing target. A historical Show HN game; its original hosting is currently unavailable.",
+    "coverUrl": null,
+    "metadataUrl": "https://news.ycombinator.com/item?id=29921419",
+    "metadataAttribution": "Historical creator submission on Hacker News (2022); current official game hosting unavailable at collection time. No artwork supplied.",
+    "color": "#97bca6",
+    "steamAppId": null
+  }
+]

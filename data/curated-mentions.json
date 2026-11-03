@@ -1,0 +1,30 @@
+[
+  {
+    "gameId": "looptap",
+    "id": "29922249",
+    "url": "https://news.ycombinator.com/item?id=29922249",
+    "author": "johnmorrison",
+    "date": "2022-01-13T16:07:21.000Z",
+    "text": "I love it, accurate description",
+    "kind": "comment",
+    "storyTitle": "Show HN: Looptap \u2013 A minimal game to waste your time",
+    "storyUrl": "https://news.ycombinator.com/item?id=29921419",
+    "classification": "candidate",
+    "confidence": 0.95,
+    "provenance": "curated-thread-v1; direct child of original creator Show HN launch 29921419; entity resolved from parent story, not keywords"
+  },
+  {
+    "gameId": "looptap",
+    "id": "29922815",
+    "url": "https://news.ycombinator.com/item?id=29922815",
+    "author": "kpmcc",
+    "date": "2022-01-13T16:37:58.000Z",
+    "text": "Good game, clever concept, appreciate the simplicity.",
+    "kind": "comment",
+    "storyTitle": "Show HN: Looptap \u2013 A minimal game to waste your time",
+    "storyUrl": "https://news.ycombinator.com/item?id=29921419",
+    "classification": "candidate",
+    "confidence": 0.95,
+    "provenance": "curated-thread-v1; direct child of original creator Show HN launch 29921419; entity resolved from parent story, not keywords"
+  }
+]

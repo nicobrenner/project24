@@ -1,0 +1,399 @@
+[
+  {
+    "gameId": "factorio",
+    "id": "9876140",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Factorio (a great game for the HN audience)",
+    "reason": "Explicit positive game endorsement aimed at the HN audience.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "dwarf-fortress",
+    "id": "8930275",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Dwarf Fortress is amazing. It's quite possibly my favorite game of all time.",
+    "reason": "Direct personal endorsement; criticism of simulation limits does not negate praise.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "dwarf-fortress",
+    "id": "8993243",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I also recommend checking out Dwarf Fortress.",
+    "reason": "Explicit recommendation of the named game.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "minecraft",
+    "id": "9994760",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I love Minecraft so much.",
+    "reason": "Direct endorsement with specific praise of exploration.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "minecraft",
+    "id": "9831470",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "It's a blast",
+    "reason": "First-person account of enjoying Minecraft with family.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "rimworld",
+    "id": "49392804",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Many of the best games - Rimworld",
+    "reason": "Names RimWorld among the best games while praising design.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "baba-is-you",
+    "id": "46807264",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Baba is You is literally a sokoban for software engineers, highly recommended.",
+    "reason": "Explicit recommendation; difficulty caveat retained.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "baba-is-you",
+    "id": "44576852",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "would also recommend baba is you",
+    "reason": "Explicit recommendation and praise for puzzle satisfaction.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "celeste",
+    "id": "45179303",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I see a mention of Celeste, I give an upvote. What a great game",
+    "reason": "Direct endorsement with praise of movement.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "celeste",
+    "id": "45174905",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "a lot of my favorite games have it - Doom, Hades, Ori, Celeste",
+    "reason": "Named among personal favorites.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "outer-wilds",
+    "id": "46821549",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Outer Wilds was exactly that for me.",
+    "reason": "Calls Outer Wilds a new all-time favorite.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "outer-wilds",
+    "id": "49064816",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Strongly recommend Outer Wilds.",
+    "reason": "Explicit recommendation of the game.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "slay-the-spire",
+    "id": "47766977",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "many games I love do rely heavily on them (like, say, Slay the Spire",
+    "reason": "Direct personal endorsement within a game-design discussion.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "disco-elysium",
+    "id": "43952260",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I cannot recommend it enough.",
+    "reason": "Explicit recommendation following specific praise of Disco Elysium.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "kerbal-space-program",
+    "id": "9296853",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Kerbal Space Program is one of my favourite.",
+    "reason": "Direct personal favorite.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "kerbal-space-program",
+    "id": "8242860",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I strongly recommend kerbal space program.",
+    "reason": "Explicit recommendation to understand orbital mechanics.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "kerbal-space-program",
+    "id": "8883215",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "highly recommended if you're interested at all in spaceflight, orbital mechanics or rocketry",
+    "reason": "Explicit game recommendation with intended audience.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "hollow-knight",
+    "id": "49700890",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I just played through Hollow Knight for the first time and man, what a great experience.",
+    "reason": "First-person endorsement after completing the game.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "hollow-knight",
+    "id": "48805459",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Hollow Knight",
+    "reason": "Explicit list of indie games readers are encouraged to play.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "into-the-breach",
+    "id": "36065137",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I can recommend Into the Breach.",
+    "reason": "Explicit recommendation with touchscreen usability detail.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "into-the-breach",
+    "id": "39149599",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I'd at least recommend trying Into the Breach",
+    "reason": "Explicit recommendation despite distribution caveat.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "into-the-breach",
+    "id": "32899017",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I can recommend Into The Breach",
+    "reason": "Explicit recommendation and praise of replayability.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "stardew-valley",
+    "id": "48293257",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "The first play-through without spoilers and without knowing what I was getting into was magical.",
+    "reason": "First-person endorsement of Stardew Valley and replay value.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "stardew-valley",
+    "id": "48805459",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Stardew Valley",
+    "reason": "Explicit list of indie games readers are encouraged to play.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "ftl-faster-than-light",
+    "id": "5321385",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "The best (IMHO) recent roguelike is FTL: Faster Than Light.",
+    "reason": "Direct endorsement with explanation of gameplay.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "ftl-faster-than-light",
+    "id": "34199122",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Released in 2012, still fun to play.",
+    "reason": "First-person continuing endorsement of FTL.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "noita",
+    "id": "38389785",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Really recommend it!",
+    "reason": "Explicit recommendation following a detailed Noita description.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "noita",
+    "id": "47827452",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "My favorite games (Factorio, Noita, Song of Syx to name a few)",
+    "reason": "Named among personal favorites; technical context does not negate endorsement.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "opus-magnum",
+    "id": "40176413",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Opus Magnum is my favorite by a large margin.",
+    "reason": "Direct personal favorite.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "opus-magnum",
+    "id": "25091499",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "another great game here is Opus Magnum.",
+    "reason": "Direct positive endorsement.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "opus-magnum",
+    "id": "41628396",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "All Zachtronics games are a strong recommend",
+    "reason": "Explicit recommendation, with Opus Magnum named as an entry point.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "nethack",
+    "id": "8993243",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "love NetHack, consider it one of the masterpieces of game design",
+    "reason": "Direct personal endorsement of NetHack.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "nethack",
+    "id": "8431993",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Nethack is a favorite of mine",
+    "reason": "Direct personal favorite.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "return-of-the-obra-dinn",
+    "id": "43943005",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "the masterpiece that is Return of the Obra Dinn.",
+    "reason": "Direct positive endorsement.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "return-of-the-obra-dinn",
+    "id": "38994139",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Return of the Obra Dinn is also an amazing game",
+    "reason": "Direct positive endorsement.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "return-of-the-obra-dinn",
+    "id": "35625873",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "play Return of the Obra Dinn.",
+    "reason": "Explicit recommendation to play the game.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "a-dark-room",
+    "id": "8145989",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I have to recommend A Dark Room:",
+    "reason": "Explicit recommendation with the official browser URL.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "a-dark-room",
+    "id": "7892060",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "This is a great game (the web version, at least)",
+    "reason": "Direct endorsement of the browser game, with market surprise caveat.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "universal-paperclips",
+    "id": "42622627",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Universal Paperclips is still my favourite, and I replay it often.",
+    "reason": "Direct personal favorite and repeated play.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "universal-paperclips",
+    "id": "42279505",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Universal Paperclips was my favorite piece of art",
+    "reason": "Direct endorsement of the game as an artistic experience.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "2048",
+    "id": "9543617",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "while I love 2048",
+    "reason": "Direct positive endorsement of 2048, contrasted with criticism of a different game.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-02"
+  },
+  {
+    "gameId": "looptap",
+    "id": "29922249",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I love it, accurate description",
+    "reason": "Positive endorsement in a direct reply to the original Looptap creator launch; parent subject resolves the game.",
+    "provenance": "manual-review-v1; Codex source-text and parent-thread review; 2026-11-02"
+  },
+  {
+    "gameId": "looptap",
+    "id": "29922815",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Good game, clever concept, appreciate the simplicity.",
+    "reason": "Positive endorsement in a direct reply to the original Looptap creator launch; parent subject resolves the game.",
+    "provenance": "manual-review-v1; Codex source-text and parent-thread review; 2026-11-02"
+  },
+  {
+    "gameId": "looptap",
+    "id": "29921419",
+    "classification": "mention",
+    "confidence": 0.99,
+    "excerpt": "Show HN: Looptap \u2013 A minimal game to waste your time",
+    "reason": "Creator vasanthv submitted original Looptap launch, with original game URL matching creator identity.",
+    "provenance": "manual-review-v1; Codex original launch review; 2026-11-02",
+    "showHNLaunch": true
+  }
+]
