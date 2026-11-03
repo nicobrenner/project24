@@ -17,6 +17,7 @@ export interface Mention {
   provenance: string;
   showHNSubmission?: boolean;
   theme?: {label: string; name: string; confidence: number; model: string};
+  sentiment?: {label: "positive" | "negative" | "mixed" | "unclear"; name: string; model: string; provenance: string};
 }
 export interface Game {
   id: string;
@@ -40,6 +41,7 @@ export interface Game {
   discussionCount: number;
   showHN: boolean;
   showHNSourceId?: string;
+  sentimentSummary?: {label: "positive" | "negative" | "mixed" | "unclear"; evidenceCount: number};
 }
 export interface Catalog {
   generatedAt: string;

@@ -60,6 +60,27 @@ function Cover({ game, className = "" }: { game: Game; className?: string }) {
     </div>
   );
 }
+function SentimentIndicator({
+  label,
+  evidenceCount,
+  detail = false,
+  compact = false,
+}: {
+  label: "positive" | "negative" | "mixed" | "unclear";
+  evidenceCount?: number;
+  detail?: boolean;
+  compact?: boolean;
+}) {
+  const name = detail
+    ? { positive: "Positive tone", negative: "Critical tone", mixed: "Mixed tone", unclear: "No clear signal" }[label]
+    : { positive: "Positive signals", negative: "Critical signals", mixed: "Mixed reactions", unclear: "No clear signal" }[label];
+  const count = evidenceCount === undefined ? "" : ` · ${evidenceCount} excerpt${evidenceCount === 1 ? "" : "s"}`;
+  return (
+    <span className={`sentiment-indicator ${label}${compact ? " compact" : ""}`} aria-label={`${name}${count}`} title={`Experimental sample tone${count}; phrase-cue heuristic, not calibrated.`}>
+      <i aria-hidden="true" />{compact ? null : <>{name}{count}</>}
+    </span>
+  );
+}
 function App() {
   const [catalog, setCatalog] = useState<Catalog | null>(null),
     [error, setError] = useState("");
@@ -298,8 +319,8 @@ function App() {
                   across aliases, and unrelated uses of a name. They are never
                   treated as recommendations. An em dash means no search estimate is available.
                 </p>
-                <h2>Conversation themes, with Jeffy</h2>
-                <p>A custom <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">Jeffy</a> classifier suggests topics such as puzzles, nostalgia, and technical craft. It runs locally on source excerpts; no visitor data is sent to a model service. This experiment was trained on 85 synthetic teaching examples. A small Codex-labeled diagnostic agreed with 15 of 24 top labels; it is not independent human evaluation or an accuracy estimate. It does not establish recommendation status or game features. Low-confidence and general predictions are hidden, and new evidence may not have a prediction yet.</p>
+                <h2>Conversation themes and tone</h2>
+                <p>A custom <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">Jeffy</a> classifier suggests topics such as puzzles, nostalgia, and technical craft. It does not classify sentiment. The small dots use explicit phrase cues to mark positive, critical, or mixed tone; they abstain when the text has no clear signal. This heuristic is uncalibrated and may miss sarcasm or refer to the surrounding discussion rather than the game. It is separate from reviewed recommendations and is not a measure of community consensus. A sentiment-specific Jeffy head needs labeled evaluation data before we can trust it enough to replace these limited cues.</p>
                 <h2>A growing, incomplete collection</h2>
                 <p>{catalog.coverage.description}</p><p>The local archive samples whole days, mostly from 2008–2026. Busy days can dominate a sample. It is not a complete history of HN; newer entries also have less recommendation review.</p>
                 <p>
@@ -591,7 +612,7 @@ function App() {
                             <span>·</span>
                             {g.releaseDate?.match(/\d{4}/)?.[0] || "—"}
                           </div>
-                          <h3>{g.title}</h3>
+                          <h3 className="card-title-line">{g.title}<SentimentIndicator label={g.sentimentSummary?.label || "unclear"} evidenceCount={g.sentimentSummary?.evidenceCount || 0} compact /></h3>
                           <p>{g.description}</p>
                           <div className="card-stats">
                             <span title="Recommendation comments individually source-reviewed by Codex">
@@ -731,7 +752,10 @@ function Detail({
           <div className="eyebrow">
             {g.genre} · {g.releaseDate}
           </div>
-          <h1>{g.title}</h1>
+          <div className="game-title-line">
+            <h1>{g.title}</h1>
+            <SentimentIndicator label={g.sentimentSummary?.label || "unclear"} evidenceCount={g.sentimentSummary?.evidenceCount || 0} />
+          </div>
           <p className="lede">{g.description}</p>
           <div className="platforms">
             {g.platforms.map((p) => (
@@ -758,6 +782,12 @@ function Detail({
                 Visit game website <ArrowUpRight size={17} />
               </a>
             ) : null}
+            <a
+              className="text-link conversation-jump"
+              href="#conversations"
+            >
+              Related HN conversations ↓
+            </a>
             <a
               className="text-link"
               href={g.metadataUrl}
@@ -799,7 +829,7 @@ function Detail({
       </section>
       <div className="discussion-layout">
         <div>
-          <div className="section-heading">
+          <div className="section-heading" id="conversations">
             <h2>
               From the conversations<span>.</span>
             </h2>
@@ -840,6 +870,7 @@ function Detail({
                       ? "Unreviewed candidate"
                       : m.classification}
                 </span>
+                <SentimentIndicator label={m.sentiment?.label || "unclear"} detail />
                 <time>{date(m.date)}</time>
               </div>
               {m.theme && <div className="theme-label">{m.theme.name} <span>· Jeffy suggestion</span></div>}
@@ -859,6 +890,7 @@ function Detail({
                   {m.provenance} · Confidence: {Math.round(m.confidence * 100)}%
                   (uncalibrated assessment)
                 </p>
+                {m.sentiment && <p>Sentiment signal: {m.sentiment.name}. {m.sentiment.provenance} Classifier: {m.sentiment.model}; confidence is uncalibrated and does not establish consensus.</p>}
                 {m.theme && <p>Conversation theme: {m.theme.name}. Jeffy custom head {m.theme.model}, confidence {Math.round(m.theme.confidence * 100)}% (uncalibrated). Trained on synthetic teaching examples. This describes the excerpt and may concern another game in the same comment; it is not a reviewed endorsement.</p>}
                 {m.storyUrl && (
                   <a href={m.storyUrl} target="_blank" rel="noreferrer">
