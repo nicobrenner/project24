@@ -822,7 +822,7 @@ footer small {
   gap: 20px;
   flex-wrap: wrap;
 }
-.conversation-jump-button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:44px; margin:0 0 8px; padding:9px 13px; border-radius:5px; background:#e66540; color:#fff; font-size:12px; font-weight:650; text-decoration:none; transition:background .2s,transform .2s; }
+.conversation-jump-button { display:flex; width:fit-content; align-items:center; justify-content:center; gap:9px; min-height:44px; margin:0 0 8px; padding:9px 13px; border-radius:5px; background:#e66540; color:#fff; font-size:12px; font-weight:650; text-decoration:none; transition:background .2s,transform .2s; }
 .conversation-jump-button:hover { background:#d45431; transform:translateY(-1px); }
 .text-link {
   font-size: 11px;
@@ -1606,3 +1606,14 @@ body { overflow-x: hidden; }
   .spotlight-note { order:5; flex-basis:100%; max-width:none; text-align:left; margin:2px 0 0; }
 }
 @media (prefers-reduced-motion: reduce) { .spotlight-visual { scroll-behavior:auto; } .procedural-orbit { animation:none; } }
+
+@media (max-width:760px) {
+  .detail .game-title-line { align-items:flex-start; gap:4px 8px; }
+  .detail .game-title-line h1 { font-size:clamp(34px,9vw,43px); line-height:1.05; }
+  .detail .game-title-line .sentiment-indicator { font-size:9px; padding:4px 7px; }
+  .detail .game-title-line .sentiment-indicator i { width:7px; height:7px; }
+  .detail .conversation-jump-button { margin-top:10px; margin-bottom:2px; }
+  .detail .lede { margin:10px 0 12px; line-height:1.6; }
+  .detail .platforms { margin:12px 0 10px; }
+  .detail .detail-stats { margin:24px 0 30px; padding:17px 0; }
+}
