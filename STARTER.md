@@ -1,4 +1,4 @@
-# HackerGames
+# PROJECT 24
 
 A starter discovery site for video games discussed on Hacker News.
 
@@ -9,9 +9,9 @@ npm install
 npm run dev
 ```
 
-## Deploy to Cloudflare Pages
+## Deploy
 
-Push this repository to GitHub. In Cloudflare Pages, connect the repository. Use build command `npm run build` and output directory `dist`. Each push to `main` deploys automatically.
+Pushes to `main` publish to GitHub Pages through the **Deploy to GitHub Pages** workflow. See the root README.
 
 ## Data caveats
 

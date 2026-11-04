@@ -1,6 +1,6 @@
 # Launch handoff
 
-The project is ready for Cloudflare Pages. Its runtime is a static build; no API credentials are exposed to visitors.
+The runtime is a static build; no API credentials are exposed to visitors.
 
 ## Completed validation
 
@@ -17,15 +17,12 @@ The expansion was checked for search and source-page rendering, with a 48-card i
 
 PROJECT 24 contains 818 game identities and 5,009 HN source records from the sampled archive and earlier searches. It has 43 endorsements individually source-reviewed by Codex; the newly discovered identity matches are mentions only. The review assessments carry provenance but are not independent human verification. This is a bounded sample, not all-time HN popularity. One verified historical Show HN game (Looptap) is included; its original hosting was unavailable, so no play link is offered.
 
-## Hosting setup still required
+## Hosting
 
-No Cloudflare API token or Wrangler OAuth configuration was available in the execution environment, so no public `pages.dev` deployment is claimed.
-
-1. In Cloudflare Pages, connect `nicobrenner/hackergames` from GitHub.
-2. Select branch `main`, build `npm run build`, output `dist`, Node `22`.
-3. Deploy and use the free `pages.dev` URL Cloudflare returns.
-
-For CLI/direct upload and optional GitHub deployment secrets, see the root README. The daily data-update workflow requires GitHub Actions to be enabled and repository contents-write permission; it preserves reviewed endorsements and does not automatically verify new ones.
+The site is published by the **Deploy to GitHub Pages** workflow on every push to `main`,
+at `https://nicobrenner.github.io/project24/`. The daily data-update workflow requires
+GitHub Actions to be enabled and contents-write permission; it preserves reviewed
+endorsements and does not automatically verify new ones.
 
 ## Remaining work
 

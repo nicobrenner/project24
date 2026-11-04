@@ -132,7 +132,7 @@ def collect(pages,incremental):
  if pages<1:raise ValueError('--pages must be positive')
  old=read(ROOT/'data/snapshot.json')
  # Fresh temporary cache prevents stale page/query results contaminating a new run.
- with tempfile.TemporaryDirectory(prefix='hackergames-') as folder:
+ with tempfile.TemporaryDirectory(prefix='project24-') as folder:
   cache=Path(folder)
   for g in read(ROOT/'data/seeds.json'):
    for kind in ['comment','story']:

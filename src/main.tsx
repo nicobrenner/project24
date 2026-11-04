@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   ArrowUpRight,
@@ -18,6 +18,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import type { Catalog, Game, Mention } from "./types";
+import { listenForOutboundClicks, trackPageView } from "./analytics";
 import "./style.css";
 const sections = [
   "All games",
@@ -220,6 +221,18 @@ function App() {
         ? "How the index works — PROJECT 24"
         : "PROJECT 24 — Games people on HN talk about.";
   }, [selected, route]);
+  useEffect(listenForOutboundClicks, []);
+  // Declared after the document.title effect so the page view carries the new title,
+  // and keyed on the route alone so the filters, which only replaceState, do not
+  // count as navigation. On /game/<id> it waits for the catalog, otherwise the title
+  // is still the generic one. The ref also absorbs StrictMode's double effect in dev.
+  const trackedRoute = useRef("");
+  useEffect(() => {
+    if (route.startsWith("/game/") && !catalog) return;
+    if (trackedRoute.current === route) return;
+    trackedRoute.current = route;
+    trackPageView();
+  }, [route, catalog, selected]);
   const collectionGames = games.filter(g => (g.medium || "video") === medium);
   const genres = [
     ...new Set(collectionGames.flatMap((g) => (g.genres?.length ? g.genres : [g.genre]))),

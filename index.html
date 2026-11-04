@@ -10,6 +10,51 @@
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>PROJECT 24 — Games people on HN talk about.</title>
+    <!-- Absolute URLs, because crawlers do not resolve relative ones reliably and the
+         app is served from a sub-path. scripts/generate-pages-routes.mjs rewrites the
+         title, the description and these tags per route, so a shared /game/<id> link
+         previews that game rather than the home page. -->
+    <link rel="canonical" href="https://nicobrenner.github.io/project24/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PROJECT 24" />
+    <meta property="og:url" content="https://nicobrenner.github.io/project24/" />
+    <meta property="og:title" content="PROJECT 24 — Games people on HN talk about." />
+    <meta
+      property="og:description"
+      content="An open index of games discussed and recommended on Hacker News, with links to the original conversations."
+    />
+    <meta property="og:image" content="https://nicobrenner.github.io/project24/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="PROJECT 24 — Games people on HN talk about. 859 games, 5,050 excerpts, 2,818 HN threads."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PROJECT 24 — Games people on HN talk about." />
+    <meta
+      name="twitter:description"
+      content="An open index of games discussed and recommended on Hacker News, with links to the original conversations."
+    />
+    <meta name="twitter:image" content="https://nicobrenner.github.io/project24/og.png" />
+    <!-- GA4. The config lives in public/analytics-bootstrap.js rather than inline, so
+         the Content-Security-Policy in public/_headers needs no 'unsafe-inline'. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXL0V8163H"></script>
+    <script src="/analytics-bootstrap.js"></script>
+    <!-- Umami -->
+    <script
+      defer
+      src="https://stats.jeffyclassify.com/script.js"
+      data-website-id="3d9aac34-2403-40fb-b10b-9f119072fccf"
+      data-tag="project24"
+      data-auto-track="false"
+    ></script>
+    <script
+      defer
+      src="https://stats.jeffyclassify.com/recorder.js"
+      data-website-id="3d9aac34-2403-40fb-b10b-9f119072fccf"
+      data-tag="project24"
+    ></script>
   </head>
   <body>
     <div id="root"></div>

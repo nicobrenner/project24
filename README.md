@@ -53,7 +53,7 @@ python3 -m pipeline.ingest metadata
 
 Read `pipeline/README.md` for schema, provenance, review procedure, rate limiting, and classifier extension details. `data/seeds.json`, `data/snapshot.json`, and `data/reviews.json` are versioned inputs. SQLite is derived and ignored. The initial checked-in snapshot can always be exported offline; re-fetching external APIs can change results.
 
-The **Update HN evidence** GitHub Action runs daily or manually. It collects new evidence, runs the tests and production build, then commits the snapshot and export. It does not create new reviewed recommendations. Give GitHub Actions contents-write permission (the workflow requests only that); disable the schedule if you prefer manual updates. Existing reviews remain explicit versioned records. Cloudflare Git integration handles site deployments independently.
+The **Update HN evidence** GitHub Action runs daily or manually. It collects new evidence, runs the tests and production build, then commits the snapshot and export. It does not create new reviewed recommendations. Give GitHub Actions contents-write permission (the workflow requests only that); disable the schedule if you prefer manual updates. Existing reviews remain explicit versioned records.
 
 ## Expanded archive discovery
 
@@ -81,36 +81,28 @@ Inspirations: HackerBooks, HackerTube, and Wikihack. [HackerTube’s data page](
 
 The public methodology page explains these limits. Counts describe a bounded sample, not an exhaustive HN archive. Unequal search coverage and source-review selection bias affect rankings. Some games may have no reviewed recommendations despite substantial discussion.
 
-## Cloudflare Pages
+## Deploying
 
-### Recommended: Git integration
+The site publishes to `https://nicobrenner.github.io/project24/`. The **Deploy to GitHub
+Pages** workflow builds with the repository subpath, generates a direct HTML entry point
+per game so detail links survive a refresh, and publishes on pushes to `main`. To enable
+it once, open **Settings → Pages** and choose **GitHub Actions** as the source. A custom
+domain can be connected there later.
 
-1. Push this repository to your personal GitHub account as `project24`.
-2. In Cloudflare, open **Workers & Pages → Create application → Pages → Connect to Git** and select the repository.
-3. Use production branch `main`, build command `npm run build`, output directory `dist`, and Node.js version `22`.
-4. Deploy. Cloudflare assigns a free `*.pages.dev` URL; the exact name depends on availability. Future commits deploy through the Git integration.
-
-The included `_redirects` supports direct game-detail routes. `_headers` adds a restrictive security policy. There is no server, database binding, paid service, or secret required at runtime. Build does not fetch HN or Steam.
-
-### Alternative: direct upload / GitHub Actions
+`scripts/generate-pages-routes.mjs` writes the canonical URL and the per-page Open Graph
+tags, so it needs to know where the site is served from. It reads `SITE_URL` and falls
+back to the GitHub Pages address. Any other host only has to set that one variable for
+its pages to canonicalise to themselves:
 
 ```sh
-npm ci
-npm run build
-npx wrangler login
-npx wrangler pages project create hackergames --production-branch main
-npx wrangler pages deploy dist --project-name hackergames --branch main
+SITE_URL=https://example.com node scripts/generate-pages-routes.mjs
 ```
 
-For the manual **Deploy to Cloudflare Pages** workflow, add repository secrets `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` (Cloudflare Pages Edit access for your account), and create the Pages project first. The workflow is manual so credentials are optional and a fresh checkout does not trigger a failing deployment. If the project name is taken, update the workflow command to your chosen name.
-
-Choose either Git integration or direct upload when creating the Cloudflare project. Refer to [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/) for account-specific UI and hosting limitations.
-
-## GitHub Pages (`github.io`)
-
-This repository publishes free to `https://nicobrenner.github.io/project24/`. The **Deploy to GitHub Pages** workflow builds the app with the repository subpath, generates direct HTML entry points for each game so detail links work on refresh, and publishes on pushes to `main`. To enable it once, open the repository’s **Settings → Pages** and choose **GitHub Actions** as the build and deployment source. The workflow then handles later updates. A custom domain can be connected in Pages settings if desired.
-
-GitHub Pages is the simplest choice if you want the `github.io` URL and static hosting. Cloudflare Pages is already supported and gives a free `*.pages.dev` address with Git integration. Both serve the same static app and need no runtime secrets; Cloudflare remains the repository’s documented default.
+The build is static, needs no runtime secret, and fetches neither HN nor Steam. The
+included `_redirects` and `_headers` are for hosts that honour them (Cloudflare Pages,
+Netlify); GitHub Pages ignores both and uses the generated `404.html` as its SPA
+fallback. If you serve the site from a host that does honour `_headers`, note that its
+Content-Security-Policy has to allow the analytics hosts, which it does.
 
 ## GitHub publication
 

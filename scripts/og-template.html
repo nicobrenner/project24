@@ -1,0 +1,117 @@
+<!--
+  Source for public/og.png, the 1200x630 link preview. It is a plain page so it can be
+  re-rendered with any headless browser, which is why it is not part of `npm run build`:
+
+    chromium --headless --window-size=1200,630 --screenshot=public/og.png \
+             --hide-scrollbars scripts/og-template.html
+
+  The counts in the footer are a snapshot of catalog.json and drift as the catalogue
+  grows. Refresh them here and re-render when they are noticeably stale.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;750&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: #f6f4ee;
+    color: #242923;
+    font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow: hidden;
+  }
+  /* the faint grid from the spotlight panel, at very low contrast */
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(109,119,100,.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(109,119,100,.07) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .glow {
+    position: absolute; right: -120px; top: -140px;
+    width: 620px; height: 620px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(236,98,59,.16), rgba(236,98,59,0) 68%);
+  }
+  .frame {
+    position: relative; height: 100%;
+    padding: 62px 72px 54px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .brand { display: flex; align-items: center; font-size: 40px; font-weight: 750; letter-spacing: -1.6px; }
+  .brand-icon {
+    width: 64px; height: 64px; display: grid; place-items: center;
+    background: #ec623b; color: #fff; border-radius: 16px; margin-right: 19px;
+  }
+  .brand .muted { color: #8c9186; }
+  .eyebrow {
+    font: 600 17px/1.6 "IBM Plex Mono", monospace;
+    letter-spacing: 2.8px; color: #68735e; text-transform: uppercase;
+    display: flex; align-items: center; gap: 14px; margin-bottom: 22px;
+  }
+  .tiny-square { width: 10px; height: 10px; background: #ec623b; }
+  h1 {
+    font-size: 86px; font-weight: 750; letter-spacing: -3.4px; line-height: 1.02;
+    max-width: 940px;
+  }
+  h1 .dot { color: #ec623b; }
+  .titles {
+    margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; max-width: 1010px;
+    max-height: 48px; overflow: hidden;
+  }
+  .titles span {
+    font: 500 17px/1 "IBM Plex Mono", monospace;
+    color: #62685b; background: #eceee5; border: 1px solid #dcdfd3;
+    border-radius: 999px; padding: 10px 15px;
+  }
+  footer {
+    border-top: 1px solid #d9ddcf; padding-top: 22px;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font: 600 18px/1 "IBM Plex Mono", monospace; letter-spacing: 1.4px;
+    color: #68735e; text-transform: uppercase;
+  }
+  footer .url { color: #242923; letter-spacing: .6px; text-transform: none; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <div class="frame">
+    <div class="brand">
+      <span class="brand-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="6" x2="10" y1="11" y2="11"/>
+          <line x1="8" x2="8" y1="9" y2="13"/>
+          <line x1="15" x2="15.01" y1="12" y2="12"/>
+          <line x1="18" x2="18.01" y1="10" y2="10"/>
+          <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/>
+        </svg>
+      </span>
+      PROJECT<span class="muted">24</span>
+    </div>
+
+    <div>
+      <div class="eyebrow"><span class="tiny-square"></span> From HN conversations</div>
+      <h1>Games people on HN talk about<span class="dot">.</span></h1>
+      <div class="titles">
+        <span>Minecraft</span><span>Dwarf Fortress</span><span>Factorio</span>
+        <span>Stardew Valley</span><span>RimWorld</span><span>Kerbal Space Program</span>
+        <span>Universal Paperclips</span><span>NetHack</span><span>Disco Elysium</span>
+        <span>Opus Magnum</span><span>Into the Breach</span>
+      </div>
+    </div>
+
+    <footer>
+      <span>859 games · 5,050 excerpts · 2,818 HN threads</span>
+      <span class="url">nicobrenner.github.io/project24</span>
+    </footer>
+  </div>
+</body>
+</html>
