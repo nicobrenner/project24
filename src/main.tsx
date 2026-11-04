@@ -895,14 +895,16 @@ function Detail({
           <span>Raw search estimate · unverified</span>
         </div>
       </div>
-      <section className="outside-links" aria-label="Videos and reviews elsewhere">
+      <section className="outside-links" aria-label="Videos, streams, communities, and reviews elsewhere">
         <div>
           <span className="eyebrow">FROM AROUND THE WEB</span>
           <h2>Watch a little. Read around.</h2>
-          <p>These links open searches on other sites. PROJECT 24 does not endorse or reproduce their videos, reviews, or ratings.</p>
+          <p>These links open searches on other sites. PROJECT 24 does not endorse or reproduce their videos, streams, community posts, reviews, or ratings.</p>
         </div>
         <div className="outside-link-list">
           <a href={`https://www.youtube.com/results?search_query=${encodeURIComponent(`${g.title} gameplay trailer`)}`} target="_blank" rel="noreferrer">YouTube videos <ArrowUpRight size={15} /></a>
+          <a href={`https://www.twitch.tv/search?term=${encodeURIComponent(g.title)}`} target="_blank" rel="noreferrer">Find Twitch streams <ArrowUpRight size={15} /></a>
+          <a href={`https://www.reddit.com/search/?q=${encodeURIComponent(g.title)}&type=sr`} target="_blank" rel="noreferrer">Find Reddit communities <ArrowUpRight size={15} /></a>
           <a href={`https://www.google.com/search?q=${encodeURIComponent(`site:metacritic.com/game ${g.title} reviews`)}`} target="_blank" rel="noreferrer">Find Metacritic reviews <ArrowUpRight size={15} /></a>
           <a href={`https://www.google.com/search?q=${encodeURIComponent(`site:opencritic.com ${g.title} reviews`)}`} target="_blank" rel="noreferrer">Find OpenCritic reviews <ArrowUpRight size={15} /></a>
           <a href={`https://www.imdb.com/find/?q=${encodeURIComponent(g.title)}`} target="_blank" rel="noreferrer">Look up on IMDb <ArrowUpRight size={15} /></a>

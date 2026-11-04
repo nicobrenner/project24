@@ -29,6 +29,7 @@ npm run preview
 - Historical HN comments and submissions, archive-based entity discovery, normalized aliases, and guarded matching for ambiguous titles.
 - 818 game identities, including 695 added from the title-reference pass; 5,009 source records with exact HN links. The wider pass contributes mentions only and does not increase reviewed recommendation counts.
 - Links from game pages to YouTube gameplay/trailer searches and external review searches (Metacritic, OpenCritic, IMDb, and Steam where available). No third-party ratings or video claims are copied into the catalog.
+- Links from game pages to Twitch stream searches and Reddit community searches; live-player embeds are not included.
 - Individual Codex source review separated from machine candidates, casual mentions, criticism, and technical discussion.
 - An experimental, locally run Jeffy topic classifier has suggestions for 114 of 3,964 distinct excerpts. Its 24-example Codex-labeled diagnostic matched 15 top labels; this is not independent human evaluation or a claim of model accuracy.
 - Metadata attribution, publisher artwork loaded from credited sources, image fallback, and official play links for browser games.
