@@ -522,7 +522,7 @@ function App() {
                   <div className="spotlight-shade" />
                   <div className="spotlight-content">
                     <div className="spotlight-game-line">{link(activeSpotlight.game, <>{activeSpotlight.game.title} <ArrowUpRight size={17}/></>, "spotlight-game")}
-                      <SentimentIndicator label={activeSpotlight.mention.sentiment?.label || "unclear"} />
+                      {activeSpotlight.game.sentimentSummary && activeSpotlight.game.sentimentSummary.label !== "unclear" && <SentimentIndicator label={activeSpotlight.game.sentimentSummary.label} evidenceCount={activeSpotlight.game.sentimentSummary.evidenceCount} href={`/?sentiment=${activeSpotlight.game.sentimentSummary.label}#catalog`} onClick={e => openSentiment(e, activeSpotlight.game.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
                     </div>
                     <blockquote>“{activeSpotlight.mention.text}”</blockquote>
                     {activeSpotlight.mention.theme && <a className="spotlight-topic" href={`/?theme=${encodeURIComponent(activeSpotlight.mention.theme.label)}#catalog`} onClick={e => openTheme(e, activeSpotlight.mention.theme!.label)} aria-label={`Show games tagged ${activeSpotlight.mention.theme.name}`}>Jeffy topic · {activeSpotlight.mention.theme.name} <ArrowUpRight size={12}/></a>}
