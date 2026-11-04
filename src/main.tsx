@@ -37,8 +37,40 @@ const date = (value: string) => {
         year: "numeric",
       });
 };
-function Cover({ game, className = "" }: { game: Game; className?: string }) {
+function ProceduralArtwork({ game }: { game: Game }) {
+  const seed = Array.from(game.id).reduce((value, char) => (value * 33 + char.charCodeAt(0)) >>> 0, 5381);
+  const palettes = [
+    ["#172b2a", "#e8754e", "#c9d59b"], ["#29233b", "#e1a84b", "#a8d6d2"],
+    ["#173442", "#f07b58", "#e0d69a"], ["#30231f", "#a9ca7d", "#e8a769"],
+    ["#252a40", "#d66f8e", "#8ad0c1"],
+  ];
+  const [base, accent, light] = palettes[seed % palettes.length];
+  const id = game.id.replace(/[^a-z0-9-]/gi, "");
+  return <div className="procedural-art" aria-label={`Generated artwork for ${game.title}`}>
+    <svg viewBox="0 0 1200 560" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id={`art-bg-${id}`} x1="0" y1="0" x2="1" y2="1"><stop stopColor={base}/><stop offset="1" stopColor="#101914"/></linearGradient>
+        <radialGradient id={`art-glow-${id}`}><stop stopColor={accent} stopOpacity=".86"/><stop offset="1" stopColor={accent} stopOpacity="0"/></radialGradient>
+        <pattern id={`art-grid-${id}`} width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke={light} strokeOpacity=".13" strokeWidth="1"/></pattern>
+      </defs>
+      <rect width="1200" height="560" fill={`url(#art-bg-${id})`}/>
+      <rect width="1200" height="560" fill={`url(#art-grid-${id})`}/>
+      <circle cx={250 + seed % 600} cy={190 + seed % 160} r="340" fill={`url(#art-glow-${id})`}/>
+      <g className="procedural-orbit" fill="none" stroke={light} strokeOpacity=".48">
+        <ellipse cx="790" cy="280" rx="360" ry="148" strokeWidth="2" transform={`rotate(${seed % 50 - 25} 790 280)`}/>
+        <ellipse cx="790" cy="280" rx="250" ry="205" strokeWidth="1.5" transform={`rotate(${-seed % 45} 790 280)`}/>
+        <circle cx="790" cy="280" r="92" strokeWidth="2"/>
+      </g>
+      <path d="M0 430 Q270 300 500 420 T1000 385 T1400 440 V560 H0Z" fill={base} fillOpacity=".7"/>
+      <path d="M0 476 Q300 365 600 478 T1200 440 V560 H0Z" fill={accent} fillOpacity=".28"/>
+      <g fill={light} fillOpacity=".82"><circle cx="170" cy="120" r="4"/><circle cx="1020" cy="110" r="5"/><circle cx="970" cy="430" r="3"/><circle cx="450" cy="180" r="3"/></g>
+    </svg>
+    <div className="procedural-art-label"><small>PROJECT 24 · {game.genre || "GAME"}</small><strong>{game.title}</strong></div>
+  </div>;
+}
+function Cover({ game, className = "", fallbackVariant }: { game: Game; className?: string; fallbackVariant?: "procedural" }) {
   const [failed, setFailed] = useState(false);
+  useEffect(() => setFailed(false), [game.id, game.coverUrl]);
   return (
     <div
       className={`cover ${className}`}
@@ -51,7 +83,7 @@ function Cover({ game, className = "" }: { game: Game; className?: string }) {
           loading="lazy"
           onError={() => setFailed(true)}
         />
-      ) : (
+      ) : fallbackVariant === "procedural" ? <ProceduralArtwork game={game} /> : (
         <div className="cover-fallback">
           <Gamepad2 size={42} />
           <span>{game.title}</span>
@@ -155,6 +187,9 @@ function App() {
     history.replaceState({}, "", `/${p.size ? "?" + p : ""}${location.hash}`);
   }, [query, section, genre, platform, route, theme]);
   const games = catalog?.games || [];
+  const spotlightTopics = useMemo(() => [...new Map(games.flatMap(game => game.mentions
+    .filter(mention => mention.kind === "comment" && mention.theme && mention.text.trim().length >= 55 && mention.text.toLowerCase().includes(game.title.toLowerCase()))
+    .map(mention => [mention.theme!.label, mention.theme!.name] as const))).entries()].sort((a,b) => a[1].localeCompare(b[1])), [games]);
   const selected = route.startsWith("/game/")
     ? games.find((g) => g.id === decodeURIComponent(route.slice(6)))
     : null;
@@ -209,9 +244,27 @@ function App() {
       .map(mention => ({game, mention, direct: mention.text.toLowerCase().includes(game.title.toLowerCase())}))
       .filter(item => item.direct));
     const seen = new Set<string>();
-    return items.sort((a, b) => Number(b.direct) - Number(a.direct) || (b.mention.theme?.confidence || 0) - (a.mention.theme?.confidence || 0) || b.mention.text.length - a.mention.text.length)
-      .filter(item => { if (seen.has(item.mention.id)) return false; seen.add(item.mention.id); return true; })
-      .slice(0, 24);
+    const candidates = items.sort((a, b) => (b.mention.theme?.confidence || 0) - (a.mention.theme?.confidence || 0) || a.mention.id.localeCompare(b.mention.id))
+      .filter(item => { if (seen.has(item.mention.id)) return false; seen.add(item.mention.id); return true; });
+    const labels = [...new Set(candidates.map(item => item.mention.theme!.label))].sort();
+    const selected: typeof candidates = [];
+    const selectedIds = new Set<string>();
+    const selectedGames = new Set<string>();
+    // First round gives each topic and game a turn; later rounds fill the remaining slots.
+    for (const label of labels) {
+      const item = candidates.find(candidate => candidate.mention.theme?.label === label && !selectedGames.has(candidate.game.id));
+      if (item) { selected.push(item); selectedIds.add(item.mention.id); selectedGames.add(item.game.id); }
+    }
+    while (selected.length < 24) {
+      let added = false;
+      for (const label of labels) {
+        if (selected.length >= 24) break;
+        const item = candidates.find(candidate => candidate.mention.theme?.label === label && !selectedIds.has(candidate.mention.id));
+        if (item) { selected.push(item); selectedIds.add(item.mention.id); added = true; }
+      }
+      if (!added) break;
+    }
+    return selected;
   }, [games, theme]);
   const activeSpotlight = spotlightItems.length ? spotlightItems[spotlightIndex % spotlightItems.length] : undefined;
   useEffect(() => { setSpotlightIndex(0); }, [theme]);
@@ -422,14 +475,17 @@ function App() {
                   <span className="spotlight-select-wrap">
                     <select aria-label="Conversation theme" value={theme} onChange={e => setTheme(e.target.value)}>
                       <option value="all">All conversations</option>
-                      {[...new Map(games.flatMap(g => (g.themes || []).map(t => [t.label, t.name] as const))).entries()].sort((a,b) => a[1].localeCompare(b[1])).map(([value,name]) => <option key={value} value={value}>{name}</option>)}
+                      {spotlightTopics.map(([value,name]) => <option key={value} value={value}>{name}</option>)}
                     </select>
                     <ChevronDown aria-hidden="true" size={17} />
                   </span>
                 </label>
               </div>
               {activeSpotlight ? <article className="spotlight-card" aria-live="polite">
-                <div className="spotlight-visual"><Cover game={activeSpotlight.game} className="spotlight-cover" /><div className="spotlight-shade" />
+                <div className={`spotlight-visual${activeSpotlight.game.coverUrl ? " has-cover" : " generated-cover"}`}>
+                  {activeSpotlight.game.coverUrl && <div className="spotlight-backdrop" aria-hidden="true" style={{backgroundImage: `url(${JSON.stringify(activeSpotlight.game.coverUrl)})`}} />}
+                  <Cover game={activeSpotlight.game} className="spotlight-cover" fallbackVariant="procedural" />
+                  <div className="spotlight-shade" />
                   <div className="spotlight-content">
                     <div className="spotlight-game-line">{link(activeSpotlight.game, <>{activeSpotlight.game.title} <ArrowUpRight size={17}/></>, "spotlight-game")}
                       <SentimentIndicator label={activeSpotlight.mention.sentiment?.label || "unclear"} />
@@ -444,7 +500,7 @@ function App() {
                   <span>{String(spotlightIndex + 1).padStart(2,"0")} <i>/</i> {String(spotlightItems.length).padStart(2,"0")}</span>
                   <button aria-label="Next conversation" onClick={() => setSpotlightIndex(index => (index + 1) % spotlightItems.length)}><ArrowRight size={17}/></button>
                   <button className="spotlight-play" aria-label={spotlightPlaying ? "Pause automatic rotation" : "Resume automatic rotation"} onClick={() => setSpotlightPlaying(value => !value)}>{spotlightPlaying ? "Pause" : "Play"}</button>
-                  <span className="spotlight-note">Tone is an experimental excerpt-level signal; Jeffy suggests a conversation topic.</span>
+                  <span className="spotlight-note">Fixed, varied sample for this catalog snapshot; the theme menu filters it. Tone is experimental.</span>
                 </div>
               </article> : <div className="spotlight-empty">No matching excerpts in this theme yet. Try another conversation theme.</div>}
             </section>
