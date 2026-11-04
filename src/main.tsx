@@ -487,6 +487,7 @@ function App() {
             link={link}
             onBack={(e) => internal(e, "/")}
             onSentimentClick={openSentiment}
+            onThemeClick={openTheme}
             games={games}
           />
         ) : route !== "/" ? (
@@ -664,9 +665,7 @@ function App() {
               <div className="grid">
                 {shown.slice(0, visibleGames).map((g, i) => (
                   <article className="card" key={g.id}>
-                    {link(
-                      g,
-                      <>
+                    <a className="card-link" href={`/game/${g.id}`} onClick={e => internal(e, `/game/${g.id}`)}>
                         <div className="card-art">
                           <Cover game={g} />
                           <span className="rank">
@@ -681,13 +680,17 @@ function App() {
                             <ArrowUpRight size={22} />
                           </span>
                         </div>
+                    </a>
                         <div className="card-body">
                           <div className="game-meta">
                             {g.genre}
                             <span>·</span>
                             {g.releaseDate?.match(/\d{4}/)?.[0] || "—"}
                           </div>
-                          <h3 className="card-title-line">{g.title}<SentimentIndicator label={g.sentimentSummary?.label || "unclear"} evidenceCount={g.sentimentSummary?.evidenceCount || 0} compact /></h3>
+                          <div className="card-title-line">
+                            <h3><a className="card-title-link" href={`/game/${g.id}`} onClick={e => internal(e, `/game/${g.id}`)}>{g.title}</a></h3>
+                            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} compact href={`/?sentiment=${g.sentimentSummary.label}#catalog`} onClick={e => openSentiment(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
+                          </div>
                           <p>{g.description}</p>
                           <div className="card-stats">
                             <span title="Recommendation comments individually source-reviewed by Codex">
@@ -701,9 +704,6 @@ function App() {
                             </span>
                           </div>
                         </div>
-                      </>,
-                      "card-link",
-                    )}
                   </article>
                 ))}
               </div>
@@ -795,12 +795,14 @@ function Detail({
   game: g,
   onBack,
   onSentimentClick,
+  onThemeClick,
   link,
   games,
 }: {
   game: Game;
   onBack: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   onSentimentClick: (e: React.MouseEvent<HTMLAnchorElement>, label: "positive" | "negative" | "mixed") => void;
+  onThemeClick: (e: React.MouseEvent<HTMLAnchorElement>, label: string) => void;
   link: (g: Game, c: React.ReactNode, cls?: string) => React.ReactNode;
   games: Game[];
 }) {
@@ -965,7 +967,7 @@ function Detail({
                   (uncalibrated assessment)
                 </p>
                 {m.sentiment && <p>Sentiment signal: {m.sentiment.name}. {m.sentiment.provenance} Classifier: {m.sentiment.model}; confidence is uncalibrated and does not establish consensus.</p>}
-                {m.theme && <p>Conversation theme: {m.theme.name}. Jeffy custom head {m.theme.model}, confidence {Math.round(m.theme.confidence * 100)}% (uncalibrated). Trained on synthetic teaching examples. This describes the excerpt and may concern another game in the same comment; it is not a reviewed endorsement.</p>}
+                {m.theme && <p>Jeffy conversation topic: <a href={`/?theme=${encodeURIComponent(m.theme.label)}#catalog`} onClick={e => onThemeClick(e, m.theme!.label)}>{m.theme.name}</a> · <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">About Jeffy</a>. Custom head {m.theme.model}, confidence {Math.round(m.theme.confidence * 100)}% (uncalibrated), trained on synthetic teaching examples. This describes the excerpt and may concern another game in the same comment; it is not a reviewed endorsement.</p>}
                 {m.storyUrl && (
                   <a href={m.storyUrl} target="_blank" rel="noreferrer">
                     {m.storyTitle || "Parent discussion"} ↗
