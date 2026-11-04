@@ -509,7 +509,7 @@ function App() {
               <div className="spotlight-heading">
                 <div>
                   <div className="eyebrow"><span className="tiny-square" /> FROM HN CONVERSATIONS</div>
-                  <h1 id="spotlight-title">What are people talking about?</h1>
+                  <h1 id="spotlight-title">What games is HN talking about?</h1>
                 </div>
                 <label className="spotlight-filter">Conversation theme
                   <span className="spotlight-select-wrap">
