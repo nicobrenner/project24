@@ -22,6 +22,7 @@ export interface Mention {
 export interface Game {
   id: string;
   title: string;
+  medium: "video" | "tabletop";
   aliases: string[];
   genre: string;
   genres: string[];

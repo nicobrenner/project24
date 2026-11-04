@@ -30,8 +30,20 @@ class DatasetTests(unittest.TestCase):
     self.assertNotIn('<script',m['text']);self.assertLessEqual(len(m['text']),600)
     if m['classification']=='recommendation':self.assertIn((game['id'],m['id']),verified)
  def test_review_excerpts_are_in_snapshot(self):
-  snapshot=json.loads((ROOT/'data/snapshot.json').read_text());records={(r['gameId'],r['id']):r for r in snapshot['records']}
+  snapshot=json.loads((ROOT/'data/snapshot.json').read_text());tabletop=json.loads((ROOT/'data/tabletop-mentions.json').read_text());records={(r['gameId'],r['id']):r for r in snapshot['records']+tabletop}
   for r in json.loads((ROOT/'data/reviews.json').read_text()):self.assertIn(r['excerpt'],records[(r['gameId'],r['id'])]['text'])
+ def test_tabletop_pilot_contains_only_selected_sourced_mentions(self):
+  selected=json.loads((ROOT/'data/tabletop-selections.json').read_text())['games']
+  expected={(g['id'],str(item)) for g in selected for item in g['ids']}
+  mentions=json.loads((ROOT/'data/tabletop-mentions.json').read_text())
+  self.assertEqual(expected,{(m['gameId'],m['id']) for m in mentions})
+  catalog=json.loads((ROOT/'public/data/catalog.json').read_text())
+  games={g['id']:g for g in catalog['games'] if g.get('medium')=='tabletop'}
+  self.assertEqual(set(games),{g['id'] for g in selected})
+  for game in games.values():
+   self.assertTrue(game['mentions'])
+   self.assertIsNone(game['keywordMatches'])
+   self.assertFalse(game['showHN'])
 class IncrementalTests(unittest.TestCase):
  def test_incremental_refuses_to_skip_uncollected_pages(self):
   with tempfile.TemporaryDirectory() as folder:

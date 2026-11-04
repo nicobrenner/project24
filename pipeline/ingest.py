@@ -85,14 +85,17 @@ def import_cache(cache, metadata, previous=None, preserve_totals=True):
  export()
 def export():
  snapshot=read(ROOT/'data/snapshot.json',{'records':[],'queries':[],'collectedAt':''})
+ tabletop_records=read(ROOT/'data/tabletop-mentions.json',[])
+ all_records=snapshot['records']+tabletop_records
  theme_data=read(ROOT/'data/classifiers/theme-predictions.json',{}); theme_predictions=theme_data.get('predictions',{})
  sentiment_data=read(ROOT/'data/classifiers/sentiment-predictions.json',{}); sentiment_predictions=sentiment_data.get('predictions',{})
  reviews=read(ROOT/'data/reviews.json',[]); lookup={(r['gameId'],r['id']):r for r in reviews}
  con=sqlite3.connect(ROOT/'data/catalog.sqlite');con.execute('CREATE TABLE IF NOT EXISTS mentions(game_id TEXT, id TEXT, payload TEXT, PRIMARY KEY(game_id,id))');con.execute('DELETE FROM mentions')
  games=[]
- for seed in read(ROOT/'data/seeds.json'):
+ for seed in read(ROOT/'data/seeds.json')+read(ROOT/'data/tabletop-games.json',[]):
   g={k:v for k,v in seed.items() if k!='steamAppId'}; mentions=[]
-  for row in snapshot['records']:
+  g.setdefault('medium','video')
+  for row in all_records:
    if row['gameId']!=g['id']:continue
    m={k:v for k,v in row.items() if k!='gameId'}; review=lookup.get((g['id'],m['id']))
    if review:
@@ -121,10 +124,10 @@ def export():
   g['themes']=sorted(theme_groups.values(),key=lambda x:(-x['count'],x['label']))
   games.append(g)
  con.commit();con.close()
- result={'generatedAt':max(snapshot['collectedAt'],snapshot.get('discoveryUpdatedAt','')),'coverage':{'description':f'{len(games)} games identified in sampled historical HN records and recommendation threads. Counts describe collected, context-filtered evidence, not the entire HN archive.','method':'Sampled local HN archive, whole discussion threads, and bounded Algolia searches. Explicit game URLs and reviewed title identities; conservative context checks.','keywordMatches':'Raw Algolia-reported comment plus story query matches at baseline collection, before disambiguation. These are not unique verified game mentions or recommendations. Incremental updates preserve this baseline.', 'recommendations':'Only positive game endorsements individually source-reviewed by Codex count as verified. These are agent reviews, not independent human verification. Heuristic candidates are separate and unverified.','ranking':'Verified recommendations rank this sample; unequal search coverage and editorial review mean this is not a census.','limitations':['Sampled archive and selected recommendation threads; not an exhaustive HN archive.','Comments can discuss multiple games. Heuristic labels may be wrong.','Show HN Games lists curated creator launch posts from the sampled submission archive. A launch post is a mention, not a recommendation or quality endorsement.','Sentiment dots are uncalibrated phrase-cue signals over excerpts, not game ratings or community consensus.'],'archive':read(ROOT/'data/discovery-coverage.json',{}),'themeClassifier':theme_data.get('model'),'sentimentClassifier':sentiment_data.get('model'),'source':'https://hn.algolia.com/api','snapshotRecords':len(snapshot['records'])},'games':games}
+ result={'generatedAt':max(snapshot['collectedAt'],snapshot.get('discoveryUpdatedAt','')),'coverage':{'description':f'{len(games)} games identified in sampled historical HN records and recommendation threads, including a separately curated tabletop pilot. Counts describe collected, context-filtered evidence, not the entire HN archive.','method':'Sampled local HN archive, whole discussion threads, and bounded Algolia searches. Explicit game URLs and reviewed title identities; conservative context checks.','keywordMatches':'Raw Algolia-reported comment plus story query matches at baseline collection, before disambiguation. These are not unique verified game mentions or recommendations. Incremental updates preserve this baseline.', 'recommendations':'Only positive game endorsements individually source-reviewed by Codex count as verified. These are agent reviews, not independent human verification. Heuristic candidates are separate and unverified.','ranking':'Verified recommendations rank this sample; unequal search coverage and editorial review mean this is not a census.','limitations':['Sampled archive and selected recommendation threads; not an exhaustive HN archive.','Comments can discuss multiple games. Heuristic labels may be wrong.','Show HN Games lists curated creator launch posts from the sampled submission archive. A launch post is a mention, not a recommendation or quality endorsement.','Sentiment dots are uncalibrated phrase-cue signals over excerpts, not game ratings or community consensus.','Tabletop is a small manually selected archive pilot, not a complete tabletop index.'],'archive':read(ROOT/'data/discovery-coverage.json',{}),'themeClassifier':theme_data.get('model'),'sentimentClassifier':sentiment_data.get('model'),'source':'https://hn.algolia.com/api','snapshotRecords':len(all_records)},'games':games}
  (ROOT/'public/data').mkdir(parents=True,exist_ok=True)
  (ROOT/'public/data/catalog.json').write_text(json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n')
- print(f"Exported {len(games)} games, {len(snapshot['records'])} evidence records, {sum(g['verifiedRecommendations'] for g in games)} reviewed recommendations")
+ print(f"Exported {len(games)} games, {len(all_records)} evidence records, {sum(g['verifiedRecommendations'] for g in games)} reviewed recommendations")
 def collect(pages,incremental):
  if pages<1:raise ValueError('--pages must be positive')
  old=read(ROOT/'data/snapshot.json')

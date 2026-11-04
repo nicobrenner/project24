@@ -1,0 +1,282 @@
+[
+  {
+    "id": "tabletop-chess",
+    "title": "Chess",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "abstract strategy",
+    "genres": [
+      "abstract strategy"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "The two-player strategy game played on an eight-by-eight board.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Chess",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-go",
+    "title": "Go",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "abstract strategy",
+    "genres": [
+      "abstract strategy"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An ancient two-player strategy game of placing stones and surrounding territory.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Go_(game)",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-dungeons-and-dragons",
+    "title": "Dungeons & Dragons",
+    "aliases": [
+      "Dungeons and Dragons",
+      "D&D"
+    ],
+    "medium": "tabletop",
+    "genre": "role-playing",
+    "genres": [
+      "role-playing"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A tabletop role-playing game in which a group creates an adventure together.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Dungeons_%26_Dragons",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-catan",
+    "title": "Catan",
+    "aliases": [
+      "Settlers of Catan"
+    ],
+    "medium": "tabletop",
+    "genre": "board game",
+    "genres": [
+      "board game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A trading and resource-building board game set on an island.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Catan",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-magic-the-gathering",
+    "title": "Magic: The Gathering",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "card game",
+    "genres": [
+      "card game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A collectible card game in which players build decks and cast spells.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Magic:_The_Gathering",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-ticket-to-ride",
+    "title": "Ticket to Ride",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "board game",
+    "genres": [
+      "board game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A board game about collecting cards and building railway routes.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Ticket_to_Ride_(board_game)",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-carcassonne",
+    "title": "Carcassonne",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "board game",
+    "genres": [
+      "board game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A tile-laying game in which players build a shared landscape.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Carcassonne_(board_game)",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-terraforming-mars",
+    "title": "Terraforming Mars",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "board game",
+    "genres": [
+      "board game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A strategy board game about developing projects on Mars.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Terraforming_Mars_(board_game)",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-spirit-island",
+    "title": "Spirit Island",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "cooperative",
+    "genres": [
+      "cooperative"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A cooperative board game in which island spirits resist invading settlers.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Spirit_Island_(board_game)",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-twilight-struggle",
+    "title": "Twilight Struggle",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "board game",
+    "genres": [
+      "board game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A two-player card-driven board game set during the Cold War.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Twilight_Struggle",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-dominion",
+    "title": "Dominion",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "card game",
+    "genres": [
+      "card game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A deck-building card game in which players acquire cards to develop their decks.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Dominion_(card_game)",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-pandemic",
+    "title": "Pandemic",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "cooperative",
+    "genres": [
+      "cooperative"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A cooperative board game about containing outbreaks around the world.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Pandemic_(board_game)",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-agricola",
+    "title": "Agricola",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "board game",
+    "genres": [
+      "board game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A strategy board game about developing a family farm.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Agricola_(board_game)",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-puerto-rico",
+    "title": "Puerto Rico",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "board game",
+    "genres": [
+      "board game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A strategy board game about production and trade on Puerto Rico.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Puerto_Rico_(board_game)",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-power-grid",
+    "title": "Power Grid",
+    "aliases": [
+      "Powergrid",
+      "Funkenschlag"
+    ],
+    "medium": "tabletop",
+    "genre": "board game",
+    "genres": [
+      "board game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A strategy board game about building a network and supplying power to cities.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Power_Grid",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  },
+  {
+    "id": "tabletop-race-for-the-galaxy",
+    "title": "Race for the Galaxy",
+    "aliases": [],
+    "medium": "tabletop",
+    "genre": "card game",
+    "genres": [
+      "card game"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "A card game about building a spacefaring civilization.",
+    "coverUrl": null,
+    "metadataUrl": "https://en.wikipedia.org/wiki/Race_for_the_Galaxy",
+    "metadataAttribution": "Game reference: linked Wikipedia article. Summary: PROJECT 24 editorial.",
+    "color": "#526551"
+  }
+]

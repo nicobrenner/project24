@@ -27,6 +27,7 @@ const sections = [
   "Show HN Games",
 ] as const;
 type Section = (typeof sections)[number];
+type Medium = "video" | "tabletop";
 const appBase = import.meta.env.BASE_URL.replace(/\/$/, "");
 const appPath = (path: string) => `${appBase}${path.startsWith("/") ? path : `/${path}`}`;
 const routePath = (path: string) => {
@@ -144,6 +145,7 @@ function App() {
     [sort, setSort] = useState("recommended");
   const [theme, setTheme] = useState(params.get("theme") || "all");
   const [sentiment, setSentiment] = useState(params.get("sentiment") || "all");
+  const [medium, setMedium] = useState<Medium>(params.get("medium") === "tabletop" ? "tabletop" : "video");
   const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 760px)").matches);
   const [visibleGames, setVisibleGames] = useState(() => window.matchMedia("(max-width: 760px)").matches ? 5 : 48);
   const pageSize = isMobile ? 5 : 48;
@@ -155,7 +157,7 @@ function App() {
     media.addEventListener("change", update);
     return () => media.removeEventListener("change", update);
   }, []);
-  useEffect(() => setVisibleGames(pageSize), [query, section, genre, platform, sort, theme, sentiment, pageSize]);
+  useEffect(() => setVisibleGames(pageSize), [query, section, genre, platform, sort, theme, sentiment, medium, pageSize]);
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/catalog.json`)
       .then((r) => {
@@ -182,6 +184,7 @@ function App() {
       setPlatform(p.get("platform") || "All platforms");
       setTheme(p.get("theme") || "all");
       setSentiment(p.get("sentiment") || "all");
+      setMedium(p.get("medium") === "tabletop" ? "tabletop" : "video");
     };
     window.addEventListener("popstate", listener);
     return () => window.removeEventListener("popstate", listener);
@@ -197,13 +200,14 @@ function App() {
     if (query) p.set("q", query);
     if (theme !== "all") p.set("theme", theme);
     if (sentiment !== "all") p.set("sentiment", sentiment);
+    if (medium === "tabletop") p.set("medium", medium);
     if (section !== "All games") p.set("section", section);
     if (genre !== "All genres") p.set("genre", genre);
     if (platform !== "All platforms") p.set("platform", platform);
     history.replaceState({}, "", appPath(`/${p.size ? "?" + p : ""}${location.hash}`));
-  }, [query, section, genre, platform, route, theme, sentiment]);
+  }, [query, section, genre, platform, route, theme, sentiment, medium]);
   const games = catalog?.games || [];
-  const spotlightTopics = useMemo(() => [...new Map(games.flatMap(game => game.mentions
+  const spotlightTopics = useMemo(() => [...new Map(games.filter(game => game.medium !== "tabletop").flatMap(game => game.mentions
     .filter(mention => mention.kind === "comment" && mention.theme && mention.text.trim().length >= 55 && mention.text.toLowerCase().includes(game.title.toLowerCase()))
     .map(mention => [mention.theme!.label, mention.theme!.name] as const))).entries()].sort((a,b) => a[1].localeCompare(b[1])), [games]);
   const selected = route.startsWith("/game/")
@@ -216,10 +220,11 @@ function App() {
         ? "How the index works — PROJECT 24"
         : "PROJECT 24 — Games people on HN talk about.";
   }, [selected, route]);
+  const collectionGames = games.filter(g => (g.medium || "video") === medium);
   const genres = [
-    ...new Set(games.flatMap((g) => (g.genres?.length ? g.genres : [g.genre]))),
+    ...new Set(collectionGames.flatMap((g) => (g.genres?.length ? g.genres : [g.genre]))),
   ].sort();
-  const platforms = [...new Set(games.flatMap((g) => g.platforms))].sort();
+  const platforms = [...new Set(collectionGames.flatMap((g) => g.platforms))].sort();
   const shown = useMemo(
     () =>
       games
@@ -229,6 +234,7 @@ function App() {
             .includes(query.toLowerCase());
           return (
             matches &&
+            (g.medium || "video") === medium &&
             (theme === "all" || !!g.themes?.some(t => t.label === theme)) &&
             (sentiment === "all" || g.sentimentSummary?.label === sentiment) &&
             (genre === "All genres" ||
@@ -253,10 +259,10 @@ function App() {
             a.title.localeCompare(b.title)
           );
         }),
-    [games, query, genre, platform, section, sort, theme, sentiment],
+    [games, query, genre, platform, section, sort, theme, sentiment, medium],
   );
   const spotlightItems = useMemo(() => {
-    const items = games.flatMap(game => game.mentions
+    const items = games.filter(game => game.medium !== "tabletop").flatMap(game => game.mentions
       .filter(mention => mention.kind === "comment" && mention.theme && mention.text.trim().length >= 55 && (theme === "all" || mention.theme.label === theme))
       .map(mention => ({game, mention, direct: mention.text.toLowerCase().includes(game.title.toLowerCase())}))
       .filter(item => item.direct));
@@ -315,23 +321,29 @@ function App() {
     setPlatform("All platforms");
     setSection("All games");
   }
-  function openTheme(e: React.MouseEvent<HTMLAnchorElement>, label: string) {
+  function changeMedium(next: Medium) {
+    setMedium(next); setQuery(""); setSection("All games"); setSort("recommended");
+    setGenre("All genres"); setPlatform("All platforms"); setTheme("all"); setSentiment("all");
+  }
+  function openTheme(e: React.MouseEvent<HTMLAnchorElement>, label: string, target: Medium = "video") {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
     setQuery("");
     setSection("All games");
     setGenre("All genres");
     setPlatform("All platforms");
+    setSentiment("all");
     setTheme(label);
-    history.pushState({}, "", appPath(`/?theme=${encodeURIComponent(label)}#catalog`));
+    setMedium(target);
+    history.pushState({}, "", appPath(`/?theme=${encodeURIComponent(label)}${target === "tabletop" ? "&medium=tabletop" : ""}#catalog`));
     setRoute("/");
     window.requestAnimationFrame(() => document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" }));
   }
-  function openSentiment(e: React.MouseEvent<HTMLAnchorElement>, label: "positive" | "negative" | "mixed") {
+  function openSentiment(e: React.MouseEvent<HTMLAnchorElement>, label: "positive" | "negative" | "mixed", target: Medium = "video") {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
-    setQuery(""); setSection("All games"); setGenre("All genres"); setPlatform("All platforms"); setTheme("all"); setSentiment(label);
-    history.pushState({}, "", appPath(`/?sentiment=${label}#catalog`));
+    setQuery(""); setSection("All games"); setGenre("All genres"); setPlatform("All platforms"); setTheme("all"); setSentiment(label); setMedium(target);
+    history.pushState({}, "", appPath(`/?sentiment=${label}${target === "tabletop" ? "&medium=tabletop" : ""}#catalog`));
     setRoute("/");
     window.requestAnimationFrame(() => document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" }));
   }
@@ -434,6 +446,7 @@ function App() {
                 <p>A custom <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">Jeffy</a> classifier suggests topics such as puzzles, nostalgia, and technical craft. It does not classify sentiment. The small dots use explicit phrase cues to mark positive, critical, or mixed tone; they abstain when the text has no clear signal. This heuristic is uncalibrated and may miss sarcasm or refer to the surrounding discussion rather than the game. It is separate from reviewed recommendations and is not a measure of community consensus. A sentiment-specific Jeffy head needs labeled evaluation data before we can trust it enough to replace these limited cues.</p>
                 <h2>A growing, incomplete collection</h2>
                 <p>{catalog.coverage.description}</p><p>The local archive samples whole days, mostly from 2008–2026. Busy days can dominate a sample. It is not a complete history of HN; newer entries also have less recommendation review.</p>
+                <p>The tabletop collection is an early, manually selected pilot from that archive. Its comments and identities were checked by Codex, and it is not updated by the video-game collector. Rankings are separate for each collection and reflect the evidence selected so far.</p>
                 <p>
                   Rankings describe this sample, not all of Hacker News.
                   Collection limits, uneven coverage, and a small source-review
@@ -491,7 +504,12 @@ function App() {
           <Detail
             game={selected}
             link={link}
-            onBack={(e) => internal(e, "/")}
+            onBack={(e) => {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+              e.preventDefault();
+              if (medium !== selected.medium) changeMedium(selected.medium || "video");
+              navigate(selected.medium === "tabletop" ? "/?medium=tabletop#catalog" : "/");
+            }}
             onSentimentClick={openSentiment}
             onThemeClick={openTheme}
             games={games}
@@ -513,7 +531,10 @@ function App() {
                 </div>
                 <label className="spotlight-filter">Conversation theme
                   <span className="spotlight-select-wrap">
-                    <select aria-label="Conversation theme" value={theme} onChange={e => setTheme(e.target.value)}>
+                    <select aria-label="Conversation theme" value={theme} onChange={e => {
+                      if (medium === "tabletop") changeMedium("video");
+                      setTheme(e.target.value);
+                    }}>
                       <option value="all">All conversations</option>
                       {spotlightTopics.map(([value,name]) => <option key={value} value={value}>{name}</option>)}
                     </select>
@@ -540,7 +561,7 @@ function App() {
                   <span>{String(spotlightIndex + 1).padStart(2,"0")} <i>/</i> {String(spotlightItems.length).padStart(2,"0")}</span>
                   <button aria-label="Next conversation" onClick={() => setSpotlightIndex(index => (index + 1) % spotlightItems.length)}><ArrowRight size={17}/></button>
                   <button className="spotlight-play" aria-label={spotlightPlaying ? "Pause automatic rotation" : "Resume automatic rotation"} onClick={() => setSpotlightPlaying(value => !value)}>{spotlightPlaying ? "Pause" : "Play"}</button>
-                  <span className="spotlight-note">Jeffy tags the topic; the tone cue is separate and experimental. The theme menu filters this fixed sample.</span>
+                  <span className="spotlight-note">Jeffy tags the topic; the tone cue is separate and experimental. The theme menu filters the video-game collection and this fixed sample.</span>
                 </div>
               </article> : <div className="spotlight-empty">No matching excerpts in this theme yet. Try another conversation theme.</div>}
             </section>
@@ -565,8 +586,13 @@ function App() {
                   <Shuffle size={16} /> Surprise me
                 </button>
               </div>
+              <div className="medium-switch" role="group" aria-label="Choose a collection">
+                <button className={medium === "video" ? "active" : ""} aria-pressed={medium === "video"} onClick={() => changeMedium("video")}><Gamepad2 size={16} /> Video games <span>{games.filter(g => g.medium !== "tabletop").length}</span></button>
+                <button className={medium === "tabletop" ? "active" : ""} aria-pressed={medium === "tabletop"} onClick={() => changeMedium("tabletop")}><span aria-hidden="true">✳</span> Tabletop games <span>{games.filter(g => g.medium === "tabletop").length}</span></button>
+              </div>
+              {medium === "tabletop" && <p className="tabletop-note">A small, source-checked collection of board, card, and tabletop role-playing games from the sampled HN archive.</p>}
               <div className="tabs" role="group" aria-label="Game collections">
-                {sections.map((s, i) => (
+                {sections.filter(s => medium === "video" || (s !== "Browser Games" && s !== "Show HN Games")).map((s) => (
                   <button
                     aria-pressed={section === s}
                     className={s === section ? "active" : ""}
@@ -576,11 +602,11 @@ function App() {
                     }}
                     key={s}
                   >
-                    {i === 0 ? (
+                    {s === "All games" ? (
                       <Gamepad2 size={16} />
-                    ) : i === 3 ? (
+                    ) : s === "Browser Games" ? (
                       <Sparkles size={15} />
-                    ) : i === 5 ? (
+                    ) : s === "Show HN Games" ? (
                       <Terminal size={16} />
                     ) : null}
                     {s}
@@ -620,7 +646,7 @@ function App() {
                   </select>
                   <ChevronDown size={13} />
                 </label>
-                <label className="select">
+                {medium === "video" && <label className="select">
                   <select
                     aria-label="Filter by platform"
                     value={platform}
@@ -632,7 +658,7 @@ function App() {
                     ))}
                   </select>
                   <ChevronDown size={13} />
-                </label>
+                </label>}
                 <label className="select">
                   <select aria-label="Filter by HN tone" value={sentiment} onChange={e => setSentiment(e.target.value)}>
                     <option value="all">All HN tones</option>
@@ -673,7 +699,7 @@ function App() {
                   <article className="card" key={g.id}>
                     <a className="card-link" href={appPath(`/game/${g.id}`)} onClick={e => internal(e, `/game/${g.id}`)}>
                         <div className="card-art">
-                          <Cover game={g} />
+                          <Cover game={g} fallbackVariant={g.medium === "tabletop" ? "procedural" : undefined} />
                           <span className="rank">
                             {String(i + 1).padStart(2, "0")}
                           </span>
@@ -690,12 +716,11 @@ function App() {
                         <div className="card-body">
                           <div className="game-meta">
                             {g.genre}
-                            <span>·</span>
-                            {g.releaseDate?.match(/\d{4}/)?.[0] || "—"}
+                            {g.releaseDate && <><span>·</span>{g.releaseDate.match(/\d{4}/)?.[0] || g.releaseDate}</>}
                           </div>
                           <div className="card-title-line">
                             <h3><a className="card-title-link" href={appPath(`/game/${g.id}`)} onClick={e => internal(e, `/game/${g.id}`)}>{g.title}</a></h3>
-                            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} compact href={appPath(`/?sentiment=${g.sentimentSummary.label}#catalog`)} onClick={e => openSentiment(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
+                            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} compact href={appPath(`/?sentiment=${g.sentimentSummary.label}${g.medium === "tabletop" ? "&medium=tabletop" : ""}#catalog`)} onClick={e => openSentiment(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed", g.medium || "video")} />}
                           </div>
                           <p>{g.description}</p>
                           <div className="card-stats">
@@ -807,8 +832,8 @@ function Detail({
 }: {
   game: Game;
   onBack: (e: React.MouseEvent<HTMLAnchorElement>) => void;
-  onSentimentClick: (e: React.MouseEvent<HTMLAnchorElement>, label: "positive" | "negative" | "mixed") => void;
-  onThemeClick: (e: React.MouseEvent<HTMLAnchorElement>, label: string) => void;
+  onSentimentClick: (e: React.MouseEvent<HTMLAnchorElement>, label: "positive" | "negative" | "mixed", medium?: Medium) => void;
+  onThemeClick: (e: React.MouseEvent<HTMLAnchorElement>, label: string, medium?: Medium) => void;
   link: (g: Game, c: React.ReactNode, cls?: string) => React.ReactNode;
   games: Game[];
 }) {
@@ -828,18 +853,18 @@ function Detail({
     );
   return (
     <section className="detail">
-      <a className="back" href={appPath("/")} onClick={onBack}>
+      <a className="back" href={appPath(g.medium === "tabletop" ? "/?medium=tabletop#catalog" : "/")} onClick={onBack}>
         <ArrowLeft size={16} /> Back to the index
       </a>
       <div className="detail-hero">
-        <Cover game={g} />
+        <Cover game={g} fallbackVariant={g.medium === "tabletop" ? "procedural" : undefined} />
         <div>
           <div className="eyebrow">
-            {g.genre} · {g.releaseDate}
+            {g.medium === "tabletop" ? "TABLETOP · " : ""}{g.genre}{g.releaseDate ? ` · ${g.releaseDate}` : ""}
           </div>
           <div className="game-title-line">
             <h1>{g.title}</h1>
-            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} href={appPath(`/?sentiment=${g.sentimentSummary.label}#catalog`)} onClick={e => onSentimentClick(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
+            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} href={appPath(`/?sentiment=${g.sentimentSummary.label}${g.medium === "tabletop" ? "&medium=tabletop" : ""}#catalog`)} onClick={e => onSentimentClick(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed", g.medium || "video")} />}
           </div>
           <a className="conversation-jump-button" href="#conversations">
             Related HN conversations <ArrowDown size={16} />
@@ -905,9 +930,11 @@ function Detail({
           <a href={`https://www.youtube.com/results?search_query=${encodeURIComponent(`${g.title} gameplay trailer`)}`} target="_blank" rel="noreferrer">YouTube videos <ArrowUpRight size={15} /></a>
           <a href={`https://www.twitch.tv/search?term=${encodeURIComponent(g.title)}`} target="_blank" rel="noreferrer">Find Twitch streams <ArrowUpRight size={15} /></a>
           <a href={`https://www.reddit.com/search/?q=${encodeURIComponent(g.title)}&type=sr`} target="_blank" rel="noreferrer">Find Reddit communities <ArrowUpRight size={15} /></a>
-          <a href={`https://www.google.com/search?q=${encodeURIComponent(`site:metacritic.com/game ${g.title} reviews`)}`} target="_blank" rel="noreferrer">Find Metacritic reviews <ArrowUpRight size={15} /></a>
-          <a href={`https://www.google.com/search?q=${encodeURIComponent(`site:opencritic.com ${g.title} reviews`)}`} target="_blank" rel="noreferrer">Find OpenCritic reviews <ArrowUpRight size={15} /></a>
-          <a href={`https://www.imdb.com/find/?q=${encodeURIComponent(g.title)}`} target="_blank" rel="noreferrer">Look up on IMDb <ArrowUpRight size={15} /></a>
+          {g.medium === "tabletop" ? <a href={`https://www.google.com/search?q=${encodeURIComponent(`site:${g.genre === "role-playing" ? "rpggeek.com" : "boardgamegeek.com"} ${g.title}`)}`} target="_blank" rel="noreferrer">Find {g.genre === "role-playing" ? "RPGGeek" : "BoardGameGeek"} pages <ArrowUpRight size={15} /></a> : <>
+            <a href={`https://www.google.com/search?q=${encodeURIComponent(`site:metacritic.com/game ${g.title} reviews`)}`} target="_blank" rel="noreferrer">Find Metacritic reviews <ArrowUpRight size={15} /></a>
+            <a href={`https://www.google.com/search?q=${encodeURIComponent(`site:opencritic.com ${g.title} reviews`)}`} target="_blank" rel="noreferrer">Find OpenCritic reviews <ArrowUpRight size={15} /></a>
+            <a href={`https://www.imdb.com/find/?q=${encodeURIComponent(g.title)}`} target="_blank" rel="noreferrer">Look up on IMDb <ArrowUpRight size={15} /></a>
+          </>}
           {g.storeUrl?.includes('store.steampowered.com/app/') && <a href={`${g.storeUrl.replace(/\/$/, '')}/#app_reviews_hash`} target="_blank" rel="noreferrer">Steam player reviews <ArrowUpRight size={15} /></a>}
         </div>
       </section>
@@ -975,7 +1002,7 @@ function Detail({
                   (uncalibrated assessment)
                 </p>
                 {m.sentiment && <p>Sentiment signal: {m.sentiment.name}. {m.sentiment.provenance} Classifier: {m.sentiment.model}; confidence is uncalibrated and does not establish consensus.</p>}
-                {m.theme && <p>Jeffy conversation topic: <a href={appPath(`/?theme=${encodeURIComponent(m.theme.label)}#catalog`)} onClick={e => onThemeClick(e, m.theme!.label)}>{m.theme.name}</a> · <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">About Jeffy</a>. Custom head {m.theme.model}, confidence {Math.round(m.theme.confidence * 100)}% (uncalibrated), trained on synthetic teaching examples. This describes the excerpt and may concern another game in the same comment; it is not a reviewed endorsement.</p>}
+                {m.theme && <p>Jeffy conversation topic: <a href={appPath(`/?theme=${encodeURIComponent(m.theme.label)}${g.medium === "tabletop" ? "&medium=tabletop" : ""}#catalog`)} onClick={e => onThemeClick(e, m.theme!.label, g.medium || "video")}>{m.theme.name}</a> · <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">About Jeffy</a>. Custom head {m.theme.model}, confidence {Math.round(m.theme.confidence * 100)}% (uncalibrated), trained on synthetic teaching examples. This describes the excerpt and may concern another game in the same comment; it is not a reviewed endorsement.</p>}
                 {m.storyUrl && (
                   <a href={m.storyUrl} target="_blank" rel="noreferrer">
                     {m.storyTitle || "Parent discussion"} ↗
@@ -1030,14 +1057,14 @@ function Detail({
         <h2>Keep exploring</h2>
         <div>
           {games
-            .filter((other) => other.id !== g.id && other.genre === g.genre)
+            .filter((other) => other.id !== g.id && other.genre === g.genre && other.medium === g.medium)
             .slice(0, 3)
             .map((other) => (
               <React.Fragment key={other.id}>
                 {link(
                   other,
                   <>
-                    <Cover game={other} />
+                    <Cover game={other} fallbackVariant={other.medium === "tabletop" ? "procedural" : undefined} />
                     <strong>{other.title}</strong>
                     <ArrowUpRight size={16} />
                   </>,

@@ -64,8 +64,9 @@ def classify(text):
 
 def run():
     snapshot = read(ROOT / "data/snapshot.json", {"records": []})
+    records = snapshot["records"] + read(ROOT / "data/tabletop-mentions.json", [])
     predictions = {hashlib.sha256(text.encode()).hexdigest(): classify(text)
-                   for text in dict.fromkeys(r.get("text", "") for r in snapshot["records"])}
+                   for text in dict.fromkeys(r.get("text", "") for r in records)}
     result = {
         "model": {
             "id": "phrase-cues-v1",

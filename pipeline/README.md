@@ -10,7 +10,21 @@ python3 -m pipeline.ingest collect --incremental --pages 2
 python3 -m pipeline.ingest metadata
 ```
 
-`export` is fully offline. It reads the checked-in `data/seeds.json`, `data/snapshot.json`, and `data/reviews.json`, recreates `data/catalog.sqlite`, and writes `public/data/catalog.json`. SQLite is an inspectable local processing artifact, not a production server. `mentions` has a composite primary key `(game_id, id)` and a JSON payload. Re-export does not change the collection timestamp.
+`export` is fully offline. It reads the checked-in video-game seeds and snapshot, the tabletop seeds and mentions, and `data/reviews.json`; it recreates `data/catalog.sqlite` and writes `public/data/catalog.json`. SQLite is an inspectable local processing artifact, not a production server. `mentions` has a composite primary key `(game_id, id)` and a JSON payload. Re-export does not change the collection timestamp.
+
+## Tabletop pilot
+
+The tabletop pilot is a separately curated set of 16 games and 37 game–comment matches from 28 distinct HN comments in the supplied sampled archive. `data/tabletop-selections.json` records the selected identities and exact HN comment IDs; Codex reviewed the source text and parent discussion context. The checked-in `tabletop-games.json` and `tabletop-mentions.json` permit offline export. Recommendations remain separate review records in `data/reviews.json` and require a matching excerpt, just like video-game reviews. Classification confidence is editorial, not calibrated. The selection is deliberately small and is not an exhaustive or representative index.
+
+To rebuild the checked-in tabletop files from the original archive, then update the optional phrase-cue signals and catalog:
+
+```sh
+python3 -m pipeline.tabletop --comments /path/to/comments_sample.jsonl.gz
+python3 -m pipeline.sentiment
+python3 -m pipeline.ingest export
+```
+
+The import refuses missing source IDs, missing timestamps or parent discussions, and comments without a selected title or alias. It does not discover new titles or run the Jeffy topic classifier. The incremental Algolia collector currently updates video games only; tabletop additions require explicit selection and review. Missing release dates and licensed artwork stay missing; the site uses generated artwork. Video-game and tabletop rankings are displayed separately.
 
 `collect` queries the public HN Algolia API for each curated seed title, in separate comment and story searches, requesting up to 100 comments and 40 stories per page. Queries are relevance-ranked. This is a bounded historical sample, not an exhaustive HN archive. Additional pages increase coverage up to the API's search limits. Requests are sequential, spaced by 350 ms, with exponential retry backoff. A failed request aborts collection before replacing the snapshot. Use modest page counts and follow the provider's API policies. No authentication is required.
 

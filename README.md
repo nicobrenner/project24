@@ -1,6 +1,6 @@
 # PROJECT 24
 
-A small, evidence-first discovery index for video games discussed on Hacker News. React + TypeScript + Vite, served from static JSON; a Python/SQLite pipeline collects and classifies the source material.
+A small, evidence-first discovery index for games discussed on Hacker News: a video-game catalog and an early, separate tabletop collection. React + TypeScript + Vite, served from static JSON; a Python/SQLite pipeline collects and classifies the source material.
 
 ## Local development
 
@@ -27,7 +27,8 @@ npm run preview
 - All Games, Most Recommended, Most Discussed, Browser Games, and Show HN Games collections.
 - Shareable `/game/<slug>` pages, plain-text source excerpts, HN links, confidence, and classification provenance.
 - Historical HN comments and submissions, archive-based entity discovery, normalized aliases, and guarded matching for ambiguous titles.
-- 818 game identities, including 695 added from the title-reference pass; 5,009 source records with exact HN links. The wider pass contributes mentions only and does not increase reviewed recommendation counts.
+- 859 video-game identities plus a 16-game tabletop pilot. The tabletop pilot contains 37 game–comment matches from 28 distinct HN comments, including seven game–comment endorsements reviewed by Codex. A comment discussing multiple games can appear in several entries.
+- Separate video-game and tabletop collections, each with its own genre, tone and ranking filters. Video games remain the default.
 - Links from game pages to YouTube gameplay/trailer searches and external review searches (Metacritic, OpenCritic, IMDb, and Steam where available). No third-party ratings or video claims are copied into the catalog.
 - Links from game pages to Twitch stream searches and Reddit community searches; live-player embeds are not included.
 - Individual Codex source review separated from machine candidates, casual mentions, criticism, and technical discussion.
@@ -56,11 +57,13 @@ The **Update HN evidence** GitHub Action runs daily or manually. It collects new
 
 ## Expanded archive discovery
 
-The catalog contains **818 game identities and 5,009 source records**, including Tetris and Another World. It has **43 individually reviewed recommendations**; the additional archive matches are mentions, not recommendations.
+The catalog contains **859 video-game identities and 16 tabletop identities**, including Tetris, Another World, chess and Go. It includes **5,087 game–source records** and **50 individually reviewed game–comment recommendations**. One comment may be associated with more than one game; most records are mentions, not recommendations.
 
 The scanner processed 1,191,935 comments and 293,708 submissions from the user-supplied HN archive, then fetched 35 additional whole discussion threads through Algolia. Most archive records cover 2008–2026, with a small late-2007 boundary spillover. Sampling selected whole days, so observations are clustered and coverage is uneven. Submission scores had a 14-day settling window. Neither corpus is a complete HN archive.
 
 Discovery now has two stages. Steam application URLs and selected Show/Ask HN threads contribute explicitly reviewed identities in `data/entity-decisions.json`. A second, high-recall pass matches exact, case-preserving titles from a frozen Wikidata game index against nearby video-game context. The curated allowlist records 727 title decisions; 726 identities passed the final collision check, with some matching existing games. The allowlist is in `data/reference-decisions.json`; each accepted mention retains the HN item ID, parent discussion, and match provenance. Wikidata descriptions, genres, and platforms are CC0 and attributed. Uncertain artwork is omitted. Context and title matches still need correction over time.
+
+The tabletop pilot is a separate, manually selected set of archive comments, identified in `data/tabletop-selections.json` and rebuilt by `pipeline.tabletop`. Each game identity and source context was checked by Codex; this is not human verification or a comprehensive tabletop census. Only explicit positive endorsements in the review file count as recommendations. Tabletop metadata has editorial summaries and linked reference pages; artwork is generated in the browser, with no guessed release dates. The video-game collector does not automatically add or update tabletop records.
 
 See [pipeline discovery instructions](pipeline/README.md#archive-and-thread-discovery) to reproduce both discovery passes. The Wikidata reference snapshot is checked in as `data/wikidata-game-index.json`; the large HN dumps remain local inputs and are not republished. Offline export from committed evidence remains available without the original dumps. The discovery pass does not advance the incremental API watermark.
 

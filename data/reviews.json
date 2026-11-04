@@ -391,9 +391,72 @@
     "id": "29921419",
     "classification": "mention",
     "confidence": 0.99,
-    "excerpt": "Show HN: Looptap \u2013 A minimal game to waste your time",
+    "excerpt": "Show HN: Looptap – A minimal game to waste your time",
     "reason": "Creator vasanthv submitted original Looptap launch, with original game URL matching creator identity.",
     "provenance": "manual-review-v1; Codex original launch review; 2026-11-02",
     "showHNLaunch": true
+  },
+  {
+    "gameId": "tabletop-carcassonne",
+    "id": "945511",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "My wife and I love Carcassonne!",
+    "reason": "Direct personal endorsement of the board game.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-03"
+  },
+  {
+    "gameId": "tabletop-magic-the-gathering",
+    "id": "6782179",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I love Magic: the Gathering",
+    "reason": "Direct personal endorsement, with later criticism of cost.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-03"
+  },
+  {
+    "gameId": "tabletop-spirit-island",
+    "id": "45677484",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "I love Spirit Island!",
+    "reason": "Direct personal endorsement of the board game.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-03"
+  },
+  {
+    "gameId": "tabletop-pandemic",
+    "id": "945494",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Powergrid and Pandemic - highly recommended",
+    "reason": "Explicit recommendation of both named games.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-03"
+  },
+  {
+    "gameId": "tabletop-power-grid",
+    "id": "945494",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Powergrid and Pandemic - highly recommended",
+    "reason": "Explicit recommendation of both named games.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-03"
+  },
+  {
+    "gameId": "tabletop-agricola",
+    "id": "945494",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Other favorites are Race For The Galaxy and Agricola",
+    "reason": "Explicitly names the game as a favorite.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-03"
+  },
+  {
+    "gameId": "tabletop-race-for-the-galaxy",
+    "id": "945494",
+    "classification": "recommendation",
+    "confidence": 0.98,
+    "excerpt": "Other favorites are Race For The Galaxy and Agricola",
+    "reason": "Explicitly names the game as a favorite.",
+    "provenance": "manual-review-v1; Codex source-text review; 2026-11-03"
   }
 ]
