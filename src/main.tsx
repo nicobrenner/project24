@@ -65,7 +65,7 @@ function ProceduralArtwork({ game }: { game: Game }) {
       <path d="M0 476 Q300 365 600 478 T1200 440 V560 H0Z" fill={accent} fillOpacity=".28"/>
       <g fill={light} fillOpacity=".82"><circle cx="170" cy="120" r="4"/><circle cx="1020" cy="110" r="5"/><circle cx="970" cy="430" r="3"/><circle cx="450" cy="180" r="3"/></g>
     </svg>
-    <div className="procedural-art-label"><small>PROJECT 24 · {game.genre || "GAME"}</small><strong>{game.title}</strong></div>
+    <div className="procedural-art-label"><small>PROJECT 24 · {game.genre || "GAME"}</small></div>
   </div>;
 }
 function Cover({ game, className = "", fallbackVariant }: { game: Game; className?: string; fallbackVariant?: "procedural" }) {
@@ -103,6 +103,7 @@ function SentimentIndicator({
   detail?: boolean;
   compact?: boolean;
 }) {
+  if (label === "unclear") return null;
   const name = detail
     ? { positive: "Positive tone", negative: "Critical tone", mixed: "Mixed tone", unclear: "No clear signal" }[label]
     : { positive: "Positive signals", negative: "Critical signals", mixed: "Mixed reactions", unclear: "No clear signal" }[label];
@@ -296,6 +297,18 @@ function App() {
     setGenre("All genres");
     setPlatform("All platforms");
     setSection("All games");
+  }
+  function openTheme(e: React.MouseEvent<HTMLAnchorElement>, label: string) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    setQuery("");
+    setSection("All games");
+    setGenre("All genres");
+    setPlatform("All platforms");
+    setTheme(label);
+    history.pushState({}, "", `/?theme=${encodeURIComponent(label)}#catalog`);
+    setRoute("/");
+    window.requestAnimationFrame(() => document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" }));
   }
   return (
     <>
@@ -491,7 +504,7 @@ function App() {
                       <SentimentIndicator label={activeSpotlight.mention.sentiment?.label || "unclear"} />
                     </div>
                     <blockquote>“{activeSpotlight.mention.text}”</blockquote>
-                    {activeSpotlight.mention.theme && <a className="spotlight-topic" href="https://jeffyclassify.com" target="_blank" rel="noreferrer">Jeffy topic · {activeSpotlight.mention.theme.name} <ArrowUpRight size={12}/></a>}
+                    {activeSpotlight.mention.theme && <a className="spotlight-topic" href={`/?theme=${encodeURIComponent(activeSpotlight.mention.theme.label)}#catalog`} onClick={e => openTheme(e, activeSpotlight.mention.theme!.label)} aria-label={`Show games tagged ${activeSpotlight.mention.theme.name}`}>Jeffy topic · {activeSpotlight.mention.theme.name} <ArrowUpRight size={12}/></a>}
                     <div className="spotlight-source"><span>{activeSpotlight.mention.author} · {activeSpotlight.mention.storyTitle}</span><a href={activeSpotlight.mention.url} target="_blank" rel="noreferrer">Read on Hacker News <ArrowUpRight size={14}/></a></div>
                   </div>
                 </div>
@@ -500,7 +513,7 @@ function App() {
                   <span>{String(spotlightIndex + 1).padStart(2,"0")} <i>/</i> {String(spotlightItems.length).padStart(2,"0")}</span>
                   <button aria-label="Next conversation" onClick={() => setSpotlightIndex(index => (index + 1) % spotlightItems.length)}><ArrowRight size={17}/></button>
                   <button className="spotlight-play" aria-label={spotlightPlaying ? "Pause automatic rotation" : "Resume automatic rotation"} onClick={() => setSpotlightPlaying(value => !value)}>{spotlightPlaying ? "Pause" : "Play"}</button>
-                  <span className="spotlight-note">Fixed, varied sample for this catalog snapshot; the theme menu filters it. Tone is experimental.</span>
+                  <span className="spotlight-note">Jeffy tags the topic; the tone cue is separate and experimental. The theme menu filters this fixed sample.</span>
                 </div>
               </article> : <div className="spotlight-empty">No matching excerpts in this theme yet. Try another conversation theme.</div>}
             </section>
