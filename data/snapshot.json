@@ -76489,6 +76489,21 @@
       "confidence": 1.0,
       "provenance": "curated-showhn-v1; source title and item ID matched in user-supplied historical HN submissions. Launch post is not an endorsement.",
       "showHNSubmission": true
+    },
+    {
+      "gameId": "showhn-50366175",
+      "id": "50366175",
+      "url": "https://news.ycombinator.com/item?id=50366175",
+      "author": "nico",
+      "date": "2026-11-04T14:41:02+00:00",
+      "text": "Show HN: Id|le, little AI-creatures living in the browser (story mode)",
+      "kind": "story",
+      "storyTitle": "Show HN: Id|le, little AI-creatures living in the browser (story mode)",
+      "storyUrl": "https://news.ycombinator.com/item?id=50366175",
+      "classification": "mention",
+      "confidence": 1.0,
+      "provenance": "curated-showhn-v1; source title and item ID verified against the Hacker News API on 2026-11-04. Submitted by this index's own author, listed under the same criteria as every other entry. Launch post is not an endorsement.",
+      "showHNSubmission": true
     }
   ],
   "discoveryUpdatedAt": "2026-11-03T15:04:36.160447+00:00"

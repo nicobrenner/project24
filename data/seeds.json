@@ -19085,5 +19085,22 @@
     "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
     "color": "#607d70",
     "showHNSourceId": "48884949"
+  },
+  {
+    "id": "showhn-50366175",
+    "title": "Id|le",
+    "aliases": [],
+    "genre": "simulation",
+    "genres": [
+      "simulation"
+    ],
+    "platforms": [],
+    "releaseDate": "",
+    "description": "An independently made game introduced in this Hacker News Show HN submission.",
+    "coverUrl": null,
+    "metadataUrl": "https://id-le.com/?story",
+    "metadataAttribution": "Project identity and launch source: linked Hacker News submission. No cover or platform metadata asserted.",
+    "color": "#607d70",
+    "showHNSourceId": "50366175"
   }
 ]
