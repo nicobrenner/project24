@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 export default defineConfig({
-  base: process.env.GITHUB_PAGES === "true" ? "/hackergames/" : "/",
+  base: process.env.GITHUB_PAGES === "true" ? "/project24/" : "/",
   plugins: [react()],
 });

@@ -748,7 +748,7 @@ function App() {
                   Missing a game? Found a bad match? Suggestions and corrections are welcome.
                 </p>
               </div>
-              <a href="https://github.com/nicobrenner/hackergames/issues" target="_blank" rel="noreferrer">
+              <a href="https://github.com/nicobrenner/project24/issues" target="_blank" rel="noreferrer">
                 Contribute on GitHub <ArrowUpRight size={18} />
               </a>
             </section>
