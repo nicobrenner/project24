@@ -4,6 +4,7 @@ import {
   ArrowUpRight,
   ArrowRight,
   ArrowLeft,
+  ArrowDown,
   Search,
   Gamepad2,
   MessageSquare,
@@ -802,6 +803,9 @@ function Detail({
             <h1>{g.title}</h1>
             <SentimentIndicator label={g.sentimentSummary?.label || "unclear"} evidenceCount={g.sentimentSummary?.evidenceCount || 0} />
           </div>
+          <a className="conversation-jump-button" href="#conversations">
+            Related HN conversations <ArrowDown size={16} />
+          </a>
           <p className="lede">{g.description}</p>
           <div className="platforms">
             {g.platforms.map((p) => (
@@ -828,12 +832,6 @@ function Detail({
                 Visit game website <ArrowUpRight size={17} />
               </a>
             ) : null}
-            <a
-              className="text-link conversation-jump"
-              href="#conversations"
-            >
-              Related HN conversations ↓
-            </a>
             <a
               className="text-link"
               href={g.metadataUrl}

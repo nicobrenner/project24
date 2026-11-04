@@ -822,7 +822,8 @@ footer small {
   gap: 20px;
   flex-wrap: wrap;
 }
-.conversation-jump {color:#557347;text-decoration:underline;text-underline-offset:3px}
+.conversation-jump-button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:44px; margin:0 0 8px; padding:9px 13px; border-radius:5px; background:#e66540; color:#fff; font-size:12px; font-weight:650; text-decoration:none; transition:background .2s,transform .2s; }
+.conversation-jump-button:hover { background:#d45431; transform:translateY(-1px); }
 .text-link {
   font-size: 11px;
   display: flex;
