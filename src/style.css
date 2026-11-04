@@ -772,14 +772,20 @@ footer p {
   font-size: 10px;
   color: #6d7764;
 }
-footer > a:last-of-type {
+.footer-links {
   margin-left: auto;
-  font-size: 10px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.footer-links a {
+  font-size: 10px;
+  display: inline-flex;
   gap: 4px;
   align-items: center;
   color: #76836a;
 }
+.footer-links a:hover, .about aside .about-source-link:hover { color:#df633e; }
 footer small {
   font-size: 9px;
   width: 100%;
@@ -1085,6 +1091,7 @@ footer small {
   gap: 8px;
   color: #597344;
 }
+.about aside .about-source-link { margin-top:16px; }
 .snapshot {
   font-size: 11px;
   margin: 25px 0;
@@ -1354,7 +1361,7 @@ footer small {
     width: 100%;
     margin: 0;
   }
-  footer > a:last-of-type {
+  .footer-links {
     margin: 5px 0;
   }
   .detail-hero {

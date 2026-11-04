@@ -1,132 +1,115 @@
 # PROJECT 24
 
-A small, evidence-first discovery index for games discussed on Hacker News: a video-game catalog and an early, separate tabletop collection. React + TypeScript + Vite, served from static JSON; a Python/SQLite pipeline collects and classifies the source material.
+**Games people on HN talk about.**
 
-## Local development
+A small, open index of games mentioned and recommended in Hacker News conversations. Browse the games, follow the discussions, and see the evidence for yourself.
 
-Requires Node.js 22+ and Python 3.10+ (pipeline uses the standard library and `curl`).
+[Explore PROJECT 24](https://nicobrenner.github.io/project24/) · [How it works](https://nicobrenner.github.io/project24/about/) · [Browse the data](https://nicobrenner.github.io/project24/data/catalog.json) · [Suggest a correction](https://github.com/nicobrenner/project24/issues)
+
+---
+
+## What's here
+
+- **Video games and tabletop games.** Search, filter, and browse each collection separately. Video games are the main catalog; tabletop is an early pilot.
+- **Conversations, in context.** Every indexed mention links to its original HN comment or submission. Game pages distinguish reviewed recommendations, unreviewed candidates, mentions, criticism, and technical discussion.
+- **Ways to explore.** Browse by reviewed recommendations or discussion count, find browser games and Show HN launches, and follow links to videos, streams, communities, and reviews elsewhere.
+- **A look inside.** A reproducible Python pipeline builds a static catalog served by a React, TypeScript, and Vite frontend. No backend or runtime credentials are needed.
+
+The checked-in snapshot has **859 video games** and **16 tabletop games**. It contains 5,087 game–source records, including 50 game–comment endorsements reviewed by Codex. A comment can appear under more than one game; these numbers are not counts of unique people or a census of HN.
+
+## Run it locally
+
+You'll need Node.js 22+ and Python 3.10+.
 
 ```sh
+git clone https://github.com/nicobrenner/project24.git
+cd project24
 npm ci
 npm run dev
 ```
 
-Open the URL Vite prints. The checked-in `public/data/catalog.json` works immediately without credentials or a backend.
+Open the local URL Vite prints. The checked-in catalog works immediately, without an API key, database server, or network fetch during the build.
 
 ```sh
-npm test
-npm run build
-npm run preview
+npm test         # pipeline and data-integrity tests
+npm run build    # production build in dist/
+npm run preview  # preview the production build locally
 ```
 
-`dist/` is the deployable site. Source files are in `src/`; historical data and classifier documentation are in `data/` and `pipeline/`.
+## How the evidence works
 
-## Implemented
+A game mention is a starting point, not an endorsement. Each record keeps its HN item ID, source URL, parent discussion, classification, confidence, and provenance.
 
-- Responsive discovery catalog with search, genre/platform filters, alphabetical and evidence-based sorting, and a random pick.
-- All Games, Most Recommended, Most Discussed, Browser Games, and Show HN Games collections.
-- Shareable `/game/<slug>` pages, plain-text source excerpts, HN links, confidence, and classification provenance.
-- Historical HN comments and submissions, archive-based entity discovery, normalized aliases, and guarded matching for ambiguous titles.
-- 859 video-game identities plus a 16-game tabletop pilot. The tabletop pilot contains 37 game–comment matches from 28 distinct HN comments, including seven game–comment endorsements reviewed by Codex. A comment discussing multiple games can appear in several entries.
-- Separate video-game and tabletop collections, each with its own genre, tone and ranking filters. Video games remain the default.
-- Links from game pages to YouTube gameplay/trailer searches and external review searches (Metacritic, OpenCritic, IMDb, and Steam where available). No third-party ratings or video claims are copied into the catalog.
-- Links from game pages to Twitch stream searches and Reddit community searches; live-player embeds are not included.
-- Individual Codex source review separated from machine candidates, casual mentions, criticism, and technical discussion.
-- An experimental, locally run Jeffy topic classifier has suggestions for 114 of 3,964 distinct excerpts. Its 24-example Codex-labeled diagnostic matched 15 top labels; this is not independent human evaluation or a claim of model accuracy.
-- Metadata attribution, publisher artwork loaded from credited sources, image fallback, and official play links for browser games.
-- Reproducible SQLite processing and static export, CI validation, and an incremental collection workflow.
+| Signal | What it means |
+| --- | --- |
+| **Reviewed recommendations** | Positive endorsements of a particular game, individually reviewed against the source text by Codex. These are AI reviews, not independent human verification, and count comments rather than people. |
+| **Discussion threads** | Distinct HN discussions represented in the collected sample. They can include criticism and technical discussion. |
+| **Raw keyword matches** | Unverified search estimates before disambiguation. They are not recommendation counts; an em dash means no estimate is available. |
+| **Conversation topics** | Experimental suggestions from [Jeffy](https://jeffyclassify.com/). They describe the excerpt and are not verified game attributes or endorsements. |
+| **Tone indicators** | Experimental phrase-cue signals, separate from Jeffy and recommendation review. They can miss context, negation, and sarcasm. |
 
-The starter's game selection and discovery concept were retained. Its client-side live API fan-out, keyword-only ranking, emoji artwork, and unsafe HTML rendering were replaced. The original starter README is preserved in `STARTER.md`.
+The source archive samples whole days, mostly from 2008–2026, so its coverage is uneven and not an exhaustive history of HN. Rankings reflect the selected evidence and review effort. Some games have no reviewed recommendations even if people discuss them often. [Read the full methodology](https://nicobrenner.github.io/project24/about/).
 
-## Data collection and reproducibility
+## Data and pipeline
+
+The video-game index draws on a user-supplied sample of 1,191,935 HN comments and 293,708 submissions, 35 additional discussion threads, and bounded HN Algolia searches. Curated identities and contextual checks help disambiguate titles; each accepted mention retains a link to its source. The archive files themselves are local inputs and are not included in the repository.
+
+The tabletop pilot is a separate, manually selected set of **16 games and 37 game–comment matches from 28 distinct comments**. Seven game–comment endorsements are source-reviewed by Codex. The pilot is not comprehensive and is not updated by the video-game collector. Jeffy topic labels have not yet been run on the new tabletop excerpts.
 
 ```sh
-# Rebuild SQLite and the published JSON from committed sources, offline
+# Rebuild SQLite and the published catalog from checked-in evidence, offline
 python3 -m pipeline.ingest export
-# Collect a bounded historical sample (increase pages deliberately)
+
+# Collect a bounded video-game sample or merge incremental results
 python3 -m pipeline.ingest collect --pages 1
-# Merge new evidence with the historical snapshot
 python3 -m pipeline.ingest collect --incremental --pages 5
-# Refresh available Steam metadata independently
-python3 -m pipeline.ingest metadata
+
+# Rebuild the tabletop pilot from the original sampled comments, if available
+python3 -m pipeline.tabletop --comments /path/to/comments_sample.jsonl.gz
+python3 -m pipeline.sentiment
+python3 -m pipeline.ingest export
 ```
 
-Read `pipeline/README.md` for schema, provenance, review procedure, rate limiting, and classifier extension details. `data/seeds.json`, `data/snapshot.json`, and `data/reviews.json` are versioned inputs. SQLite is derived and ignored. The initial checked-in snapshot can always be exported offline; re-fetching external APIs can change results.
+The [pipeline guide](pipeline/README.md) covers the schema, source reviews, rate limits, archive discovery, and classifier limitations. [Tabletop selections](data/tabletop-selections.json), [review decisions](data/reviews.json), and [classifier metadata](data/classifiers/) are versioned for inspection. The scheduled **Update HN evidence** workflow performs bounded video-game collection; it does not create reviewed recommendations or expand the tabletop pilot.
 
-The **Update HN evidence** GitHub Action runs daily or manually. It collects new evidence, runs the tests and production build, then commits the snapshot and export. It does not create new reviewed recommendations. Give GitHub Actions contents-write permission (the workflow requests only that); disable the schedule if you prefer manual updates. Existing reviews remain explicit versioned records.
+## Deploy
 
-## Expanded archive discovery
+### GitHub Pages
 
-The catalog contains **859 video-game identities and 16 tabletop identities**, including Tetris, Another World, chess and Go. It includes **5,087 game–source records** and **50 individually reviewed game–comment recommendations**. One comment may be associated with more than one game; most records are mentions, not recommendations.
+The live site is hosted at [nicobrenner.github.io/project24](https://nicobrenner.github.io/project24/). The included [GitHub Pages workflow](.github/workflows/github-pages.yml) builds for the `/project24/` path, generates direct game-page entry points, and deploys pushes to `main`.
 
-The scanner processed 1,191,935 comments and 293,708 submissions from the user-supplied HN archive, then fetched 35 additional whole discussion threads through Algolia. Most archive records cover 2008–2026, with a small late-2007 boundary spillover. Sampling selected whole days, so observations are clustered and coverage is uneven. Submission scores had a 14-day settling window. Neither corpus is a complete HN archive.
+For a new repository, enable **Settings → Pages → Build and deployment → GitHub Actions**. If you use a different repository name, update the GitHub Pages base path in `vite.config.ts` to match it. A custom domain can be configured in GitHub Pages settings.
 
-Discovery now has two stages. Steam application URLs and selected Show/Ask HN threads contribute explicitly reviewed identities in `data/entity-decisions.json`. A second, high-recall pass matches exact, case-preserving titles from a frozen Wikidata game index against nearby video-game context. The curated allowlist records 727 title decisions; 726 identities passed the final collision check, with some matching existing games. The allowlist is in `data/reference-decisions.json`; each accepted mention retains the HN item ID, parent discussion, and match provenance. Wikidata descriptions, genres, and platforms are CC0 and attributed. Uncertain artwork is omitted. Context and title matches still need correction over time.
-
-The tabletop pilot is a separate, manually selected set of archive comments, identified in `data/tabletop-selections.json` and rebuilt by `pipeline.tabletop`. Each game identity and source context was checked by Codex; this is not human verification or a comprehensive tabletop census. Only explicit positive endorsements in the review file count as recommendations. Tabletop metadata has editorial summaries and linked reference pages; artwork is generated in the browser, with no guessed release dates. The video-game collector does not automatically add or update tabletop records.
-
-See [pipeline discovery instructions](pipeline/README.md#archive-and-thread-discovery) to reproduce both discovery passes. The Wikidata reference snapshot is checked in as `data/wikidata-game-index.json`; the large HN dumps remain local inputs and are not republished. Offline export from committed evidence remains available without the original dumps. The discovery pass does not advance the incremental API watermark.
-
-Inspirations: HackerBooks, HackerTube, and Wikihack. [HackerTube’s data page](https://hackertube.org/data) links to the [OpenIndex HN dataset](https://huggingface.co/datasets/open-index/hacker-news), a possible future full-history source. This version uses the supplied local sample and Algolia; it does not ingest that dataset or assert it is a Karpathy archive.
-
-## What the counts mean
-
-**Reviewed recommendations** count individually source-reviewed endorsement comments for that specific game. They do not measure unique people. The initial source reviews were performed by Codex, not a human. Their provenance is explicit; they are fallible AI assessments of the quoted source. A rule-based classifier never upgrades a comment into a reviewed recommendation.
-
-**Discussion threads** count distinct parent HN stories among accepted mentions in the collected sample. Criticism and technical discussion count as discussion, not endorsement.
-
-**Raw keyword matches** report estimated Algolia search matches before disambiguation. Multiple alias query totals may overlap. They are not recommendation counts and are not used to rank games. A missing estimate is shown as an em dash, not zero.
-
-**Hidden Gems** is temporarily omitted: the current reviewed recommendation set and low-discussion cutoff yields only one title, and this sample is too limited to claim a game is obscure. **Show HN Games** lists curated creator launch submissions from the supplied sampled archive. A launch post is a mention, not a recommendation or quality endorsement. The reviewed source IDs and repeatable importer are in `data/showhn-decisions.json` and `pipeline/showhn.py`.
-
-The public methodology page explains these limits. Counts describe a bounded sample, not an exhaustive HN archive. Unequal search coverage and source-review selection bias affect rankings. Some games may have no reviewed recommendations despite substantial discussion.
-
-## Deploying
-
-The site publishes to `https://nicobrenner.github.io/project24/`. The **Deploy to GitHub
-Pages** workflow builds with the repository subpath, generates a direct HTML entry point
-per game so detail links survive a refresh, and publishes on pushes to `main`. To enable
-it once, open **Settings → Pages** and choose **GitHub Actions** as the source. A custom
-domain can be connected there later.
-
-`scripts/generate-pages-routes.mjs` writes the canonical URL and the per-page Open Graph
-tags, so it needs to know where the site is served from. It reads `SITE_URL` and falls
-back to the GitHub Pages address. Any other host only has to set that one variable for
-its pages to canonicalise to themselves:
+The route generator also writes canonical URLs and per-game social-preview tags. It defaults to the GitHub Pages URL; when building for another host, set its public URL before running the generator:
 
 ```sh
 SITE_URL=https://example.com node scripts/generate-pages-routes.mjs
 ```
 
-The build is static, needs no runtime secret, and fetches neither HN nor Steam. The
-included `_redirects` and `_headers` are for hosts that honour them (Cloudflare Pages,
-Netlify); GitHub Pages ignores both and uses the generated `404.html` as its SPA
-fallback. If you serve the site from a host that does honour `_headers`, note that its
-Content-Security-Policy has to allow the analytics hosts, which it does.
+### Cloudflare Pages
 
-## GitHub publication
+Connect the repository to Cloudflare Pages with production branch `main`, build command `npm run build`, output directory `dist`, and Node.js 22. The included `_redirects` supports direct game routes. A manual [Cloudflare deployment workflow](.github/workflows/deploy.yml) is also available if the Pages project and the required account ID and API-token secrets are configured; its project name is currently `hackergames`.
 
-From this directory, after authenticating with `gh auth login`:
+## Project map
 
-```sh
-gh repo create project24 --public --source=. --remote=origin --push
+```text
+src/                 React interface and styles
+public/data/         Static catalog served by the site
+pipeline/            Collection, review, export, and tests
+data/                Versioned evidence, selections, reviews, and classifier metadata
+.github/workflows/   Validation, collection, and deployment workflows
 ```
 
-Do not run this if the remote already exists; use `git push -u origin main` instead. The project has its own Git repository and does not modify the enclosing workspace repository.
+## Help improve the collection
 
-## Rights and privacy
+Found a bad match, missing game, or confusing source? [Open an issue](https://github.com/nicobrenner/project24/issues) with a link to the HN discussion if you have one. New evidence is welcome; please keep mentions separate from reviewed recommendations and preserve the original source links.
 
-The MIT license applies to original code only. HN content belongs to its authors; each excerpt links to its source. Game artwork and metadata belong to their publishers/source providers, are attributed on game pages, and are not relicensed by this repository. Artwork is loaded remotely rather than redistributed as local assets. No broad artwork reuse license is claimed. Remote artwork requests reveal normal browser request information to the image host. No analytics, tracking scripts, cookies, account system, or paid placements are included.
+There is plenty still to do: broader historical coverage, more independently reviewed recommendations, improved alias disambiguation, source-deletion reconciliation, and independent evaluation of the experimental classifiers.
 
-Metadata describes the credited source edition (for example a Steam release date may differ from the game's original release). Missing data remains missing rather than inferred. Browser games with no usable licensed artwork use a typographic fallback.
+## Rights and independence
 
-## Future work / limitations
+The project's original code is available under the [MIT License](LICENSE). HN comments belong to their authors and link to their originals. Game artwork and metadata remain with their respective rights holders; externally hosted artwork is attributed on game pages and is not relicensed by this repository. Tabletop fallback artwork is generated by the site. Remote artwork requests reveal normal browser request information to the image host.
 
-- Full-history backfill: the current local archive samples whole days, and additional thread searches are bounded. These cannot establish all-time HN popularity.
-- More reviewed recommendations and a reviewer interface; multiple independent reviewers and calibrated confidence.
-- Better Jeffy evaluation using independent human labels and more training examples. PROJECT 24 currently runs an experimental local Jeffy topic classifier; it labels conversation themes, not game identities or recommendations.
-- Richer alias catalogs, edition-aware metadata, licensed local artwork, and ongoing source-deletion reconciliation.
-- Broader coverage from additional full-history sources, multilingual titles, stronger alias resolution, and ongoing correction review.
-- Frontend automated browser regression tests; current verification includes TypeScript production build, Python tests/data invariants, and manual browser interaction checks.
+The site loads Google Analytics and Umami scripts, including an Umami recorder, and records page views and outbound-link interactions. These services also receive normal browser request information.
 
-HN search API: <https://hn.algolia.com/api>. Original discussions: <https://news.ycombinator.com/>. This independent project is not affiliated with Y Combinator, Hacker News, Valve, or game publishers.
+PROJECT 24 is independent and is not affiliated with Hacker News, Y Combinator, Valve, or game publishers. It was inspired by HackerBooks, HackerTube, and Wikihack.

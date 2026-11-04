@@ -16,6 +16,7 @@ import {
   ExternalLink,
   Shuffle,
   ChevronDown,
+  Github,
 } from "lucide-react";
 import type { Catalog, Game, Mention } from "./types";
 import { listenForOutboundClicks, trackPageView } from "./analytics";
@@ -496,6 +497,9 @@ function App() {
                 <a href={appPath("/data/catalog.json")} target="_blank" rel="noreferrer">
                   Inspect the published dataset <ArrowUpRight size={15} />
                 </a>
+                <a className="about-source-link" href="https://github.com/nicobrenner/project24" target="_blank" rel="noreferrer">
+                  <Github size={16} /> View source code on GitHub <ArrowUpRight size={15} />
+                </a>
               </aside>
             </div>
             <h2>Attribution & independence</h2>
@@ -796,15 +800,20 @@ function App() {
       <footer className="wrap">
         <a
           className="brand footer-brand"
-                  href={appPath("/")}
+          href={appPath("/")}
           onClick={(e) => internal(e, "/")}
         >
           <Gamepad2 size={20} /> PROJECT 24
         </a>
         <p>Built from HN conversations. Still growing.</p>
-        <a href={appPath("/about")} onClick={(e) => internal(e, "/about")}>
-          Sources & methodology <ArrowUpRight size={13} />
-        </a>
+        <nav className="footer-links" aria-label="Footer links">
+          <a href={appPath("/about")} onClick={(e) => internal(e, "/about")}>
+            Sources & methodology <ArrowUpRight size={13} />
+          </a>
+          <a href="https://github.com/nicobrenner/project24" target="_blank" rel="noreferrer">
+            <Github size={15} /> Source code on GitHub <ArrowUpRight size={13} />
+          </a>
+        </nav>
         <small>Independent. Not affiliated with Y Combinator.</small>
       </footer>
       <KeyboardSearch />
