@@ -98,22 +98,27 @@ function SentimentIndicator({
   evidenceCount,
   detail = false,
   compact = false,
+  href,
+  onClick,
 }: {
   label: "positive" | "negative" | "mixed" | "unclear";
   evidenceCount?: number;
   detail?: boolean;
   compact?: boolean;
+  href?: string;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }) {
   if (label === "unclear") return null;
   const name = detail
     ? { positive: "Positive tone", negative: "Critical tone", mixed: "Mixed tone", unclear: "No clear signal" }[label]
     : { positive: "Positive signals", negative: "Critical signals", mixed: "Mixed reactions", unclear: "No clear signal" }[label];
   const count = evidenceCount === undefined ? "" : ` · ${evidenceCount} excerpt${evidenceCount === 1 ? "" : "s"}`;
-  return (
-    <span className={`sentiment-indicator ${label}${compact ? " compact" : ""}`} aria-label={`${name}${count}`} title={`Experimental sample tone${count}; phrase-cue heuristic, not calibrated.`}>
-      <i aria-hidden="true" />{compact ? null : <>{name}{count}</>}
-    </span>
-  );
+  const className = `sentiment-indicator ${label}${compact ? " compact" : ""}`;
+  const content = <><i aria-hidden="true" />{compact ? null : <>{name}{count}</>}</>;
+  const title = `Experimental sample tone${count}; phrase-cue heuristic, not calibrated.`;
+  return href
+    ? <a className={`${className} sentiment-indicator-link`} href={href} onClick={onClick} aria-label={`${name}${count}`} title={title}>{content}</a>
+    : <span className={className} aria-label={`${name}${count}`} title={title}>{content}</span>;
 }
 function App() {
   const [catalog, setCatalog] = useState<Catalog | null>(null),
@@ -132,6 +137,7 @@ function App() {
     ),
     [sort, setSort] = useState("recommended");
   const [theme, setTheme] = useState(params.get("theme") || "all");
+  const [sentiment, setSentiment] = useState(params.get("sentiment") || "all");
   const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 760px)").matches);
   const [visibleGames, setVisibleGames] = useState(() => window.matchMedia("(max-width: 760px)").matches ? 5 : 48);
   const pageSize = isMobile ? 5 : 48;
@@ -143,7 +149,7 @@ function App() {
     media.addEventListener("change", update);
     return () => media.removeEventListener("change", update);
   }, []);
-  useEffect(() => setVisibleGames(pageSize), [query, section, genre, platform, sort, theme, pageSize]);
+  useEffect(() => setVisibleGames(pageSize), [query, section, genre, platform, sort, theme, sentiment, pageSize]);
   useEffect(() => {
     fetch("/data/catalog.json")
       .then((r) => {
@@ -169,6 +175,7 @@ function App() {
       setGenre(p.get("genre") || "All genres");
       setPlatform(p.get("platform") || "All platforms");
       setTheme(p.get("theme") || "all");
+      setSentiment(p.get("sentiment") || "all");
     };
     window.addEventListener("popstate", listener);
     return () => window.removeEventListener("popstate", listener);
@@ -183,11 +190,12 @@ function App() {
     const p = new URLSearchParams();
     if (query) p.set("q", query);
     if (theme !== "all") p.set("theme", theme);
+    if (sentiment !== "all") p.set("sentiment", sentiment);
     if (section !== "All games") p.set("section", section);
     if (genre !== "All genres") p.set("genre", genre);
     if (platform !== "All platforms") p.set("platform", platform);
     history.replaceState({}, "", `/${p.size ? "?" + p : ""}${location.hash}`);
-  }, [query, section, genre, platform, route, theme]);
+  }, [query, section, genre, platform, route, theme, sentiment]);
   const games = catalog?.games || [];
   const spotlightTopics = useMemo(() => [...new Map(games.flatMap(game => game.mentions
     .filter(mention => mention.kind === "comment" && mention.theme && mention.text.trim().length >= 55 && mention.text.toLowerCase().includes(game.title.toLowerCase()))
@@ -216,6 +224,7 @@ function App() {
           return (
             matches &&
             (theme === "all" || !!g.themes?.some(t => t.label === theme)) &&
+            (sentiment === "all" || g.sentimentSummary?.label === sentiment) &&
             (genre === "All genres" ||
               g.genres?.includes(genre) ||
               g.genre === genre) &&
@@ -238,7 +247,7 @@ function App() {
             a.title.localeCompare(b.title)
           );
         }),
-    [games, query, genre, platform, section, sort, theme],
+    [games, query, genre, platform, section, sort, theme, sentiment],
   );
   const spotlightItems = useMemo(() => {
     const items = games.flatMap(game => game.mentions
@@ -295,6 +304,7 @@ function App() {
   function reset() {
     setQuery("");
     setTheme("all");
+    setSentiment("all");
     setGenre("All genres");
     setPlatform("All platforms");
     setSection("All games");
@@ -308,6 +318,14 @@ function App() {
     setPlatform("All platforms");
     setTheme(label);
     history.pushState({}, "", `/?theme=${encodeURIComponent(label)}#catalog`);
+    setRoute("/");
+    window.requestAnimationFrame(() => document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" }));
+  }
+  function openSentiment(e: React.MouseEvent<HTMLAnchorElement>, label: "positive" | "negative" | "mixed") {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    setQuery(""); setSection("All games"); setGenre("All genres"); setPlatform("All platforms"); setTheme("all"); setSentiment(label);
+    history.pushState({}, "", `/?sentiment=${label}#catalog`);
     setRoute("/");
     window.requestAnimationFrame(() => document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" }));
   }
@@ -468,6 +486,7 @@ function App() {
             game={selected}
             link={link}
             onBack={(e) => internal(e, "/")}
+            onSentimentClick={openSentiment}
             games={games}
           />
         ) : route !== "/" ? (
@@ -604,6 +623,15 @@ function App() {
                     {platforms.map((p) => (
                       <option key={p}>{p}</option>
                     ))}
+                  </select>
+                  <ChevronDown size={13} />
+                </label>
+                <label className="select">
+                  <select aria-label="Filter by HN tone" value={sentiment} onChange={e => setSentiment(e.target.value)}>
+                    <option value="all">All HN tones</option>
+                    <option value="positive">Positive signals</option>
+                    <option value="negative">Critical signals</option>
+                    <option value="mixed">Mixed reactions</option>
                   </select>
                   <ChevronDown size={13} />
                 </label>
@@ -766,11 +794,13 @@ function KeyboardSearch() {
 function Detail({
   game: g,
   onBack,
+  onSentimentClick,
   link,
   games,
 }: {
   game: Game;
   onBack: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  onSentimentClick: (e: React.MouseEvent<HTMLAnchorElement>, label: "positive" | "negative" | "mixed") => void;
   link: (g: Game, c: React.ReactNode, cls?: string) => React.ReactNode;
   games: Game[];
 }) {
@@ -801,7 +831,7 @@ function Detail({
           </div>
           <div className="game-title-line">
             <h1>{g.title}</h1>
-            <SentimentIndicator label={g.sentimentSummary?.label || "unclear"} evidenceCount={g.sentimentSummary?.evidenceCount || 0} />
+            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} href={`/?sentiment=${g.sentimentSummary.label}#catalog`} onClick={e => onSentimentClick(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
           </div>
           <a className="conversation-jump-button" href="#conversations">
             Related HN conversations <ArrowDown size={16} />

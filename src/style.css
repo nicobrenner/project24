@@ -632,6 +632,9 @@ header {
 .card-title-line .sentiment-indicator {font-size:8px}
 .sentiment-indicator.compact {padding:4px}
 .game-title-line .sentiment-indicator {font-size:10px;padding:6px 9px;border:1px solid #e0e3d7;border-radius:20px;background:#f5f6f0}
+.sentiment-indicator-link {color:inherit;text-decoration:none;cursor:pointer;transition:border-color .15s ease,transform .15s ease}
+.sentiment-indicator-link:hover {border-color:#b88e39;transform:translateY(-1px)}
+.sentiment-indicator-link:focus-visible {outline:2px solid #e96542;outline-offset:3px}
 .card-body > p {
   font-size: 11px;
   color: #6d7764;
