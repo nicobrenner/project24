@@ -98,8 +98,18 @@ function App() {
     ),
     [sort, setSort] = useState("recommended");
   const [theme, setTheme] = useState(params.get("theme") || "all");
-  const [visibleGames, setVisibleGames] = useState(48);
-  useEffect(() => setVisibleGames(48), [query, section, genre, platform, sort, theme]);
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 760px)").matches);
+  const [visibleGames, setVisibleGames] = useState(() => window.matchMedia("(max-width: 760px)").matches ? 5 : 48);
+  const pageSize = isMobile ? 5 : 48;
+  const [spotlightIndex, setSpotlightIndex] = useState(0);
+  const [spotlightPlaying, setSpotlightPlaying] = useState(() => !window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 760px)");
+    const update = () => setIsMobile(media.matches);
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+  useEffect(() => setVisibleGames(pageSize), [query, section, genre, platform, sort, theme, pageSize]);
   useEffect(() => {
     fetch("/data/catalog.json")
       .then((r) => {
@@ -193,6 +203,23 @@ function App() {
         }),
     [games, query, genre, platform, section, sort, theme],
   );
+  const spotlightItems = useMemo(() => {
+    const items = games.flatMap(game => game.mentions
+      .filter(mention => mention.kind === "comment" && mention.theme && mention.text.trim().length >= 55 && (theme === "all" || mention.theme.label === theme))
+      .map(mention => ({game, mention, direct: mention.text.toLowerCase().includes(game.title.toLowerCase())}))
+      .filter(item => item.direct));
+    const seen = new Set<string>();
+    return items.sort((a, b) => Number(b.direct) - Number(a.direct) || (b.mention.theme?.confidence || 0) - (a.mention.theme?.confidence || 0) || b.mention.text.length - a.mention.text.length)
+      .filter(item => { if (seen.has(item.mention.id)) return false; seen.add(item.mention.id); return true; })
+      .slice(0, 24);
+  }, [games, theme]);
+  const activeSpotlight = spotlightItems.length ? spotlightItems[spotlightIndex % spotlightItems.length] : undefined;
+  useEffect(() => { setSpotlightIndex(0); }, [theme]);
+  useEffect(() => {
+    if (!spotlightPlaying || spotlightItems.length < 2) return;
+    const timer = window.setInterval(() => setSpotlightIndex(index => (index + 1) % spotlightItems.length), 9000);
+    return () => window.clearInterval(timer);
+  }, [spotlightPlaying, spotlightItems.length]);
   function internal(e: React.MouseEvent<HTMLAnchorElement>, path: string) {
     if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
       e.preventDefault();
@@ -217,13 +244,6 @@ function App() {
     setPlatform("All platforms");
     setSection("All games");
   }
-  const featured = ["outer-wilds", "factorio", "baba-is-you"]
-    .map((id) => games.find((g) => g.id === id))
-    .filter(Boolean) as Game[];
-  const recommendations = games.reduce(
-    (n, g) => n + g.verifiedRecommendations,
-    0,
-  );
   return (
     <>
       <a className="skip" href="#main">
@@ -392,86 +412,43 @@ function App() {
           </div>
         ) : (
           <>
-            <section className="hero">
-              <div className="hero-copy">
-                <div className="eyebrow">
-                  <span className="tiny-square" /> PROJECT 24 · THE HN GAME INDEX
+            <section className="spotlight" aria-labelledby="spotlight-title">
+              <div className="spotlight-heading">
+                <div>
+                  <div className="eyebrow"><span className="tiny-square" /> FROM HN CONVERSATIONS</div>
+                  <h1 id="spotlight-title">What are people talking about?</h1>
                 </div>
-                <h1>
-                  Games people
-                  <br />
-                  on HN <span>talk about.</span>
-                  <svg viewBox="0 0 320 18" aria-hidden="true">
-                    <path d="M3 12Q150 0 314 8M42 17Q175 8 280 13" />
-                  </svg>
-                </h1>
-                <p>
-                  An open index of games mentioned and recommended on Hacker News. Browse the games, read the conversations, and see what catches your eye.
-                </p>
-                <a className="primary" href="#catalog">
-                  Browse the games <ArrowRight size={17} />
-                </a>
-                <div className="hero-note">
-                  <span className="hn-square">Y</span> Collected from HN conversations.
-                </div>
-              </div>
-              <div className="hero-art" aria-label="Games in the index">
-                <div className="orbit orbit-one" />
-                <div className="orbit orbit-two" />
-                <span className="art-cross cross-one">+</span>
-                <span className="art-cross cross-two">+</span>
-                <div className="art-caption">
-                  FROM THE COLLECTION <ArrowUpRight size={17} />
-                </div>
-                {featured.map((g, i) => (
-                  <React.Fragment key={g.id}>
-                    {link(
-                      g,
-                      <>
-                        <Cover game={g} />
-                        <div className="featured-label">
-                          <span>{g.title}</span>
-                          <ArrowUpRight size={17} />
-                        </div>
-                      </>,
-                      `featured featured-${i}`,
-                    )}
-                  </React.Fragment>
-                ))}
-                <div className="evidence-sticker">
-                  <span className="sticker-icon">
-                    <MessageSquare size={19} />
+                <label className="spotlight-filter">Conversation theme
+                  <span className="spotlight-select-wrap">
+                    <select aria-label="Conversation theme" value={theme} onChange={e => setTheme(e.target.value)}>
+                      <option value="all">All conversations</option>
+                      {[...new Map(games.flatMap(g => (g.themes || []).map(t => [t.label, t.name] as const))).entries()].sort((a,b) => a[1].localeCompare(b[1])).map(([value,name]) => <option key={value} value={value}>{name}</option>)}
+                    </select>
+                    <ChevronDown aria-hidden="true" size={17} />
                   </span>
-                  <div>
-                    Games, stories,
-                    <br />
-                    <strong>and side projects.</strong>
+                </label>
+              </div>
+              {activeSpotlight ? <article className="spotlight-card" aria-live="polite">
+                <div className="spotlight-visual"><Cover game={activeSpotlight.game} className="spotlight-cover" /><div className="spotlight-shade" />
+                  <div className="spotlight-content">
+                    <div className="spotlight-game-line">{link(activeSpotlight.game, <>{activeSpotlight.game.title} <ArrowUpRight size={17}/></>, "spotlight-game")}
+                      <SentimentIndicator label={activeSpotlight.mention.sentiment?.label || "unclear"} />
+                    </div>
+                    <blockquote>“{activeSpotlight.mention.text}”</blockquote>
+                    {activeSpotlight.mention.theme && <a className="spotlight-topic" href="https://jeffyclassify.com" target="_blank" rel="noreferrer">Jeffy topic · {activeSpotlight.mention.theme.name} <ArrowUpRight size={12}/></a>}
+                    <div className="spotlight-source"><span>{activeSpotlight.mention.author} · {activeSpotlight.mention.storyTitle}</span><a href={activeSpotlight.mention.url} target="_blank" rel="noreferrer">Read on Hacker News <ArrowUpRight size={14}/></a></div>
                   </div>
                 </div>
-              </div>
+                <div className="spotlight-controls">
+                  <button aria-label="Previous conversation" onClick={() => setSpotlightIndex(index => (index - 1 + spotlightItems.length) % spotlightItems.length)}><ArrowLeft size={17}/></button>
+                  <span>{String(spotlightIndex + 1).padStart(2,"0")} <i>/</i> {String(spotlightItems.length).padStart(2,"0")}</span>
+                  <button aria-label="Next conversation" onClick={() => setSpotlightIndex(index => (index + 1) % spotlightItems.length)}><ArrowRight size={17}/></button>
+                  <button className="spotlight-play" aria-label={spotlightPlaying ? "Pause automatic rotation" : "Resume automatic rotation"} onClick={() => setSpotlightPlaying(value => !value)}>{spotlightPlaying ? "Pause" : "Play"}</button>
+                  <span className="spotlight-note">Tone is an experimental excerpt-level signal; Jeffy suggests a conversation topic.</span>
+                </div>
+              </article> : <div className="spotlight-empty">No matching excerpts in this theme yet. Try another conversation theme.</div>}
             </section>
-            <div className="index-strip">
-              <div>
-                <span className="live-dot" /> A small, open-source project
-              </div>
-              <div>
-                <strong>{games.length}</strong> games{" "}
-                <span className="divider">/</span>{" "}
-                <strong>{fmt(recommendations)}</strong> reviewed recommendations{" "}
-                <span className="divider">/</span>{" "}
-                <a href="/about" onClick={(e) => internal(e, "/about")}>
-                  Explore the evidence <ArrowUpRight size={13} />
-                </a>
-              </div>
-            </div>
             <section className="catalog" id="catalog">
-              <div className="conversation-lenses">
-                <div><strong>What are people talking about?</strong><p>Explore themes in the source excerpts. Experimental tags by <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">Jeffy</a>; they describe conversations, not verified game qualities.</p></div>
-                <label>Conversation theme <select aria-label="Conversation theme" value={theme} onChange={e => setTheme(e.target.value)}>
-                  <option value="all">All conversations</option>
-                  {[...new Map(games.flatMap(g => (g.themes || []).map(t => [t.label, t.name] as const))).entries()].sort((a,b) => a[1].localeCompare(b[1])).map(([value,name]) => <option key={value} value={value}>{name}</option>)}
-                </select></label>
-              </div>
               <div className="section-heading">
                 <div>
                   <div className="eyebrow">THE COLLECTION</div>
@@ -632,7 +609,7 @@ function App() {
                   </article>
                 ))}
               </div>
-              {shown.length > visibleGames && <button className="random" onClick={() => setVisibleGames(n => n + 48)}>Show more games ({shown.length - visibleGames} remaining)</button>}
+              {shown.length > visibleGames && <button className="random show-more" onClick={() => setVisibleGames(n => n + pageSize)}>Show next {Math.min(pageSize, shown.length - visibleGames)} games ({shown.length - visibleGames} remaining)</button>}
               {!shown.length && (
                 <div className="empty">
                   <Search size={30} />
