@@ -27,6 +27,9 @@ const sections = [
   "Show HN Games",
 ] as const;
 type Section = (typeof sections)[number];
+const appBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+const appPath = (path: string) => `${appBase}${path.startsWith("/") ? path : `/${path}`}`;
+const routePath = (path: string) => appBase && (path === appBase || path.startsWith(`${appBase}/`)) ? path.slice(appBase.length) || "/" : path;
 const fmt = (n: number | null) => n === null ? "—" : n.toLocaleString();
 const date = (value: string) => {
   const d = new Date(value);
@@ -123,7 +126,7 @@ function SentimentIndicator({
 function App() {
   const [catalog, setCatalog] = useState<Catalog | null>(null),
     [error, setError] = useState("");
-  const [route, setRoute] = useState(location.pathname),
+  const [route, setRoute] = useState(routePath(location.pathname)),
     [params, setParams] = useState(new URLSearchParams(location.search));
   const [query, setQuery] = useState(params.get("q") || ""),
     [section, setSection] = useState<Section>(
@@ -151,7 +154,7 @@ function App() {
   }, []);
   useEffect(() => setVisibleGames(pageSize), [query, section, genre, platform, sort, theme, sentiment, pageSize]);
   useEffect(() => {
-    fetch("/data/catalog.json")
+    fetch(`${import.meta.env.BASE_URL}data/catalog.json`)
       .then((r) => {
         if (!r.ok) throw Error("The catalog could not be loaded.");
         return r.json();
@@ -163,7 +166,7 @@ function App() {
   }, []);
   useEffect(() => {
     const listener = () => {
-      setRoute(location.pathname);
+      setRoute(routePath(location.pathname));
       const p = new URLSearchParams(location.search);
       setParams(p);
       setQuery(p.get("q") || "");
@@ -181,8 +184,8 @@ function App() {
     return () => window.removeEventListener("popstate", listener);
   }, []);
   function navigate(path: string) {
-    history.pushState({}, "", path);
-    setRoute(location.pathname);
+    history.pushState({}, "", appPath(path));
+    setRoute(routePath(location.pathname));
     window.scrollTo({ top: 0, behavior: "instant" });
   }
   useEffect(() => {
@@ -194,7 +197,7 @@ function App() {
     if (section !== "All games") p.set("section", section);
     if (genre !== "All genres") p.set("genre", genre);
     if (platform !== "All platforms") p.set("platform", platform);
-    history.replaceState({}, "", `/${p.size ? "?" + p : ""}${location.hash}`);
+    history.replaceState({}, "", appPath(`/${p.size ? "?" + p : ""}${location.hash}`));
   }, [query, section, genre, platform, route, theme, sentiment]);
   const games = catalog?.games || [];
   const spotlightTopics = useMemo(() => [...new Map(games.flatMap(game => game.mentions
@@ -294,7 +297,7 @@ function App() {
     return (
       <a
         className={className}
-        href={`/game/${game.id}`}
+        href={appPath(`/game/${game.id}`)}
         onClick={(e) => internal(e, `/game/${game.id}`)}
       >
         {children}
@@ -317,7 +320,7 @@ function App() {
     setGenre("All genres");
     setPlatform("All platforms");
     setTheme(label);
-    history.pushState({}, "", `/?theme=${encodeURIComponent(label)}#catalog`);
+    history.pushState({}, "", appPath(`/?theme=${encodeURIComponent(label)}#catalog`));
     setRoute("/");
     window.requestAnimationFrame(() => document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" }));
   }
@@ -325,7 +328,7 @@ function App() {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
     setQuery(""); setSection("All games"); setGenre("All genres"); setPlatform("All platforms"); setTheme("all"); setSentiment(label);
-    history.pushState({}, "", `/?sentiment=${label}#catalog`);
+    history.pushState({}, "", appPath(`/?sentiment=${label}#catalog`));
     setRoute("/");
     window.requestAnimationFrame(() => document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" }));
   }
@@ -338,7 +341,7 @@ function App() {
         <div className="wrap nav">
           <a
             className="brand"
-            href="/"
+            href={appPath("/")}
             onClick={(e) => {
               internal(e, "/");
               reset();
@@ -352,14 +355,14 @@ function App() {
           <nav aria-label="Main navigation">
             <a
               className={route === "/" ? "current" : ""}
-              href="/"
+              href={appPath("/")}
               onClick={(e) => internal(e, "/")}
             >
               Discover
             </a>
             <a
               className={route === "/about" ? "current" : ""}
-              href="/about"
+              href={appPath("/about")}
               onClick={(e) => internal(e, "/about")}
             >
               How it works
@@ -390,7 +393,7 @@ function App() {
           </div>
         ) : route === "/about" ? (
           <section className="about">
-            <a className="back" href="/" onClick={(e) => internal(e, "/")}>
+            <a className="back" href={appPath("/")} onClick={(e) => internal(e, "/")}>
               <ArrowLeft size={16} /> Back to discovery
             </a>
         <div className="eyebrow">PROJECT 24 · SMALL INDEX. OPEN EVIDENCE.</div>
@@ -461,7 +464,7 @@ function App() {
                   <span className="live-dot" /> Snapshot:{" "}
                   {date(catalog.generatedAt)}
                 </div>
-                <a href="/data/catalog.json" target="_blank" rel="noreferrer">
+                <a href={appPath("/data/catalog.json")} target="_blank" rel="noreferrer">
                   Inspect the published dataset <ArrowUpRight size={15} />
                 </a>
               </aside>
@@ -493,7 +496,7 @@ function App() {
         ) : route !== "/" ? (
           <div className="empty">
             <h1>Game not found.</h1>
-            <a href="/" onClick={(e) => internal(e, "/")}>
+            <a href={appPath("/")} onClick={(e) => internal(e, "/")}>
               Browse the games →
             </a>
           </div>
@@ -522,10 +525,10 @@ function App() {
                   <div className="spotlight-shade" />
                   <div className="spotlight-content">
                     <div className="spotlight-game-line">{link(activeSpotlight.game, <>{activeSpotlight.game.title} <ArrowUpRight size={17}/></>, "spotlight-game")}
-                      {activeSpotlight.game.sentimentSummary && activeSpotlight.game.sentimentSummary.label !== "unclear" && <SentimentIndicator label={activeSpotlight.game.sentimentSummary.label} evidenceCount={activeSpotlight.game.sentimentSummary.evidenceCount} href={`/?sentiment=${activeSpotlight.game.sentimentSummary.label}#catalog`} onClick={e => openSentiment(e, activeSpotlight.game.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
+                      {activeSpotlight.game.sentimentSummary && activeSpotlight.game.sentimentSummary.label !== "unclear" && <SentimentIndicator label={activeSpotlight.game.sentimentSummary.label} evidenceCount={activeSpotlight.game.sentimentSummary.evidenceCount} href={appPath(`/?sentiment=${activeSpotlight.game.sentimentSummary.label}#catalog`)} onClick={e => openSentiment(e, activeSpotlight.game.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
                     </div>
                     <blockquote>“{activeSpotlight.mention.text}”</blockquote>
-                    {activeSpotlight.mention.theme && <a className="spotlight-topic" href={`/?theme=${encodeURIComponent(activeSpotlight.mention.theme.label)}#catalog`} onClick={e => openTheme(e, activeSpotlight.mention.theme!.label)} aria-label={`Show games tagged ${activeSpotlight.mention.theme.name}`}>Jeffy topic · {activeSpotlight.mention.theme.name} <ArrowUpRight size={12}/></a>}
+                    {activeSpotlight.mention.theme && <a className="spotlight-topic" href={appPath(`/?theme=${encodeURIComponent(activeSpotlight.mention.theme.label)}#catalog`)} onClick={e => openTheme(e, activeSpotlight.mention.theme!.label)} aria-label={`Show games tagged ${activeSpotlight.mention.theme.name}`}>Jeffy topic · {activeSpotlight.mention.theme.name} <ArrowUpRight size={12}/></a>}
                     <div className="spotlight-source"><span>{activeSpotlight.mention.author} · {activeSpotlight.mention.storyTitle}</span><a href={activeSpotlight.mention.url} target="_blank" rel="noreferrer">Read on Hacker News <ArrowUpRight size={14}/></a></div>
                   </div>
                 </div>
@@ -665,7 +668,7 @@ function App() {
               <div className="grid">
                 {shown.slice(0, visibleGames).map((g, i) => (
                   <article className="card" key={g.id}>
-                    <a className="card-link" href={`/game/${g.id}`} onClick={e => internal(e, `/game/${g.id}`)}>
+                    <a className="card-link" href={appPath(`/game/${g.id}`)} onClick={e => internal(e, `/game/${g.id}`)}>
                         <div className="card-art">
                           <Cover game={g} />
                           <span className="rank">
@@ -688,8 +691,8 @@ function App() {
                             {g.releaseDate?.match(/\d{4}/)?.[0] || "—"}
                           </div>
                           <div className="card-title-line">
-                            <h3><a className="card-title-link" href={`/game/${g.id}`} onClick={e => internal(e, `/game/${g.id}`)}>{g.title}</a></h3>
-                            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} compact href={`/?sentiment=${g.sentimentSummary.label}#catalog`} onClick={e => openSentiment(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
+                            <h3><a className="card-title-link" href={appPath(`/game/${g.id}`)} onClick={e => internal(e, `/game/${g.id}`)}>{g.title}</a></h3>
+                            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} compact href={appPath(`/?sentiment=${g.sentimentSummary.label}#catalog`)} onClick={e => openSentiment(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
                           </div>
                           <p>{g.description}</p>
                           <div className="card-stats">
@@ -725,7 +728,7 @@ function App() {
                   Rankings reflect a collected sample,
                   not all of HN. A mention isn’t an endorsement.
                   <br />
-                  <a href="/about" onClick={(e) => internal(e, "/about")}>
+                  <a href={appPath("/about")} onClick={(e) => internal(e, "/about")}>
                     Read how we count →
                   </a>
                 </p>
@@ -752,13 +755,13 @@ function App() {
       <footer className="wrap">
         <a
           className="brand footer-brand"
-          href="/"
+                  href={appPath("/")}
           onClick={(e) => internal(e, "/")}
         >
           <Gamepad2 size={20} /> PROJECT 24
         </a>
         <p>Built from HN conversations. Still growing.</p>
-        <a href="/about" onClick={(e) => internal(e, "/about")}>
+        <a href={appPath("/about")} onClick={(e) => internal(e, "/about")}>
           Sources & methodology <ArrowUpRight size={13} />
         </a>
         <small>Independent. Not affiliated with Y Combinator.</small>
@@ -822,7 +825,7 @@ function Detail({
     );
   return (
     <section className="detail">
-      <a className="back" href="/" onClick={onBack}>
+      <a className="back" href={appPath("/")} onClick={onBack}>
         <ArrowLeft size={16} /> Back to the index
       </a>
       <div className="detail-hero">
@@ -833,7 +836,7 @@ function Detail({
           </div>
           <div className="game-title-line">
             <h1>{g.title}</h1>
-            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} href={`/?sentiment=${g.sentimentSummary.label}#catalog`} onClick={e => onSentimentClick(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
+            {g.sentimentSummary && g.sentimentSummary.label !== "unclear" && <SentimentIndicator label={g.sentimentSummary.label} evidenceCount={g.sentimentSummary.evidenceCount} href={appPath(`/?sentiment=${g.sentimentSummary.label}#catalog`)} onClick={e => onSentimentClick(e, g.sentimentSummary!.label as "positive" | "negative" | "mixed")} />}
           </div>
           <a className="conversation-jump-button" href="#conversations">
             Related HN conversations <ArrowDown size={16} />
@@ -967,7 +970,7 @@ function Detail({
                   (uncalibrated assessment)
                 </p>
                 {m.sentiment && <p>Sentiment signal: {m.sentiment.name}. {m.sentiment.provenance} Classifier: {m.sentiment.model}; confidence is uncalibrated and does not establish consensus.</p>}
-                {m.theme && <p>Jeffy conversation topic: <a href={`/?theme=${encodeURIComponent(m.theme.label)}#catalog`} onClick={e => onThemeClick(e, m.theme!.label)}>{m.theme.name}</a> · <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">About Jeffy</a>. Custom head {m.theme.model}, confidence {Math.round(m.theme.confidence * 100)}% (uncalibrated), trained on synthetic teaching examples. This describes the excerpt and may concern another game in the same comment; it is not a reviewed endorsement.</p>}
+                {m.theme && <p>Jeffy conversation topic: <a href={appPath(`/?theme=${encodeURIComponent(m.theme.label)}#catalog`)} onClick={e => onThemeClick(e, m.theme!.label)}>{m.theme.name}</a> · <a href="https://jeffyclassify.com" target="_blank" rel="noreferrer">About Jeffy</a>. Custom head {m.theme.model}, confidence {Math.round(m.theme.confidence * 100)}% (uncalibrated), trained on synthetic teaching examples. This describes the excerpt and may concern another game in the same comment; it is not a reviewed endorsement.</p>}
                 {m.storyUrl && (
                   <a href={m.storyUrl} target="_blank" rel="noreferrer">
                     {m.storyTitle || "Parent discussion"} ↗
@@ -990,9 +993,7 @@ function Detail({
         <aside className="detail-aside">
           <span className="eyebrow">CONTEXT MATTERS</span>
           <h3>
-            A mention is
-            <br />
-            only the beginning.
+            A mention is only the beginning.
           </h3>
           <p>
             People discuss games for all sorts of reasons. Only endorsements
@@ -1003,7 +1004,7 @@ function Detail({
             Counts describe our collected sample. Multiple comments can come
             from the same person or conversation.
           </p>
-          <a href="/about">
+          <a href={appPath("/about")}>
             How the index works <ArrowUpRight size={14} />
           </a>
           <hr />
