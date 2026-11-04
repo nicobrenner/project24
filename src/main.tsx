@@ -770,8 +770,7 @@ function App() {
               <div className="catalog-note">
                 <span className="note-icon">i</span>
                 <p>
-                  Rankings reflect a collected sample,
-                  not all of HN. A mention isn’t an endorsement.
+                  Rankings reflect a collected sample, not all of HN.
                   <br />
                   <a href={appPath("/about")} onClick={(e) => internal(e, "/about")}>
                     Read how we count →
@@ -939,14 +938,14 @@ function Detail({
         </div>
         <div>
           <strong>{fmt(g.keywordMatches)}</strong>
-          <span>Raw search estimate · unverified</span>
+          <span>Raw search estimate</span>
         </div>
       </div>
       <section className="outside-links" aria-label="Videos, streams, communities, and reviews elsewhere">
         <div>
           <span className="eyebrow">FROM AROUND THE WEB</span>
           <h2>Watch a little. Read around.</h2>
-          <p>These links open searches on other sites. PROJECT 24 does not endorse or reproduce their videos, streams, community posts, reviews, or ratings.</p>
+          <p>These open searches on other sites.</p>
         </div>
         <div className="outside-link-list">
           <a href={`https://www.youtube.com/results?search_query=${encodeURIComponent(`${g.title} gameplay trailer`)}`} target="_blank" rel="noreferrer">YouTube videos <ArrowUpRight size={15} /></a>
@@ -1045,18 +1044,10 @@ function Detail({
           )}
         </div>
         <aside className="detail-aside">
-          <span className="eyebrow">CONTEXT MATTERS</span>
-          <h3>
-            A mention is only the beginning.
-          </h3>
+          <h4>How we count</h4>
           <p>
-            People discuss games for all sorts of reasons. Only endorsements
-            individually reviewed against the source by Codex count as
-            recommendations here.
-          </p>
-          <p>
-            Counts describe our collected sample. Multiple comments can come
-            from the same person or conversation.
+            A collected sample, not all of HN. Only endorsements reviewed
+            against the source count as recommendations.
           </p>
           <a href={appPath("/about")}>
             How the index works <ArrowUpRight size={14} />
