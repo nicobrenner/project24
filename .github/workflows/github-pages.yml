@@ -27,8 +27,8 @@ jobs:
       - run: npm run build
         env:
           GITHUB_PAGES: "true"
-      - name: Add route fallback
-        run: cp dist/index.html dist/404.html
+      - name: Generate direct routes for GitHub Pages
+        run: node scripts/generate-pages-routes.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

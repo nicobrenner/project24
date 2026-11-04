@@ -29,7 +29,10 @@ const sections = [
 type Section = (typeof sections)[number];
 const appBase = import.meta.env.BASE_URL.replace(/\/$/, "");
 const appPath = (path: string) => `${appBase}${path.startsWith("/") ? path : `/${path}`}`;
-const routePath = (path: string) => appBase && (path === appBase || path.startsWith(`${appBase}/`)) ? path.slice(appBase.length) || "/" : path;
+const routePath = (path: string) => {
+  const route = appBase && (path === appBase || path.startsWith(`${appBase}/`)) ? path.slice(appBase.length) || "/" : path;
+  return route.replace(/\/+$/, "") || "/";
+};
 const fmt = (n: number | null) => n === null ? "—" : n.toLocaleString();
 const date = (value: string) => {
   const d = new Date(value);

@@ -104,7 +104,7 @@ Choose either Git integration or direct upload when creating the Cloudflare proj
 
 ## GitHub Pages (`github.io`)
 
-This repository can also publish free to `https://nicobrenner.github.io/hackergames/`. The **Deploy to GitHub Pages** workflow builds the app with the repository subpath, keeps game-detail links working on refresh, and publishes on pushes to `main`. To enable it once, open the repository’s **Settings → Pages** and choose **GitHub Actions** as the build and deployment source. The workflow then handles later updates. A custom domain can be connected in Pages settings if desired.
+This repository can also publish free to `https://nicobrenner.github.io/hackergames/`. The **Deploy to GitHub Pages** workflow builds the app with the repository subpath, generates direct HTML entry points for each game so detail links work on refresh, and publishes on pushes to `main`. To enable it once, open the repository’s **Settings → Pages** and choose **GitHub Actions** as the build and deployment source. The workflow then handles later updates. A custom domain can be connected in Pages settings if desired.
 
 GitHub Pages is the simplest choice if you want the `github.io` URL and static hosting. Cloudflare Pages is already supported and gives a free `*.pages.dev` address with Git integration. Both serve the same static app and need no runtime secrets; Cloudflare remains the repository’s documented default.
 
