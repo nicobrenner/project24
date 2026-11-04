@@ -1,6 +1,6 @@
 # PROJECT 24
 
-**Games people on HN talk about.**
+[![Games people on HN talk about. 875 games and 5,087 source excerpts, each one linked back to the Hacker News comment it came from.](.github/social-preview.png)](https://nicobrenner.github.io/project24/)
 
 A small, open index of games mentioned and recommended in Hacker News conversations. Browse the games, follow the discussions, and see the evidence for yourself.
 
